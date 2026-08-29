@@ -228,18 +228,74 @@
     </article>
   `;
 };
-  const pendingFixtureCard = (item) => `
-    <article class="fixture-card fixture-card--pending reveal is-visible" data-section="${item.section || ''}">
+  const pendingFixtureCard = (item) => {
+
+  const isFemale =
+    item.section === 'Femenina';
+
+  const badgeBg =
+    isFemale
+      ? 'rgba(180, 30, 60, 0.16)'
+      : 'rgba(28, 78, 216, 0.16)';
+
+  const badgeColor =
+    isFemale
+      ? '#b41e3c'
+      : '#1c4ed8';
+
+  const borderColor =
+    isFemale
+      ? 'rgba(180, 30, 60, 0.28)'
+      : 'rgba(28, 78, 216, 0.28)';
+
+  return `
+    <article
+      class="fixture-card reveal is-visible"
+      data-section="${item.section || ''}"
+      style="border:1px solid ${borderColor};"
+    >
+
       <div class="fixture-card__top">
-        <span>${item.team || 'Rivas Futsal'}</span>
+        <span>${item.team || ''}</span>
         <span>PENDIENTE</span>
       </div>
-      <div class="fixture-pending">
-        <span class="fixture-pending__eyebrow">PRÓXIMAMENTE</span>
-        <strong>Calendario 2026/27</strong>
-        <p>${item.reason || 'La próxima jornada todavía no está publicada.'}</p>
+
+      <div style="margin:.4rem 0 1rem;">
+        <span
+          style="
+            display:inline-flex;
+            align-items:center;
+            gap:.35rem;
+            padding:.42rem .75rem;
+            border-radius:999px;
+            font-size:.78rem;
+            font-weight:800;
+            letter-spacing:.04em;
+            text-transform:uppercase;
+            background:${badgeBg};
+            color:${badgeColor};
+          "
+        >
+          ${item.section || 'Sección'}
+        </span>
       </div>
-    </article>`;
+
+      <div
+        class="fixture-empty"
+        style="margin:0;min-height:150px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;"
+      >
+        <strong style="font-size:1.15rem;">
+          PRÓXIMAMENTE
+        </strong>
+
+        <p style="margin:.7rem 0 0;max-width:320px;">
+          ${item.reason || 'Calendario 2026/27 pendiente de publicación.'}
+        </p>
+      </div>
+
+    </article>
+  `;
+};
 
   const renderFixtures = () => {
     document.querySelectorAll('[data-next-matches]').forEach(host => {
