@@ -1,0 +1,12 @@
+{
+  "upcoming": [],
+  "results": [],
+  "sourceTeams": [],
+  "detectedTeams": [],
+  "updatedAt": null,
+  "source": "Datos públicos RFFM vía El Balón de Madrid (navegador automático)",
+  "diagnostics": {
+    "scraper": "playwright-v1",
+    "status": "Pendiente de primera actualización"
+  }
+}
