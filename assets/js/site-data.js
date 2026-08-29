@@ -16,9 +16,9 @@ window.RIVAS_DATA = {
   femaleTeams: [
     { name: "Juvenil A", group: "Juvenil", level: "Ambición y crecimiento", tone: "red" },
     { name: "Cadete A", group: "Cadete", level: "Talento y proyección", tone: "blue" },
-     { name: "Cadete B", group: "Cadete", level: "Formación y crecimiento", tone: "navy" },
-    { name: "Infantil A", group: "Infantil", level: "Aprender para competir", tone: "navy" },
-    { name: "Alevín A", group: "Alevín", level: "Ilusión desde la base", tone: "red" }
+    { name: "Cadete B", group: "Cadete", level: "Formación y crecimiento", tone: "navy" },
+    { name: "Infantil A", group: "Infantil", level: "Aprender para competir", tone: "red" },
+    { name: "Alevín A", group: "Alevín", level: "Ilusión desde la base", tone: "blue" }
   ],
   sponsors: [
     { name: "YouFirst Smart Finance", image: "assets/images/youfirst.jpg", role: "Patrocinador principal" },

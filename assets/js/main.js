@@ -108,8 +108,8 @@
 
 
 
-  // Partidos: sincronización automática con RFFM mediante Netlify Function.
-  let fixtureStore = { upcoming: [], results: [] };
+  // Partidos: datos preparados automáticamente por GitHub Actions y publicados como JSON estático.
+  let fixtureStore = { upcoming: [], results: [], pending: [] };
   let currentFixtureFilter = 'all';
 
   const formatFixtureDate = (iso) => {
@@ -132,7 +132,8 @@
     const home = homeIsRivas ? 'RIVAS FUTSAL' : cleanClubName(f.home);
     const away = awayIsRivas ? 'RIVAS FUTSAL' : cleanClubName(f.away);
     const score = result && f.score ? `<div class="fixture-score">${f.score}</div>` : '<div class="fixture-vs">VS</div>';
-    const meta = [formatFixtureDate(f.date), f.time || null, f.venue || null].filter(Boolean).join(' · ');
+    const meta = [formatFixtureDate(f.date), f.time || 'Hora por confirmar', f.venue || null].filter(Boolean).join(' · ');
+
     return `
       <article class="fixture-card reveal is-visible" data-section="${f.section || ''}">
         <div class="fixture-card__top">
@@ -155,64 +156,102 @@
       </article>`;
   };
 
+  const pendingFixtureCard = (item) => `
+    <article class="fixture-card fixture-card--pending reveal is-visible" data-section="${item.section || ''}">
+      <div class="fixture-card__top">
+        <span>${item.team || 'Rivas Futsal'}</span>
+        <span>PENDIENTE</span>
+      </div>
+      <div class="fixture-pending">
+        <span class="fixture-pending__eyebrow">PRÓXIMAMENTE</span>
+        <strong>Calendario 2026/27</strong>
+        <p>${item.reason || 'La próxima jornada todavía no está publicada.'}</p>
+      </div>
+    </article>`;
+
   const renderFixtures = () => {
     document.querySelectorAll('[data-next-matches]').forEach(host => {
       const limit = Number(host.dataset.limit || 99);
-      const filtered = fixtureStore.upcoming.filter(f => currentFixtureFilter === 'all' || f.section === currentFixtureFilter).slice(0, limit);
-      host.innerHTML = filtered.length ? filtered.map(f => fixtureCard(f, false)).join('') : '<div class="fixture-empty">Todavía no hay próximos partidos publicados para este filtro.</div>';
+      const filtered = fixtureStore.upcoming
+        .filter(f => currentFixtureFilter === 'all' || f.section === currentFixtureFilter)
+        .slice(0, limit);
+
+      host.innerHTML = filtered.length
+        ? filtered.map(f => fixtureCard(f, false)).join('')
+        : '<div class="fixture-empty">Todavía no hay próximos partidos publicados para este filtro.</div>';
     });
+
+    document.querySelectorAll('[data-pending-teams]').forEach(host => {
+      const filtered = fixtureStore.pending
+        .filter(item => currentFixtureFilter === 'all' || item.section === currentFixtureFilter);
+
+      host.innerHTML = filtered.length
+        ? filtered.map(pendingFixtureCard).join('')
+        : '<div class="fixture-empty">Todos los equipos de este filtro tienen ya su próxima jornada publicada.</div>';
+    });
+
     document.querySelectorAll('[data-last-results]').forEach(host => {
-      const filtered = fixtureStore.results.filter(f => currentFixtureFilter === 'all' || f.section === currentFixtureFilter).slice(0, 8);
-      host.innerHTML = filtered.length ? filtered.map(f => fixtureCard(f, true)).join('') : '<div class="fixture-empty">Los resultados aparecerán automáticamente cuando comience la competición.</div>';
+      const filtered = fixtureStore.results
+        .filter(f => currentFixtureFilter === 'all' || f.section === currentFixtureFilter)
+        .slice(0, 8);
+
+      host.innerHTML = filtered.length
+        ? filtered.map(f => fixtureCard(f, true)).join('')
+        : '<div class="fixture-empty">Los resultados aparecerán automáticamente cuando comience la competición.</div>';
     });
   };
 
   const loadFixtures = async () => {
-    const hosts = document.querySelectorAll('[data-next-matches], [data-last-results]');
+    const hosts = document.querySelectorAll('[data-next-matches], [data-pending-teams], [data-last-results]');
     if (!hosts.length) return;
+
     const statusEls = document.querySelectorAll('[data-fixtures-status]');
 
-    // Las Netlify Functions no existen al abrir index.html directamente desde el disco.
     if (window.location.protocol === 'file:') {
-      fixtureStore.upcoming = [];
-      fixtureStore.results = [];
-      statusEls.forEach(el => el.textContent = 'Los partidos automáticos se activan al publicar la web en Netlify.');
+      fixtureStore = { upcoming: [], results: [], pending: [] };
+      statusEls.forEach(el => el.textContent = 'Los partidos automáticos se activan al publicar la web.');
       renderFixtures();
       return;
     }
 
-    statusEls.forEach(el => el.textContent = 'Consultando próximos partidos oficiales…');
+    statusEls.forEach(el => el.textContent = 'Cargando calendarios 2026/27…');
+
     try {
       if (!window.RivasFixtures || typeof window.RivasFixtures.load !== 'function') {
         throw new Error('módulo de partidos no cargado');
       }
+
       const payload = await window.RivasFixtures.load();
 
       fixtureStore.upcoming = Array.isArray(payload.upcoming) ? payload.upcoming : [];
       fixtureStore.results = Array.isArray(payload.results) ? payload.results : [];
+      fixtureStore.pending = Array.isArray(payload.pendingTeams) ? payload.pendingTeams : [];
+
       renderFixtures();
 
       const detectedCount = Array.isArray(payload.detectedTeams) ? payload.detectedTeams.length : 0;
       const sourceCount = Array.isArray(payload.sourceTeams) ? payload.sourceTeams.length : detectedCount;
-      const diag = payload.diagnostics || {};
+      const pendingCount = fixtureStore.pending.length;
+
       statusEls.forEach(el => {
         if (fixtureStore.upcoming.length) {
-          el.textContent = `${fixtureStore.upcoming.length} equipos con próximo partido · ${sourceCount} equipos con competición 2026/27 detectada`;
-        } else if ((diag.calendarsOk || 0) > 0) {
-          el.textContent = `RFFM conectada: ${diag.calendarsOk || 0} calendarios consultados. Los equipos sin calendario 2026/27 publicado aparecerán automáticamente cuando la Federación les asigne grupo y jornada.`;
+          el.textContent = `${fixtureStore.upcoming.length} equipos con próximo partido · ${sourceCount} categorías localizadas${pendingCount ? ` · ${pendingCount} pendientes` : ''}`;
         } else {
-          el.textContent = 'La conexión con RFFM está activa, pero sus calendarios no han devuelto datos todavía.';
+          el.textContent = `Calendarios sincronizados · ${sourceCount} categorías localizadas${pendingCount ? ` · ${pendingCount} pendientes de jornada` : ''}`;
         }
       });
+
       document.querySelectorAll('[data-fixtures-updated]').forEach(el => {
-        const stamp = payload.updatedAt ? new Date(payload.updatedAt).toLocaleString('es-ES',{dateStyle:'short',timeStyle:'short'}) : '';
-        el.textContent = `Fuente: calendarios oficiales RFFM · actualización automática${stamp ? ` · ${stamp}` : ''}`;
+        const stamp = payload.updatedAt
+          ? new Date(payload.updatedAt).toLocaleString('es-ES', { dateStyle:'short', timeStyle:'short' })
+          : '';
+
+        el.textContent = `Fuente: calendarios públicos RFFM · actualización automática${stamp ? ` · ${stamp}` : ''}`;
       });
     } catch (err) {
-      fixtureStore.upcoming = [];
-      fixtureStore.results = [];
+      fixtureStore = { upcoming: [], results: [], pending: [] };
       const detail = String(err?.message || 'sin respuesta').slice(0, 120);
-      statusEls.forEach(el => el.textContent = `No se ha podido cargar la sincronización RFFM (${detail}). No se muestran partidos inventados.`);
+      statusEls.forEach(el => el.textContent = `No se han podido cargar los calendarios (${detail}).`);
       renderFixtures();
     }
   };
@@ -220,7 +259,8 @@
   document.querySelectorAll('[data-fixture-filters] [data-filter]').forEach(btn => {
     btn.addEventListener('click', () => {
       currentFixtureFilter = btn.dataset.filter || 'all';
-      document.querySelectorAll('[data-fixture-filters] [data-filter]').forEach(b => b.classList.toggle('is-active', b === btn));
+      document.querySelectorAll('[data-fixture-filters] [data-filter]')
+        .forEach(b => b.classList.toggle('is-active', b === btn));
       renderFixtures();
     });
   });

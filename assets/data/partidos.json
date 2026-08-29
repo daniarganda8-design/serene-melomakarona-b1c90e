@@ -104,15 +104,65 @@
     }
   ],
   "results": [],
+  "pendingTeams": [
+    {
+      "section": "Masculina",
+      "team": "Infantil B",
+      "reason": "La categoría localizada anteriormente correspondía a otra temporada. Esperando calendario 2026/27."
+    },
+    {
+      "section": "Masculina",
+      "team": "Alevín A",
+      "reason": "Calendario 2026/27 pendiente de publicación."
+    },
+    {
+      "section": "Masculina",
+      "team": "Alevín B",
+      "reason": "Calendario 2026/27 pendiente de publicación."
+    },
+    {
+      "section": "Masculina",
+      "team": "Benjamín A",
+      "reason": "Calendario 2026/27 pendiente de publicación."
+    },
+    {
+      "section": "Masculina",
+      "team": "Prebenjamín A",
+      "reason": "Calendario 2026/27 pendiente de publicación."
+    },
+    {
+      "section": "Femenina",
+      "team": "Juvenil A",
+      "reason": "La próxima jornada todavía no está publicada."
+    },
+    {
+      "section": "Femenina",
+      "team": "Cadete A",
+      "reason": "Calendario 2026/27 pendiente de publicación."
+    },
+    {
+      "section": "Femenina",
+      "team": "Cadete B",
+      "reason": "Calendario 2026/27 pendiente de publicación."
+    },
+    {
+      "section": "Femenina",
+      "team": "Infantil A",
+      "reason": "Calendario 2026/27 pendiente de publicación."
+    },
+    {
+      "section": "Femenina",
+      "team": "Alevín A",
+      "reason": "Calendario 2026/27 pendiente de publicación."
+    }
+  ],
   "sourceTeams": [
     "Masculina|Tercera División",
     "Masculina|Juvenil A",
     "Masculina|Juvenil B",
     "Masculina|Cadete Autonómica",
     "Masculina|Cadete B",
-    "Masculina|Infantil Preferente",
-    "Masculina|Infantil B",
-    "Femenina|Juvenil A"
+    "Masculina|Infantil Preferente"
   ],
   "detectedTeams": [
     "Masculina|Tercera División",
@@ -120,82 +170,16 @@
     "Masculina|Juvenil B",
     "Masculina|Cadete Autonómica",
     "Masculina|Cadete B",
-    "Masculina|Infantil Preferente",
-    "Masculina|Infantil B"
+    "Masculina|Infantil Preferente"
   ],
   "updatedAt": "2026-08-29T09:33:34.813Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
-    "scraper": "playwright-cloudflare-v2",
-    "sources": 8,
-    "fixtures": 7,
-    "expectedTeams": 15,
-    "missingTeams": [
-      "Masculina|Alevín A",
-      "Masculina|Alevín B",
-      "Masculina|Benjamín A",
-      "Masculina|Prebenjamín A",
-      "Femenina|Cadete A",
-      "Femenina|Infantil A",
-      "Femenina|Alevín A"
-    ],
-    "teams": {
-      "Masculina Tercera División": {
-        "mode": "rendered-dom",
-        "fixtures": 1,
-        "chars": 2650,
-        "competition": "26738221",
-        "group": "26771028"
-      },
-      "Masculina Juvenil A": {
-        "mode": "rendered-dom",
-        "fixtures": 1,
-        "chars": 2656,
-        "competition": "26749998",
-        "group": "26814437"
-      },
-      "Masculina Juvenil B": {
-        "mode": "rendered-dom",
-        "fixtures": 1,
-        "chars": 2490,
-        "competition": "26738220",
-        "group": "26878012"
-      },
-      "Masculina Cadete Autonómica": {
-        "mode": "rendered-dom",
-        "fixtures": 1,
-        "chars": 2355,
-        "competition": "26738292",
-        "group": "26738293"
-      },
-      "Masculina Cadete B": {
-        "mode": "rendered-dom",
-        "fixtures": 1,
-        "chars": 2438,
-        "competition": "26750003",
-        "group": "26877982"
-      },
-      "Masculina Infantil Preferente": {
-        "mode": "rendered-dom",
-        "fixtures": 1,
-        "chars": 2438,
-        "competition": "26738249",
-        "group": "26738251"
-      },
-      "Masculina Infantil B": {
-        "mode": "rendered-dom",
-        "fixtures": 1,
-        "chars": 2353,
-        "competition": "24388742",
-        "group": "24388758"
-      },
-      "Femenina Juvenil A": {
-        "mode": "no-fixture",
-        "fixtures": 0,
-        "chars": 2612,
-        "competition": "26738226",
-        "group": "26738227"
-      }
-    }
+    "scraper": "playwright-cloudflare-v3",
+    "sources": 6,
+    "fixtures": 6,
+    "expectedTeams": 16,
+    "pendingTeams": 10,
+    "status": "Datos iniciales; GitHub Actions los actualizará automáticamente."
   }
 }
