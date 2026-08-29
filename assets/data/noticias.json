@@ -2,8 +2,9 @@
   "username": "cdrivasfutsal",
   "posts": [],
   "updatedAt": null,
-  "source": "Instagram",
+  "source": "Instagram - actualización manual",
   "diagnostics": {
-    "status": "Pendiente de conectar la API oficial de Instagram"
+    "mode": "manual",
+    "status": "Sin Meta API"
   }
 }

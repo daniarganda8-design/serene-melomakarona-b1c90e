@@ -1,0 +1,13 @@
+name: Noticias Instagram (manual)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  informacion:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Modo manual activo
+        run: |
+          echo "Las noticias de Instagram se gestionan manualmente desde assets/data/noticias.json."
+          echo "No se necesita token de Meta ni INSTAGRAM_ACCESS_TOKEN."
