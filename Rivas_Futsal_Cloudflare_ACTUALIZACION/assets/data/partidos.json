@@ -1,0 +1,185 @@
+{
+  "upcoming": [
+    {
+      "round": 1,
+      "date": "2026-09-19",
+      "time": null,
+      "home": "FUTSALA VILLAVERDE",
+      "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
+      "score": null,
+      "venue": null,
+      "competition": "26749998",
+      "group": "26814437",
+      "competitionName": "PRIMERA DIVISION AUTONOMICA JUVENIL SALA",
+      "officialTeamName": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
+      "team": "Juvenil A",
+      "section": "Masculina",
+      "sourceUrl": "https://www.elbalondemadrid.es/competicion/26749998/grupo/26814437/jornadas",
+      "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26749998&grupo=26814437&temporada=22&tipojuego=3"
+    },
+    {
+      "round": 1,
+      "date": "2026-09-19",
+      "time": "18:30",
+      "home": "CDE C.F.S. EUROSIRIS - BINGO LAS VEGAS 'A'",
+      "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE",
+      "score": null,
+      "venue": null,
+      "competition": "26738221",
+      "group": "26771028",
+      "competitionName": "TERCERA DIVISIÓN DE FÚTBOL SALA",
+      "officialTeamName": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE",
+      "team": "Tercera División",
+      "section": "Masculina",
+      "sourceUrl": "https://www.elbalondemadrid.es/competicion/26738221/grupo/26771028/jornadas",
+      "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26738221&grupo=26771028&temporada=22&tipojuego=3"
+    },
+    {
+      "round": 1,
+      "date": "2026-09-26",
+      "time": null,
+      "home": "LEGANES F.S. MASDEPORTE 'A'",
+      "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
+      "score": null,
+      "venue": null,
+      "competition": "26738292",
+      "group": "26738293",
+      "competitionName": "PRIMERA DIVISION AUTONOMICA CADETE SALA",
+      "officialTeamName": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
+      "team": "Cadete Autonómica",
+      "section": "Masculina",
+      "sourceUrl": "https://www.elbalondemadrid.es/competicion/26738292/grupo/26738293/jornadas",
+      "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26738292&grupo=26738293&temporada=22&tipojuego=3"
+    },
+    {
+      "round": 1,
+      "date": "2026-09-26",
+      "time": null,
+      "home": "FUTBOL SALA LIMONES 5 'B'",
+      "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
+      "score": null,
+      "venue": null,
+      "competition": "26750003",
+      "group": "26877982",
+      "competitionName": "PREFERENTE CADETE SALA",
+      "officialTeamName": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
+      "team": "Cadete B",
+      "section": "Masculina",
+      "sourceUrl": "https://www.elbalondemadrid.es/competicion/26750003/grupo/26877982/jornadas",
+      "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26750003&grupo=26877982&temporada=22&tipojuego=3"
+    },
+    {
+      "round": 1,
+      "date": "2026-09-26",
+      "time": null,
+      "home": "INTER F.S. - JP FINANCIALS 'C'",
+      "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
+      "score": null,
+      "venue": null,
+      "competition": "26738249",
+      "group": "26738251",
+      "competitionName": "PREFERENTE INFANTIL SALA",
+      "officialTeamName": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
+      "team": "Infantil Preferente",
+      "section": "Masculina",
+      "sourceUrl": "https://www.elbalondemadrid.es/competicion/26738249/grupo/26738251/jornadas",
+      "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26738249&grupo=26738251&temporada=22&tipojuego=3"
+    },
+    {
+      "round": 1,
+      "date": "2026-09-26",
+      "time": null,
+      "home": "FUTBOL SALA LIMONES 5 'B'",
+      "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
+      "score": null,
+      "venue": null,
+      "competition": "26738220",
+      "group": "26878012",
+      "competitionName": "PREFERENTE JUVENIL SALA",
+      "officialTeamName": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
+      "team": "Juvenil B",
+      "section": "Masculina",
+      "sourceUrl": "https://www.elbalondemadrid.es/competicion/26738220/grupo/26878012/jornadas",
+      "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26738220&grupo=26878012&temporada=22&tipojuego=3"
+    }
+  ],
+  "results": [],
+  "pendingTeams": [
+    {
+      "section": "Masculina",
+      "team": "Infantil B",
+      "reason": "La categoría localizada anteriormente correspondía a otra temporada. Esperando calendario 2026/27."
+    },
+    {
+      "section": "Masculina",
+      "team": "Alevín A",
+      "reason": "Calendario 2026/27 pendiente de publicación."
+    },
+    {
+      "section": "Masculina",
+      "team": "Alevín B",
+      "reason": "Calendario 2026/27 pendiente de publicación."
+    },
+    {
+      "section": "Masculina",
+      "team": "Benjamín A",
+      "reason": "Calendario 2026/27 pendiente de publicación."
+    },
+    {
+      "section": "Masculina",
+      "team": "Prebenjamín A",
+      "reason": "Calendario 2026/27 pendiente de publicación."
+    },
+    {
+      "section": "Femenina",
+      "team": "Juvenil A",
+      "reason": "La próxima jornada todavía no está publicada."
+    },
+    {
+      "section": "Femenina",
+      "team": "Cadete A",
+      "reason": "Calendario 2026/27 pendiente de publicación."
+    },
+    {
+      "section": "Femenina",
+      "team": "Cadete B",
+      "reason": "Calendario 2026/27 pendiente de publicación."
+    },
+    {
+      "section": "Femenina",
+      "team": "Infantil A",
+      "reason": "Calendario 2026/27 pendiente de publicación."
+    },
+    {
+      "section": "Femenina",
+      "team": "Alevín A",
+      "reason": "Calendario 2026/27 pendiente de publicación."
+    }
+  ],
+  "sourceTeams": [
+    "Masculina|Tercera División",
+    "Masculina|Juvenil A",
+    "Masculina|Juvenil B",
+    "Masculina|Cadete Autonómica",
+    "Masculina|Cadete B",
+    "Masculina|Infantil Preferente"
+  ],
+  "detectedTeams": [
+    "Masculina|Tercera División",
+    "Masculina|Juvenil A",
+    "Masculina|Juvenil B",
+    "Masculina|Cadete Autonómica",
+    "Masculina|Cadete B",
+    "Masculina|Infantil Preferente"
+  ],
+  "updatedAt": "2026-08-29T09:33:34.813Z",
+  "source": "Calendarios públicos RFFM",
+  "diagnostics": {
+    "scraper": "playwright-cloudflare-v3",
+    "sources": 6,
+    "fixtures": 6,
+    "expectedTeams": 16,
+    "pendingTeams": 10,
+    "status": "Datos iniciales; GitHub Actions los actualizará automáticamente."
+  }
+}
