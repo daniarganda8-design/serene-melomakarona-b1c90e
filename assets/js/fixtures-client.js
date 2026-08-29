@@ -3,7 +3,7 @@
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 18000);
     try {
-      const res = await fetch('/.netlify/functions/rffm-fixtures', {
+      const res = await fetch('/assets/data/partidos.json', {
         signal: controller.signal,
         cache: 'no-store',
         headers: { 'accept': 'application/json' }
