@@ -1,10 +1,23 @@
 {
   "username": "cdrivasfutsal",
-  "posts": [],
-  "updatedAt": null,
-  "source": "Instagram - actualización manual",
+  "posts": [
+    {
+      "type": "post",
+      "permalink": "https://www.instagram.com/p/DcnzNzttu6S/"
+    },
+    {
+      "type": "post",
+      "permalink": "https://www.instagram.com/p/DcfiX1EtOtW/"
+    },
+    {
+      "type": "reel",
+      "permalink": "https://www.instagram.com/reel/Db24N9Gtmk2/"
+    }
+  ],
+  "updatedAt": "2026-08-29",
+  "source": "Instagram - publicaciones seleccionadas",
   "diagnostics": {
-    "mode": "manual",
+    "mode": "instagram-embed",
     "status": "Sin Meta API"
   }
 }
