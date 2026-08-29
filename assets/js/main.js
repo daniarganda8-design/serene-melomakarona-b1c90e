@@ -126,36 +126,108 @@
     .replace(/\s+'[ABCD]'$/i, '')
     .trim();
 
-  const fixtureCard = (f, result = false) => {
-    const homeIsRivas = /RIVAS FUTSAL/i.test(f.home || '');
-    const awayIsRivas = /RIVAS FUTSAL/i.test(f.away || '');
-    const home = homeIsRivas ? 'RIVAS FUTSAL' : cleanClubName(f.home);
-    const away = awayIsRivas ? 'RIVAS FUTSAL' : cleanClubName(f.away);
-    const score = result && f.score ? `<div class="fixture-score">${f.score}</div>` : '<div class="fixture-vs">VS</div>';
-    const meta = [formatFixtureDate(f.date), f.time || 'Hora por confirmar', f.venue || null].filter(Boolean).join(' · ');
+  const fixtureCard = (fixture) => {
 
-    return `
-      <article class="fixture-card reveal is-visible" data-section="${f.section || ''}">
-        <div class="fixture-card__top">
-          <span>${f.team || 'Rivas Futsal'}</span>
-          <span>J${f.round || '—'}</span>
-        </div>
-        <div class="fixture-matchup">
-          <div class="fixture-side ${homeIsRivas ? 'is-rivas' : ''}">
-            ${homeIsRivas ? '<img src="assets/images/rivas-futsal-logo.jpg" alt="Rivas Futsal">' : '<div class="fixture-placeholder">'+(home?.[0] || 'E')+'</div>'}
-            <strong>${home}</strong>
-          </div>
-          ${score}
-          <div class="fixture-side ${awayIsRivas ? 'is-rivas' : ''}">
-            ${awayIsRivas ? '<img src="assets/images/rivas-futsal-logo.jpg" alt="Rivas Futsal">' : '<div class="fixture-placeholder">'+(away?.[0] || 'E')+'</div>'}
-            <strong>${away}</strong>
-          </div>
-        </div>
-        <div class="fixture-meta">${meta}</div>
-        ${f.rffmUrl ? `<a class="fixture-rffm" href="${f.rffmUrl}" target="_blank" rel="noopener">Ver calendario oficial RFFM →</a>` : ''}
-      </article>`;
-  };
+  const isFemale =
+    fixture.section === 'Femenina';
 
+  const badgeBg =
+    isFemale
+      ? 'rgba(180, 30, 60, 0.16)'
+      : 'rgba(28, 78, 216, 0.16)';
+
+  const badgeColor =
+    isFemale
+      ? '#b41e3c'
+      : '#1c4ed8';
+
+  const borderColor =
+    isFemale
+      ? 'rgba(180, 30, 60, 0.28)'
+      : 'rgba(28, 78, 216, 0.28)';
+
+  return `
+    <article
+      class="fixture-card reveal is-visible"
+      data-section="${fixture.section || ''}"
+      style="border:1px solid ${borderColor};"
+    >
+
+      <div class="fixture-card__top">
+        <span>${fixture.team || 'Equipo'}</span>
+        <span>Jornada ${fixture.round ?? '-'}</span>
+      </div>
+
+      <div style="margin:.4rem 0 1rem;">
+        <span
+          style="
+            display:inline-flex;
+            align-items:center;
+            gap:.35rem;
+            padding:.42rem .75rem;
+            border-radius:999px;
+            font-size:.78rem;
+            font-weight:800;
+            letter-spacing:.04em;
+            text-transform:uppercase;
+            background:${badgeBg};
+            color:${badgeColor};
+          "
+        >
+          ${fixture.section || 'Sección'}
+        </span>
+      </div>
+
+      <div class="fixture-card__teams">
+        <div class="fixture-team">
+          <span class="fixture-team__label">Local</span>
+          <strong>${fixture.home || '-'}</strong>
+        </div>
+
+        <div class="fixture-team fixture-team--divider">VS</div>
+
+        <div class="fixture-team">
+          <span class="fixture-team__label">Visitante</span>
+          <strong>${fixture.away || '-'}</strong>
+        </div>
+      </div>
+
+      <div class="fixture-card__meta">
+        <div>
+          <span>Fecha</span>
+          <strong>${fixture.date || 'Por confirmar'}</strong>
+        </div>
+
+        <div>
+          <span>Hora</span>
+          <strong>${fixture.time || 'Por confirmar'}</strong>
+        </div>
+
+        <div>
+          <span>Competición</span>
+          <strong>${fixture.competitionName || '-'}</strong>
+        </div>
+      </div>
+
+      ${
+        fixture.sourceUrl
+          ? `
+            <div style="margin-top:1rem;">
+              <a
+                href="${fixture.sourceUrl}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver calendario oficial
+              </a>
+            </div>
+          `
+          : ''
+      }
+
+    </article>
+  `;
+};
   const pendingFixtureCard = (item) => `
     <article class="fixture-card fixture-card--pending reveal is-visible" data-section="${item.section || ''}">
       <div class="fixture-card__top">
