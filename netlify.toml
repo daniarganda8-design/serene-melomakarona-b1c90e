@@ -1,7 +1,0 @@
-[build]
-  command = "echo 'Preparando Rivas Futsal y sincronización RFFM'"
-  publish = "."
-  functions = "netlify/functions"
-
-[functions]
-  node_bundler = "esbuild"
