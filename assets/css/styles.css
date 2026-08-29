@@ -211,3 +211,219 @@ button{font:inherit}
 
 @media (max-width:980px){.join-card{grid-template-columns:1fr;padding:46px}.join-card__contacts{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:640px){.hero:after{width:470px;height:76px;right:-205px;top:135px}.hero-panel:before{width:455px;height:58px;right:-152px;top:206px}.hero-panel:after{width:360px;height:4px;right:-90px;top:266px}.join-home{padding-top:18px}.join-card{padding:34px 24px;border-radius:27px;gap:30px}.join-card__contacts{grid-template-columns:1fr}.join-contact{min-height:128px}.join-card:before{width:300px;height:56px;right:-130px}.join-card:after{width:320px;height:46px;left:-170px}}
+
+
+/* =========================================================
+   PORTADA FINAL · RIVAS FUTSAL
+   Acabado de hero + noticias horizontales
+   ========================================================= */
+
+/* Dos bandas paralelas detrás del escudo: roja + azul.
+   Se concentran en el panel derecho para no invadir el titular. */
+.hero:after{
+  content:none;
+}
+.hero-panel{
+  isolation:isolate;
+}
+.hero-panel:before,
+.hero-panel:after{
+  content:"";
+  position:absolute;
+  left:50%;
+  border-radius:999px;
+  transform:translateX(-50%) rotate(-18deg);
+  pointer-events:none;
+}
+.hero-panel:before{
+  z-index:1;
+  top:176px;
+  width:760px;
+  height:92px;
+  background:linear-gradient(90deg,#8f0b1d 0%,#d9182c 28%,#ff3349 68%,#ff6070 100%);
+  box-shadow:
+    0 24px 65px rgba(225,29,46,.28),
+    inset 0 1px 0 rgba(255,255,255,.2);
+}
+.hero-panel:after{
+  z-index:1;
+  top:286px;
+  width:700px;
+  height:68px;
+  background:linear-gradient(90deg,#074d91 0%,#0f75cf 30%,#229cff 68%,#65c3ff 100%);
+  box-shadow:
+    0 22px 58px rgba(20,128,225,.28),
+    inset 0 1px 0 rgba(255,255,255,.22);
+}
+.hero-badge{
+  z-index:4;
+  box-shadow:
+    0 38px 90px rgba(0,0,0,.42),
+    0 0 0 9px rgba(255,255,255,.035);
+}
+.hero-badge:before{
+  content:"";
+  position:absolute;
+  inset:-19px;
+  z-index:-1;
+  border-radius:50%;
+  border:1px solid rgba(130,196,255,.18);
+  box-shadow:0 0 45px rgba(48,151,244,.12);
+}
+.court{
+  z-index:0;
+  opacity:.88;
+}
+
+/* Noticias: una sola línea horizontal.
+   En escritorio caben tres tarjetas; en móvil se recorren deslizando. */
+.instagram-news{
+  overflow:hidden;
+}
+.instagram-news__grid{
+  display:flex;
+  gap:18px;
+  width:100%;
+  overflow-x:auto;
+  overflow-y:hidden;
+  padding:4px 2px 18px;
+  scroll-snap-type:x mandatory;
+  scroll-padding-inline:2px;
+  overscroll-behavior-inline:contain;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;
+  scrollbar-color:#b8c4d2 transparent;
+}
+.instagram-news__grid::-webkit-scrollbar{
+  height:7px;
+}
+.instagram-news__grid::-webkit-scrollbar-track{
+  background:transparent;
+}
+.instagram-news__grid::-webkit-scrollbar-thumb{
+  background:#c1ccd8;
+  border-radius:999px;
+}
+.instagram-card{
+  flex:0 0 calc((100% - 36px)/3);
+  min-width:340px;
+  max-width:390px;
+  scroll-snap-align:start;
+  border:1px solid var(--line);
+  border-radius:25px;
+  background:#fff;
+  box-shadow:0 14px 38px rgba(7,20,38,.07);
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+}
+.instagram-card:hover{
+  transform:translateY(-4px);
+  border-color:#cbd9e8;
+  box-shadow:0 22px 48px rgba(7,20,38,.11);
+}
+.instagram-card--embed{
+  overflow:hidden;
+}
+.instagram-card--embed .instagram-media{
+  margin-inline:auto!important;
+}
+.instagram-card__body{
+  padding:16px 18px 18px!important;
+  border-top:1px solid #edf1f6;
+}
+.instagram-card__meta{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:10px;
+  color:#7c8998;
+  font-size:9px;
+  font-weight:950;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+}
+.instagram-card__link{
+  color:var(--blue);
+  font-size:11px;
+  font-weight:950;
+  letter-spacing:.04em;
+}
+.instagram-news__status{
+  min-height:20px;
+  margin:-16px 0 18px;
+  color:#8390a1;
+  font-size:11px;
+  font-weight:750;
+}
+.instagram-news__footer{
+  margin-top:15px;
+  text-align:right;
+}
+.instagram-news__footer a{
+  color:var(--blue);
+  font-size:11px;
+  font-weight:950;
+  letter-spacing:.04em;
+}
+.instagram-news__empty{
+  width:100%;
+  padding:28px;
+  border:1px dashed #cbd6e3;
+  border-radius:22px;
+  background:#fff;
+  color:var(--muted);
+  text-align:center;
+  line-height:1.65;
+}
+.instagram-news__empty a{
+  color:var(--blue);
+  font-weight:900;
+}
+
+/* El desplegable Únete queda como punto de contacto, sin ocupar otra sección. */
+.nav-join__panel{
+  overflow:hidden;
+}
+.nav-join__panel:after{
+  content:"";
+  position:absolute;
+  right:-48px;
+  bottom:-34px;
+  width:160px;
+  height:30px;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--red),var(--blue2));
+  transform:rotate(-18deg);
+  opacity:.38;
+  pointer-events:none;
+}
+
+@media(max-width:1100px){
+  .hero-panel:before{width:660px;height:82px;top:180px}
+  .hero-panel:after{width:610px;height:62px;top:278px}
+  .instagram-card{flex-basis:calc((100% - 18px)/2);max-width:none}
+}
+
+@media(max-width:680px){
+  .hero-panel:before{
+    width:500px;
+    height:64px;
+    top:118px;
+    left:54%;
+  }
+  .hero-panel:after{
+    width:455px;
+    height:49px;
+    top:202px;
+    left:52%;
+  }
+  .hero-badge:before{inset:-13px}
+  .instagram-news__grid{
+    margin-right:calc((100vw - 100%)/-2);
+    padding-right:24px;
+  }
+  .instagram-card{
+    flex:0 0 min(86vw,370px);
+    min-width:min(86vw,370px);
+  }
+  .instagram-news__footer{text-align:left}
+}
