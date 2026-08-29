@@ -40,22 +40,43 @@ jobs:
         run: |
           node actualizar-partidos.mjs
 
+      - name: Guardar JSON temporalmente
+        run: |
+          cp assets/data/partidos.json /tmp/partidos.json
+
       - name: Guardar cambios en GitHub
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add assets/data/partidos.json
+          for intento in 1 2 3 4 5
+          do
+            echo "Intento $intento de guardar los partidos..."
 
-          if git diff --cached --quiet; then
-            echo "No hay cambios que publicar."
-            exit 0
-          fi
+            git fetch origin main
 
-          git commit -m "Actualizar partidos Rivas Futsal"
+            git checkout -B main origin/main
 
-          echo "Actualizando con los últimos cambios de main..."
-          git pull --rebase origin main
+            cp /tmp/partidos.json assets/data/partidos.json
 
-          echo "Publicando partidos..."
-          git push origin HEAD:main
+            git add assets/data/partidos.json
+
+            if git diff --cached --quiet; then
+              echo "Los partidos no han cambiado."
+              exit 0
+            fi
+
+            git commit -m "Actualizar partidos Rivas Futsal"
+
+            if git push origin main; then
+              echo "Partidos publicados correctamente."
+              exit 0
+            fi
+
+            echo "La rama cambió mientras se publicaba. Reintentando..."
+
+            sleep 3
+          done
+
+          echo "No se pudo publicar después de 5 intentos."
+          exit 1
