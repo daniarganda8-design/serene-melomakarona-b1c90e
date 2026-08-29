@@ -1,5 +1,0 @@
-ACTUALIZACIÓN LISTA PARA PEGAR SOBRE TU REPOSITORIO ACTUAL.
-
-Contiene solo los archivos que cambian.
-Descomprime esta carpeta y súbela a la raíz del repositorio de GitHub.
-Después ejecuta Actions > Actualizar partidos Rivas Futsal > Run workflow.
