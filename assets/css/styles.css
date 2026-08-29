@@ -171,3 +171,25 @@ button{font:inherit}
 .fixture-section-heading h3{margin:0;color:var(--navy);font-size:clamp(22px,2.4vw,30px);line-height:1;letter-spacing:-.035em}
 .fixture-section-heading .kicker{margin:0}
 @media(max-width:680px){.fixture-section-heading{align-items:flex-start;flex-direction:column;gap:5px}.fixture-section-group{margin-top:28px}}
+
+/* Últimas noticias · Instagram */
+.instagram-news{position:relative;overflow:hidden}
+.instagram-news:before{content:"NEWS";position:absolute;right:2%;top:18px;font-size:clamp(90px,16vw,220px);font-weight:950;letter-spacing:-.08em;line-height:.8;color:rgba(7,20,38,.025);pointer-events:none}
+.instagram-news__status{min-height:22px;margin:-2px 0 18px;color:var(--muted);font-size:13px;line-height:1.55}
+.instagram-news__status:empty{display:none}
+.instagram-news__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;position:relative;z-index:1}
+.instagram-card{display:flex;flex-direction:column;min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:26px;background:#fff;box-shadow:0 14px 38px rgba(7,20,38,.055);transition:transform .2s ease,box-shadow .2s ease}
+.instagram-card:hover{transform:translateY(-4px);box-shadow:0 20px 48px rgba(7,20,38,.09)}
+.instagram-card__media{display:block;position:relative;aspect-ratio:1/1;overflow:hidden;background:#e9eef4}
+.instagram-card__media img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .35s ease}
+.instagram-card:hover .instagram-card__media img{transform:scale(1.025)}
+.instagram-card__media:after{content:"INSTAGRAM";position:absolute;left:14px;top:14px;padding:7px 10px;border-radius:999px;background:rgba(7,20,38,.82);backdrop-filter:blur(8px);color:#fff;font-size:9px;font-weight:950;letter-spacing:.13em}
+.instagram-card__body{display:flex;flex:1;flex-direction:column;padding:19px 20px 20px}
+.instagram-card__meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;color:#8a96a5;font-size:9px;font-weight:900;letter-spacing:.11em;text-transform:uppercase}
+.instagram-card__body p{margin:0;color:#344355;font-size:13px;line-height:1.65;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden}
+.instagram-card__link{margin-top:auto;padding-top:16px;color:var(--blue);font-size:10px;font-weight:950;letter-spacing:.04em}
+.instagram-news__footer{margin-top:18px;text-align:right}
+.instagram-news__footer a{color:var(--navy);font-size:11px;font-weight:950;letter-spacing:.04em}
+.instagram-news__empty{grid-column:1/-1;padding:34px;border:1px dashed #cad5e2;border-radius:22px;background:#fff;color:var(--muted);font-size:13px;line-height:1.7;text-align:center}
+@media(max-width:960px){.instagram-news__grid{grid-template-columns:repeat(2,1fr)}.instagram-card:nth-child(n+3){display:none}}
+@media(max-width:680px){.instagram-news__grid{grid-template-columns:1fr}.instagram-card:nth-child(n+3){display:flex}.instagram-news__footer{text-align:left}}

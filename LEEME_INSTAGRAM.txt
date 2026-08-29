@@ -1,0 +1,24 @@
+RIVAS FUTSAL · NOTICIAS AUTOMÁTICAS DESDE INSTAGRAM
+===================================================
+
+Cuenta configurada: @cdrivasfutsal
+
+ARCHIVOS INCLUIDOS
+- index.html: nueva sección “Últimas noticias”.
+- assets/css/styles.css: diseño de las tarjetas.
+- assets/js/noticias-client.js: carga noticias.json en la portada.
+- assets/data/noticias.json: archivo inicial.
+- automation/actualizar-instagram.mjs: obtiene las publicaciones mediante la API oficial.
+- .github/workflows/actualizar-instagram.yml: actualización automática cada 6 horas.
+
+IMPORTANTE
+La web nunca guarda la contraseña de Instagram.
+El token de acceso debe guardarse únicamente como GitHub Actions Secret con el nombre:
+INSTAGRAM_ACCESS_TOKEN
+
+No pegues el token dentro de ningún archivo del repositorio.
+
+Después de añadir el secret, ejecuta una vez:
+Actions > Actualizar noticias Instagram > Run workflow
+
+Si Meta solicita una verificación de edad, empresa o administrador, debe completarla una persona autorizada del club con sus datos reales.
