@@ -1,0 +1,91 @@
+name: Actualizar partidos Rivas Futsal
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '17 */3 * * *'
+
+
+permissions:
+  contents: write
+
+
+concurrency:
+
+  group:
+    actualizar-partidos-rivas
+
+  cancel-in-progress:
+    false
+
+
+jobs:
+
+  actualizar:
+
+    runs-on:
+      ubuntu-latest
+
+    timeout-minutes:
+      20
+
+
+    steps:
+
+      - name: Descargar repositorio
+
+        uses:
+          actions/checkout@v6
+
+
+      - name: Preparar Node.js
+
+        uses:
+          actions/setup-node@v6
+
+        with:
+
+          node-version:
+            '22'
+
+
+      - name: Instalar Playwright
+
+        run: |
+
+          npm install --package-lock=false
+
+          npx playwright install chromium --with-deps
+
+
+      - name: Obtener partidos
+
+        run:
+
+          npm run update:partidos
+
+
+      - name: Guardar cambios en GitHub
+
+        run: |
+
+          git config user.name "github-actions[bot]"
+
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add netlify/functions/partidos.json
+
+
+          if git diff --cached --quiet; then
+
+            echo "No hay cambios en los partidos."
+
+            exit 0
+
+          fi
+
+
+          git commit -m "Actualizar partidos Rivas Futsal"
+
+          git push
