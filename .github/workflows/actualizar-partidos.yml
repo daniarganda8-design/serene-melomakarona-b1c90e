@@ -21,13 +21,15 @@ jobs:
     steps:
       - name: Descargar repositorio
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Preparar Node
         uses: actions/setup-node@v4
         with:
           node-version: '22'
 
-      - name: Instalar automatización
+      - name: Instalar Playwright
         working-directory: automation
         run: |
           npm install --package-lock=false
@@ -38,7 +40,7 @@ jobs:
         run: |
           node actualizar-partidos.mjs
 
-      - name: Guardar partidos
+      - name: Guardar cambios en GitHub
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -50,5 +52,10 @@ jobs:
             exit 0
           fi
 
-          git commit -m "Actualizar partidos"
-          git push
+          git commit -m "Actualizar partidos Rivas Futsal"
+
+          echo "Actualizando con los últimos cambios de main..."
+          git pull --rebase origin main
+
+          echo "Publicando partidos..."
+          git push origin HEAD:main
