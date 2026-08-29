@@ -39,6 +39,7 @@ const EXPECTED_TEAMS = [
 
   'Femenina|Juvenil A',
   'Femenina|Cadete A',
+  'Femenina|Cadete B',
   'Femenina|Infantil A',
   'Femenina|Alevín A'
 ];
@@ -248,19 +249,22 @@ function identifyTeam(
 
 
     if (
-      /CADETE/.test(c)
-    ) {
+  /CADETE/.test(c)
+) {
 
-      return {
-        team:
-          'Cadete A',
+  return {
 
-        section:
-          'Femenina'
-      };
-    }
+    team:
+      s === 'B'
+        ? 'Cadete B'
+        : 'Cadete A',
 
+    section:
+      'Femenina'
 
+  };
+}
+    
     if (
       /INFANTIL/.test(c)
     ) {
