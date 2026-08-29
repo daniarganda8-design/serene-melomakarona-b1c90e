@@ -42,13 +42,24 @@
           <p>Se muestran primero los encuentros más cercanos de todas las categorías del club.</p>
         </div>
       </div>
-      <div class="fixture-filters reveal" data-fixture-filters>
-        <button class="fixture-filter is-active" type="button" data-filter="all">Todos</button>
-        <button class="fixture-filter" type="button" data-filter="Masculina">Masculina</button>
-        <button class="fixture-filter" type="button" data-filter="Femenina">Femenina</button>
-      </div>
       <div class="fixtures-status" data-fixtures-status>Conectando con RFFM…</div>
-      <div class="fixtures-grid" data-next-matches></div>
+
+      <div class="fixture-section-group">
+        <div class="fixture-section-heading">
+          <span class="kicker">Sección masculina</span>
+          <h3>MASCULINA</h3>
+        </div>
+        <div class="fixtures-grid" data-next-matches="Masculina"></div>
+      </div>
+
+      <div class="fixture-section-group">
+        <div class="fixture-section-heading">
+          <span class="kicker">Sección femenina</span>
+          <h3>FEMENINA</h3>
+        </div>
+        <div class="fixtures-grid" data-next-matches="Femenina"></div>
+      </div>
+
       <div class="fixtures-source" data-fixtures-updated>Fuente: calendarios públicos RFFM · actualización automática</div>
     </div>
   </section>
@@ -62,7 +73,21 @@
           <p>Estos equipos forman parte de la temporada 2026/27, pero su próxima jornada todavía no está disponible. En cuanto se publique, pasarán automáticamente a Próximos Partidos.</p>
         </div>
       </div>
-      <div class="fixtures-grid" data-pending-teams></div>
+      <div class="fixture-section-group">
+        <div class="fixture-section-heading">
+          <span class="kicker">Sección masculina</span>
+          <h3>MASCULINA</h3>
+        </div>
+        <div class="fixtures-grid" data-pending-teams="Masculina"></div>
+      </div>
+
+      <div class="fixture-section-group">
+        <div class="fixture-section-heading">
+          <span class="kicker">Sección femenina</span>
+          <h3>FEMENINA</h3>
+        </div>
+        <div class="fixtures-grid" data-pending-teams="Femenina"></div>
+      </div>
     </div>
   </section>
 
@@ -75,7 +100,21 @@
           <p>Cuando empiece la competición, los resultados publicados por la Federación aparecerán aquí automáticamente.</p>
         </div>
       </div>
-      <div class="fixtures-grid fixtures-grid--results" data-last-results></div>
+      <div class="fixture-section-group">
+        <div class="fixture-section-heading">
+          <span class="kicker">Sección masculina</span>
+          <h3>MASCULINA</h3>
+        </div>
+        <div class="fixtures-grid fixtures-grid--results" data-last-results="Masculina"></div>
+      </div>
+
+      <div class="fixture-section-group">
+        <div class="fixture-section-heading">
+          <span class="kicker">Sección femenina</span>
+          <h3>FEMENINA</h3>
+        </div>
+        <div class="fixtures-grid fixtures-grid--results" data-last-results="Femenina"></div>
+      </div>
     </div>
   </section>
 

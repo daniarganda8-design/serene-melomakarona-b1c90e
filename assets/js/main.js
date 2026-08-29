@@ -126,201 +126,76 @@
     .replace(/\s+'[ABCD]'$/i, '')
     .trim();
 
-  const fixtureCard = (fixture) => {
+  const fixtureCard = (f, result = false) => {
+    const homeIsRivas = /RIVAS FUTSAL/i.test(f.home || '');
+    const awayIsRivas = /RIVAS FUTSAL/i.test(f.away || '');
+    const home = homeIsRivas ? 'RIVAS FUTSAL' : cleanClubName(f.home);
+    const away = awayIsRivas ? 'RIVAS FUTSAL' : cleanClubName(f.away);
+    const score = result && f.score ? `<div class="fixture-score">${f.score}</div>` : '<div class="fixture-vs">VS</div>';
+    const meta = [formatFixtureDate(f.date), f.time || 'Hora por confirmar', f.venue || null].filter(Boolean).join(' · ');
 
-  const isFemale =
-    fixture.section === 'Femenina';
+    return `
+      <article class="fixture-card reveal is-visible" data-section="${f.section || ''}">
+        <div class="fixture-card__top">
+          <span>${f.team || 'Rivas Futsal'}</span>
+          <span>J${f.round || '—'}</span>
+        </div>
+        <div class="fixture-matchup">
+          <div class="fixture-side ${homeIsRivas ? 'is-rivas' : ''}">
+            ${homeIsRivas ? '<img src="assets/images/rivas-futsal-logo.jpg" alt="Rivas Futsal">' : '<div class="fixture-placeholder">'+(home?.[0] || 'E')+'</div>'}
+            <strong>${home}</strong>
+          </div>
+          ${score}
+          <div class="fixture-side ${awayIsRivas ? 'is-rivas' : ''}">
+            ${awayIsRivas ? '<img src="assets/images/rivas-futsal-logo.jpg" alt="Rivas Futsal">' : '<div class="fixture-placeholder">'+(away?.[0] || 'E')+'</div>'}
+            <strong>${away}</strong>
+          </div>
+        </div>
+        <div class="fixture-meta">${meta}</div>
+        ${f.rffmUrl ? `<a class="fixture-rffm" href="${f.rffmUrl}" target="_blank" rel="noopener">Ver calendario oficial RFFM →</a>` : ''}
+      </article>`;
+  };
 
-  const badgeBg =
-    isFemale
-      ? 'rgba(180, 30, 60, 0.16)'
-      : 'rgba(28, 78, 216, 0.16)';
-
-  const badgeColor =
-    isFemale
-      ? '#b41e3c'
-      : '#1c4ed8';
-
-  const borderColor =
-    isFemale
-      ? 'rgba(180, 30, 60, 0.28)'
-      : 'rgba(28, 78, 216, 0.28)';
-
-  return `
-    <article
-      class="fixture-card reveal is-visible"
-      data-section="${fixture.section || ''}"
-      style="border:1px solid ${borderColor};"
-    >
-
+  const pendingFixtureCard = (item) => `
+    <article class="fixture-card fixture-card--pending reveal is-visible" data-section="${item.section || ''}">
       <div class="fixture-card__top">
-        <span>${fixture.team || 'Equipo'}</span>
-        <span>Jornada ${fixture.round ?? '-'}</span>
-      </div>
-
-      <div style="margin:.4rem 0 1rem;">
-        <span
-          style="
-            display:inline-flex;
-            align-items:center;
-            gap:.35rem;
-            padding:.42rem .75rem;
-            border-radius:999px;
-            font-size:.78rem;
-            font-weight:800;
-            letter-spacing:.04em;
-            text-transform:uppercase;
-            background:${badgeBg};
-            color:${badgeColor};
-          "
-        >
-          ${fixture.section || 'Sección'}
-        </span>
-      </div>
-
-      <div class="fixture-card__teams">
-        <div class="fixture-team">
-          <span class="fixture-team__label">Local</span>
-          <strong>${fixture.home || '-'}</strong>
-        </div>
-
-        <div class="fixture-team fixture-team--divider">VS</div>
-
-        <div class="fixture-team">
-          <span class="fixture-team__label">Visitante</span>
-          <strong>${fixture.away || '-'}</strong>
-        </div>
-      </div>
-
-      <div class="fixture-card__meta">
-        <div>
-          <span>Fecha</span>
-          <strong>${fixture.date || 'Por confirmar'}</strong>
-        </div>
-
-        <div>
-          <span>Hora</span>
-          <strong>${fixture.time || 'Por confirmar'}</strong>
-        </div>
-
-        <div>
-          <span>Competición</span>
-          <strong>${fixture.competitionName || '-'}</strong>
-        </div>
-      </div>
-
-      ${
-        fixture.sourceUrl
-          ? `
-            <div style="margin-top:1rem;">
-              <a
-                href="${fixture.sourceUrl}"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Ver calendario oficial
-              </a>
-            </div>
-          `
-          : ''
-      }
-
-    </article>
-  `;
-};
-  const pendingFixtureCard = (item) => {
-
-  const isFemale =
-    item.section === 'Femenina';
-
-  const badgeBg =
-    isFemale
-      ? 'rgba(180, 30, 60, 0.16)'
-      : 'rgba(28, 78, 216, 0.16)';
-
-  const badgeColor =
-    isFemale
-      ? '#b41e3c'
-      : '#1c4ed8';
-
-  const borderColor =
-    isFemale
-      ? 'rgba(180, 30, 60, 0.28)'
-      : 'rgba(28, 78, 216, 0.28)';
-
-  return `
-    <article
-      class="fixture-card reveal is-visible"
-      data-section="${item.section || ''}"
-      style="border:1px solid ${borderColor};"
-    >
-
-      <div class="fixture-card__top">
-        <span>${item.team || ''}</span>
+        <span>${item.team || 'Rivas Futsal'}</span>
         <span>PENDIENTE</span>
       </div>
-
-      <div style="margin:.4rem 0 1rem;">
-        <span
-          style="
-            display:inline-flex;
-            align-items:center;
-            gap:.35rem;
-            padding:.42rem .75rem;
-            border-radius:999px;
-            font-size:.78rem;
-            font-weight:800;
-            letter-spacing:.04em;
-            text-transform:uppercase;
-            background:${badgeBg};
-            color:${badgeColor};
-          "
-        >
-          ${item.section || 'Sección'}
-        </span>
+      <div class="fixture-pending">
+        <span class="fixture-pending__eyebrow">PRÓXIMAMENTE</span>
+        <strong>Calendario 2026/27</strong>
+        <p>${item.reason || 'La próxima jornada todavía no está publicada.'}</p>
       </div>
-
-      <div
-        class="fixture-empty"
-        style="margin:0;min-height:150px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;"
-      >
-        <strong style="font-size:1.15rem;">
-          PRÓXIMAMENTE
-        </strong>
-
-        <p style="margin:.7rem 0 0;max-width:320px;">
-          ${item.reason || 'Calendario 2026/27 pendiente de publicación.'}
-        </p>
-      </div>
-
-    </article>
-  `;
-};
+    </article>`;
 
   const renderFixtures = () => {
     document.querySelectorAll('[data-next-matches]').forEach(host => {
+      const section = host.dataset.nextMatches || '';
       const limit = Number(host.dataset.limit || 99);
       const filtered = fixtureStore.upcoming
-        .filter(f => currentFixtureFilter === 'all' || f.section === currentFixtureFilter)
+        .filter(f => (!section || f.section === section) && (currentFixtureFilter === 'all' || f.section === currentFixtureFilter))
         .slice(0, limit);
 
       host.innerHTML = filtered.length
         ? filtered.map(f => fixtureCard(f, false)).join('')
-        : '<div class="fixture-empty">Todavía no hay próximos partidos publicados para este filtro.</div>';
+        : '<div class="fixture-empty">Todavía no hay próximos partidos publicados en esta sección.</div>';
     });
 
     document.querySelectorAll('[data-pending-teams]').forEach(host => {
+      const section = host.dataset.pendingTeams || '';
       const filtered = fixtureStore.pending
-        .filter(item => currentFixtureFilter === 'all' || item.section === currentFixtureFilter);
+        .filter(item => (!section || item.section === section) && (currentFixtureFilter === 'all' || item.section === currentFixtureFilter));
 
       host.innerHTML = filtered.length
         ? filtered.map(pendingFixtureCard).join('')
-        : '<div class="fixture-empty">Todos los equipos de este filtro tienen ya su próxima jornada publicada.</div>';
+        : '<div class="fixture-empty">Todos los equipos de esta sección tienen ya su próxima jornada publicada.</div>';
     });
 
     document.querySelectorAll('[data-last-results]').forEach(host => {
+      const section = host.dataset.lastResults || '';
       const filtered = fixtureStore.results
-        .filter(f => currentFixtureFilter === 'all' || f.section === currentFixtureFilter)
+        .filter(f => (!section || f.section === section) && (currentFixtureFilter === 'all' || f.section === currentFixtureFilter))
         .slice(0, 8);
 
       host.innerHTML = filtered.length
