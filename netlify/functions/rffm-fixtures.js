@@ -1,114 +1,10 @@
 'use strict';
 
-/*
- * RIVAS FUTSAL
- * Próximos partidos / resultados
- * Temporada 2026/27
- *
- * Los datos de competición proceden de información pública
- * federativa mostrada a través de El Balón de Madrid.
- */
-
-const SEASON = 22;
-const TYPE = 3;
+const SEASON = 22; // Temporada 2026/27
+const TYPE = 3;    // Fútbol sala
 
 const CLUB_PAGE =
   'https://www.elbalondemadrid.es/club/16661228';
-
-
-/* =========================================================
-   EQUIPOS / COMPETICIONES YA LOCALIZADOS
-   ========================================================= */
-
-const FIXED = [
-
-  {
-    competition: '26738221',
-    group: '26771028',
-
-    competitionName:
-      'TERCERA DIVISIÓN DE FÚTBOL SALA',
-
-    officialTeamName:
-      'CD RIVAS FUTSAL - YOUFIRST SMART FINACE',
-
-    team:
-      'Tercera División',
-
-    section:
-      'Masculina'
-  },
-
-  {
-    competition: '26749998',
-    group: '26814437',
-
-    competitionName:
-      'PRIMERA DIVISION AUTONOMICA JUVENIL SALA',
-
-    officialTeamName:
-      "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
-
-    team:
-      'Juvenil A',
-
-    section:
-      'Masculina'
-  },
-
-  {
-    competition: '26738220',
-    group: '26878012',
-
-    competitionName:
-      'PREFERENTE JUVENIL SALA',
-
-    officialTeamName:
-      "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
-
-    team:
-      'Juvenil B',
-
-    section:
-      'Masculina'
-  },
-
-  {
-    competition: '26738292',
-    group: '26738293',
-
-    competitionName:
-      'PRIMERA DIVISION AUTONOMICA CADETE SALA',
-
-    officialTeamName:
-      "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
-
-    team:
-      'Cadete Autonómica',
-
-    section:
-      'Masculina'
-  },
-
-  {
-    competition: '26750003',
-    group: '26877982',
-
-    competitionName:
-      'PREFERENTE CADETE SALA',
-
-    officialTeamName:
-      "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
-
-    team:
-      'Cadete B',
-
-    section:
-      'Masculina'
-  }
-
-];
-
 
 const UA =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) ' +
@@ -116,55 +12,101 @@ const UA =
   'Chrome/151.0.0.0 Safari/537.36';
 
 
-/* =========================================================
-   UTILIDADES DE TEXTO
-   ========================================================= */
+/* ==========================================================
+   EQUIPOS QUE YA TENEMOS IDENTIFICADOS
+   ========================================================== */
 
-function decode(s = '') {
+const FIXED = [
 
-  return String(s)
+  {
+    competition: '26738221',
+    group: '26771028',
+    competitionName: 'TERCERA DIVISIÓN DE FÚTBOL SALA',
+    officialTeamName:
+      'CD RIVAS FUTSAL - YOUFIRST SMART FINACE',
+    team: 'Tercera División',
+    section: 'Masculina'
+  },
+
+  {
+    competition: '26749998',
+    group: '26814437',
+    competitionName:
+      'PRIMERA DIVISION AUTONOMICA JUVENIL SALA',
+    officialTeamName:
+      "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
+    team: 'Juvenil A',
+    section: 'Masculina'
+  },
+
+  {
+    competition: '26738220',
+    group: '26878012',
+    competitionName:
+      'PREFERENTE JUVENIL SALA',
+    officialTeamName:
+      "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
+    team: 'Juvenil B',
+    section: 'Masculina'
+  },
+
+  {
+    competition: '26738292',
+    group: '26738293',
+    competitionName:
+      'PRIMERA DIVISION AUTONOMICA CADETE SALA',
+    officialTeamName:
+      "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
+    team: 'Cadete Autonómica',
+    section: 'Masculina'
+  },
+
+  {
+    competition: '26750003',
+    group: '26877982',
+    competitionName:
+      'PREFERENTE CADETE SALA',
+    officialTeamName:
+      "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
+    team: 'Cadete B',
+    section: 'Masculina'
+  }
+
+];
+
+
+/* ==========================================================
+   TEXTO
+   ========================================================== */
+
+function decode(text = '') {
+
+  return String(text)
 
     .replace(/&nbsp;/gi, ' ')
-
     .replace(/&amp;/gi, '&')
-
     .replace(/&quot;/gi, '"')
-
-    .replace(
-      /&#39;|&apos;/gi,
-      "'"
-    )
+    .replace(/&#39;|&apos;/gi, "'")
 
     .replace(/&aacute;/gi, 'á')
-
     .replace(/&eacute;/gi, 'é')
-
     .replace(/&iacute;/gi, 'í')
-
     .replace(/&oacute;/gi, 'ó')
-
     .replace(/&uacute;/gi, 'ú')
-
     .replace(/&ntilde;/gi, 'ñ')
 
     .replace(/&Aacute;/g, 'Á')
-
     .replace(/&Eacute;/g, 'É')
-
     .replace(/&Iacute;/g, 'Í')
-
     .replace(/&Oacute;/g, 'Ó')
-
     .replace(/&Uacute;/g, 'Ú')
-
     .replace(/&Ntilde;/g, 'Ñ');
-
 }
 
 
-function stripAccents(s = '') {
+function stripAccents(text = '') {
 
-  return String(s)
+  return String(text)
 
     .normalize('NFD')
 
@@ -172,35 +114,24 @@ function stripAccents(s = '') {
       /[\u0300-\u036f]/g,
       ''
     );
-
 }
 
 
-function norm(s = '') {
+function norm(text = '') {
 
   return stripAccents(
-    decode(s)
+    decode(text)
   )
 
     .toUpperCase()
 
-    .replace(
-      /[“”]/g,
-      '"'
-    )
+    .replace(/[“”]/g, '"')
 
-    .replace(
-      /[‘’]/g,
-      "'"
-    )
+    .replace(/[‘’]/g, "'")
 
-    .replace(
-      /\s+/g,
-      ' '
-    )
+    .replace(/\s+/g, ' ')
 
     .trim();
-
 }
 
 
@@ -231,135 +162,52 @@ function plain(html = '') {
       )
 
   );
-
 }
 
 
-function lines(html = '') {
+function textLines(html = '') {
 
   return plain(html)
 
     .split(/\n+/)
 
     .map(
-      s =>
-        s
+      line =>
+        line
           .replace(/\s+/g, ' ')
           .trim()
     )
 
     .filter(Boolean);
-
 }
 
 
-function isRivas(s = '') {
+function isRivas(text = '') {
 
   return (
-    /\b(?:CDB?|C\.?D\.?)\s+RIVAS\s+FUTSAL\b/i
+    /(?:CDB?|C\.?D\.?)\s+RIVAS\s+FUTSAL/i
   ).test(
-    String(s)
+    String(text)
   );
-
 }
 
 
-function suffix(s = '') {
+function suffix(text = '') {
 
   return (
-    norm(s)
+    norm(text)
       .match(
         /(?:^|\s)'?([A-Z])'?\s*$/
       )?.[1]
     ||
     null
   );
-
 }
 
 
-function canonical(s = '') {
-
-  return norm(s)
-
-    .replace(
-      /^CDB?\.?\s+/,
-      'CD '
-    )
-
-    .replace(
-      /\s*-\s*YOUFIRST\s+SMART\s+FIN(?:A|A)CE\b/g,
-      ''
-    )
-
-    .replace(
-      /\s*-\s*YOUFIRST\b.*?(?=(?:\s+'[A-Z]'\s*$)|$)/g,
-      ''
-    )
-
-    .replace(
-      /\s+/g,
-      ' '
-    )
-
-    .trim();
-
-}
-
-
-function sameRivas(a, b) {
-
-  if (
-    !isRivas(a) ||
-    !isRivas(b)
-  ) {
-
-    return false;
-
-  }
-
-
-  const ca =
-    canonical(a);
-
-  const cb =
-    canonical(b);
-
-
-  if (ca === cb) {
-
-    return true;
-
-  }
-
-
-  const sa =
-    suffix(a);
-
-  const sb =
-    suffix(b);
-
-
-  return (
-    sa === sb
-    &&
-    ca.replace(
-      /\s+'?[A-Z]'?$/,
-      ''
-    )
-    ===
-    cb.replace(
-      /\s+'?[A-Z]'?$/,
-      ''
-    )
-  );
-
-}
-
-
-/* =========================================================
-   IDENTIFICAR CATEGORÍAS DE RIVAS
-   ========================================================= */
+/* ==========================================================
+   CATEGORÍAS
+   ========================================================== */
 
 function identity(
   competitionName,
@@ -367,326 +215,195 @@ function identity(
 ) {
 
   const c =
-    norm(
-      competitionName
-    );
+    norm(competitionName);
 
   const s =
-    suffix(
-      officialTeamName
-    );
+    suffix(officialTeamName);
 
   const female =
     /FEMENIN/.test(c);
 
 
-  /* =====================
-     FEMENINO
-     ===================== */
-
   if (female) {
 
-    if (
-      /JUVENIL/.test(c)
-    ) {
+    if (/JUVENIL/.test(c)) {
 
       return {
-
-        team:
-          'Juvenil A',
-
-        section:
-          'Femenina'
-
+        team: 'Juvenil A',
+        section: 'Femenina'
       };
-
     }
 
 
-    if (
-      /CADETE/.test(c)
-      &&
-      s !== 'B'
-    ) {
+    if (/CADETE/.test(c)) {
 
       return {
-
-        team:
-          'Cadete A',
-
-        section:
-          'Femenina'
-
+        team: 'Cadete A',
+        section: 'Femenina'
       };
-
     }
 
 
-    if (
-      /INFANTIL/.test(c)
-    ) {
+    if (/INFANTIL/.test(c)) {
 
       return {
-
-        team:
-          'Infantil A',
-
-        section:
-          'Femenina'
-
+        team: 'Infantil A',
+        section: 'Femenina'
       };
-
     }
 
 
-    if (
-      /ALEVIN/.test(c)
-    ) {
+    if (/ALEVIN/.test(c)) {
 
       return {
-
-        team:
-          'Alevín A',
-
-        section:
-          'Femenina'
-
+        team: 'Alevín A',
+        section: 'Femenina'
       };
-
     }
 
 
     return null;
-
   }
 
 
-  /* =====================
-     MASCULINO
-     ===================== */
-
-  if (
-    /TERCERA/.test(c)
-  ) {
+  if (/TERCERA/.test(c)) {
 
     return {
-
-      team:
-        'Tercera División',
-
-      section:
-        'Masculina'
-
+      team: 'Tercera División',
+      section: 'Masculina'
     };
-
   }
 
 
   if (
-    /JUVENIL/.test(c)
-    &&
-    /AUTONOMICA/.test(c)
-    &&
+    /JUVENIL/.test(c) &&
+    /AUTONOMICA/.test(c) &&
     s !== 'B'
   ) {
 
     return {
-
-      team:
-        'Juvenil A',
-
-      section:
-        'Masculina'
-
+      team: 'Juvenil A',
+      section: 'Masculina'
     };
-
   }
 
 
   if (
-    /JUVENIL/.test(c)
-    &&
+    /JUVENIL/.test(c) &&
     s === 'B'
   ) {
 
     return {
-
-      team:
-        'Juvenil B',
-
-      section:
-        'Masculina'
-
+      team: 'Juvenil B',
+      section: 'Masculina'
     };
-
   }
 
 
   if (
-    /CADETE/.test(c)
-    &&
-    /AUTONOMICA/.test(c)
-    &&
+    /CADETE/.test(c) &&
+    /AUTONOMICA/.test(c) &&
     s !== 'B'
   ) {
 
     return {
-
-      team:
-        'Cadete Autonómica',
-
-      section:
-        'Masculina'
-
+      team: 'Cadete Autonómica',
+      section: 'Masculina'
     };
-
   }
 
 
   if (
-    /CADETE/.test(c)
-    &&
+    /CADETE/.test(c) &&
     s === 'B'
   ) {
 
     return {
-
-      team:
-        'Cadete B',
-
-      section:
-        'Masculina'
-
+      team: 'Cadete B',
+      section: 'Masculina'
     };
-
   }
 
 
   if (
-    /INFANTIL/.test(c)
-    &&
-    /PREFERENTE/.test(c)
-    &&
+    /INFANTIL/.test(c) &&
+    /PREFERENTE/.test(c) &&
     s !== 'B'
   ) {
 
     return {
-
-      team:
-        'Infantil Preferente',
-
-      section:
-        'Masculina'
-
+      team: 'Infantil Preferente',
+      section: 'Masculina'
     };
-
   }
 
 
   if (
-    /INFANTIL/.test(c)
-    &&
+    /INFANTIL/.test(c) &&
     s === 'B'
   ) {
 
     return {
-
-      team:
-        'Infantil B',
-
-      section:
-        'Masculina'
-
+      team: 'Infantil B',
+      section: 'Masculina'
     };
-
   }
 
 
   if (
-    /ALEVIN/.test(c)
-    &&
+    /ALEVIN/.test(c) &&
     s === 'A'
   ) {
 
     return {
-
-      team:
-        'Alevín A',
-
-      section:
-        'Masculina'
-
+      team: 'Alevín A',
+      section: 'Masculina'
     };
-
   }
 
 
   if (
-    /ALEVIN/.test(c)
-    &&
+    /ALEVIN/.test(c) &&
     s === 'B'
   ) {
 
     return {
-
-      team:
-        'Alevín B',
-
-      section:
-        'Masculina'
-
+      team: 'Alevín B',
+      section: 'Masculina'
     };
-
   }
 
 
-  if (
-    /PREBENJAMIN/.test(c)
-  ) {
+  if (/PREBENJAMIN/.test(c)) {
 
     return {
-
-      team:
-        'Prebenjamín A',
-
-      section:
-        'Masculina'
-
+      team: 'Prebenjamín A',
+      section: 'Masculina'
     };
-
   }
 
 
-  if (
-    /BENJAMIN/.test(c)
-  ) {
+  if (/BENJAMIN/.test(c)) {
 
     return {
-
-      team:
-        'Benjamín A',
-
-      section:
-        'Masculina'
-
+      team: 'Benjamín A',
+      section: 'Masculina'
     };
-
   }
 
 
   return null;
-
 }
 
 
-/* =========================================================
-   FETCH CON TIMEOUT
-   ========================================================= */
+/* ==========================================================
+   FETCH
+   ========================================================== */
 
 async function fetchWithTimeout(
   url,
   options = {},
-  timeoutMs = 8500
+  timeout = 8000
 ) {
 
   const controller =
@@ -695,201 +412,148 @@ async function fetchWithTimeout(
 
   const timer =
     setTimeout(
-
-      () =>
-        controller.abort(),
-
-      timeoutMs
-
+      () => controller.abort(),
+      timeout
     );
 
 
   try {
 
     return await fetch(
-
       url,
-
       {
-
         ...options,
-
-        signal:
-          controller.signal
-
+        signal: controller.signal
       }
-
     );
 
+  } finally {
+
+    clearTimeout(timer);
   }
-
-  finally {
-
-    clearTimeout(
-      timer
-    );
-
-  }
-
 }
 
 
-/* =========================================================
-   OBTENER CALENDARIO
-   ========================================================= */
+function cookiesFromResponse(headers) {
 
-async function fetchFederationHtml(
-  source
-) {
-
-  /*
-   * IMPORTANTE:
-   *
-   * RFFM carga actualmente muchos partidos
-   * mediante JavaScript.
-   *
-   * Por eso aquí utilizamos la representación
-   * pública del calendario disponible en
-   * El Balón de Madrid.
-   */
-
-  const publicCalendar =
-
-    `https://www.elbalondemadrid.es/competicion/`
-
-    +
-
-    `${encodeURIComponent(source.competition)}`
-
-    +
-
-    `/grupo/`
-
-    +
-
-    `${encodeURIComponent(source.group)}`
-
-    +
-
-    `/jornadas`;
+  let cookies = [];
 
 
-  const headers = {
+  if (
+    typeof headers.getSetCookie ===
+    'function'
+  ) {
 
-    'user-agent':
-      UA,
+    cookies =
+      headers.getSetCookie();
+  }
 
-    'accept':
 
-      'text/html,' +
+  if (!cookies.length) {
 
-      'application/xhtml+xml,' +
+    const raw =
+      headers.get('set-cookie');
 
-      'application/xml;q=0.9,' +
+    if (raw) {
 
-      '*/*;q=0.8',
+      cookies = [raw];
+    }
+  }
 
-    'accept-language':
 
-      'es-ES,es;q=0.9,en;q=0.7'
+  return cookies
 
-  };
+    .map(
+      value =>
+        value.split(';')[0]
+    )
 
+    .filter(Boolean)
+
+    .join('; ');
+}
+
+
+/* ==========================================================
+   SESIÓN RFFM
+   ========================================================== */
+
+async function createRffmSession() {
 
   const response =
-
     await fetchWithTimeout(
 
-      publicCalendar,
+      'https://www.rffm.es/',
 
       {
 
-        headers,
+        headers: {
+
+          'user-agent':
+            UA,
+
+          'accept':
+            'text/html,application/xhtml+xml,*/*;q=0.8',
+
+          'accept-language':
+            'es-ES,es;q=0.9'
+
+        },
 
         redirect:
           'follow'
-
       },
 
-      8500
-
+      7000
     );
 
 
-  if (
-    !response.ok
-  ) {
-
-    throw new Error(
-
-      `Calendario público ` +
-
-      `${response.status} ` +
-
-      `para ${source.team}`
-
-    );
-
-  }
-
-
-  const body =
-    await response.text();
-
-
-  const text =
-    plain(body);
-
-
-  /*
-   * Debe ser realmente
-   * una página con jornadas.
-   */
-
-  if (
-    !/JORNADA\s*\d+/i.test(
-      text
-    )
-  ) {
-
-    throw new Error(
-
-      `Calendario sin jornadas ` +
-
-      `para ${source.team}`
-
-    );
-
-  }
-
-
-  return {
-
-    html:
-      body,
-
-    url:
-      publicCalendar,
-
-    mode:
-      'rffm-public-mirror'
-
-  };
-
+  return cookiesFromResponse(
+    response.headers
+  );
 }
 
 
-/* =========================================================
-   FETCH NORMAL
-   ========================================================= */
+/* ==========================================================
+   PÁGINA OFICIAL DE UNA JORNADA
+   ========================================================== */
 
-async function fetchText(
-  url,
-  timeoutMs = 6000
+async function fetchRound(
+  source,
+  round,
+  cookie
 ) {
 
-  const r =
+  const url =
 
+    'https://www.rffm.es/pnfg/NPcd/NFG_CmpJornada'
+
+    +
+
+    `?cod_primaria=1000120`
+
+    +
+
+    `&CodCompeticion=${source.competition}`
+
+    +
+
+    `&CodGrupo=${source.group}`
+
+    +
+
+    `&CodTemporada=${SEASON}`
+
+    +
+
+    `&CodJornada=${round}`
+
+    +
+
+    `&Sch_Tipo_Juego=${TYPE}`;
+
+
+  const response =
     await fetchWithTimeout(
 
       url,
@@ -902,458 +566,61 @@ async function fetchText(
             UA,
 
           'accept':
+            'text/html,application/xhtml+xml,*/*;q=0.8',
 
-            'text/html,' +
+          'accept-language':
+            'es-ES,es;q=0.9',
 
-            'application/xhtml+xml,' +
+          'referer':
+            'https://www.rffm.es/',
 
-            '*/*;q=0.8'
-
+          ...(cookie
+            ? { cookie }
+            : {})
         },
 
         redirect:
           'follow'
-
       },
 
-      timeoutMs
-
+      8000
     );
 
 
-  if (
-    !r.ok
-  ) {
+  if (!response.ok) {
 
     throw new Error(
-      `${r.status}`
+      `RFFM ${response.status}`
     );
-
   }
 
 
-  return await r.text();
+  return {
+    html:
+      await response.text(),
 
+    url
+  };
 }
 
 
-/* =========================================================
-   DESCUBRIR MÁS EQUIPOS DEL CLUB
-   ========================================================= */
+/* ==========================================================
+   FECHA / HORA / RESULTADO
+   ========================================================== */
 
-async function discoverExtraSources() {
+function getDate(text = '') {
 
-  try {
+  const m =
+    String(text).match(
 
-    const clubHtml =
+      /\b(\d{1,2})[\/-](\d{1,2})[\/-](\d{4})\b/
 
-      await fetchText(
-
-        CLUB_PAGE,
-
-        5000
-
-      );
-
-
-    const ids = [
-
-      ...clubHtml.matchAll(
-
-        /href=["']\/equipo\/(\d+)["']/gi
-
-      )
-
-    ].map(
-      m => m[1]
     );
 
 
-    const unique =
-
-      [
-        ...new Set(ids)
-      ]
-
-      .slice(
-        0,
-        30
-      );
-
-
-    const pages =
-
-      await Promise.allSettled(
-
-        unique.map(
-
-          async id => {
-
-            const html =
-
-              await fetchText(
-
-                `https://www.elbalondemadrid.es/equipo/${id}`,
-
-                4500
-
-              );
-
-
-            const title =
-
-              decode(
-
-                html.match(
-
-                  /<title[^>]*>([\s\S]*?)<\/title>/i
-
-                )?.[1]
-
-                ||
-
-                ''
-
-              )
-
-              .replace(
-                /<[^>]+>/g,
-                ' '
-              )
-
-              .replace(
-                /\s+/g,
-                ' '
-              )
-
-              .trim();
-
-
-            /*
-             * Solo temporada 26/27.
-             */
-
-            if (
-              !/2026\/27|2026\/2027/i.test(
-                title
-              )
-            ) {
-
-              return null;
-
-            }
-
-
-            const teamName =
-
-              decode(
-
-                (
-                  html.match(
-
-                    /<h1[^>]*>([\s\S]*?)<\/h1>/i
-
-                  )?.[1]
-
-                  ||
-
-                  ''
-                )
-
-                .replace(
-                  /<[^>]+>/g,
-                  ' '
-                )
-
-              )
-
-              .replace(
-                /\s+/g,
-                ' '
-              )
-
-              .trim();
-
-
-            /*
-             * Competición y grupo.
-             */
-
-            const link =
-
-              html.match(
-
-                /href=["']\/competicion\/(\d+)\/grupo\/(\d+)\/(?:clasificacion|jornadas)["']/i
-
-              );
-
-
-            if (
-              !link
-              ||
-              !teamName
-              ||
-              !isRivas(teamName)
-            ) {
-
-              return null;
-
-            }
-
-
-            const competitionName =
-
-              (
-                title.split(
-
-                  /2026\/27|2026\/2027/i
-
-                )[0]
-
-                ||
-
-                ''
-              )
-
-              .replace(
-
-                /^Plantilla de .*? — /i,
-
-                ''
-
-              )
-
-              .replace(
-
-                /\s*·\s*El Balón.*$/i,
-
-                ''
-
-              )
-
-              .trim();
-
-
-            const idn =
-
-              identity(
-
-                competitionName,
-
-                teamName
-
-              );
-
-
-            if (
-              !idn
-            ) {
-
-              return null;
-
-            }
-
-
-            return {
-
-              competition:
-                link[1],
-
-              group:
-                link[2],
-
-              competitionName,
-
-              officialTeamName:
-                teamName,
-
-              ...idn
-
-            };
-
-          }
-
-        )
-
-      );
-
-
-    return pages
-
-      .map(
-
-        x =>
-
-          x.status ===
-          'fulfilled'
-
-            ? x.value
-
-            : null
-
-      )
-
-      .filter(Boolean);
-
-  }
-
-  catch (_) {
-
-    return [];
-
-  }
-
-}
-
-
-/* =========================================================
-   DETECTAR NOMBRES DE EQUIPOS
-   ========================================================= */
-
-function looksLikeTeam(
-  line
-) {
-
-  const n =
-    norm(line);
-
-
-  if (
-    !line
-    ||
-    line.length > 190
-  ) {
-
-    return false;
-
-  }
-
-
-  if (
-
-    /^(JORNADA|FECHA|HORA|LUGAR|CALENDARIO|CLASIFICACION|RESULTADOS|VER ACTA|DESCANSO|TEMPORADA)/
-
-      .test(n)
-
-  ) {
-
-    return false;
-
-  }
-
-
-  if (
-
-    /^\d{1,2}:\d{2}H?$/.test(n)
-
-    ||
-
-    /^\d{2}[\/-]\d{2}[\/-]\d{4}$/.test(n)
-
-    ||
-
-    /^\d+\s*-\s*\d+$/.test(n)
-
-  ) {
-
-    return false;
-
-  }
-
-
-  const letters =
-
-    (
-      line.match(
-
-        /[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]/g
-
-      )
-
-      ||
-
-      []
-
-    ).length;
-
-
-  return (
-
-    letters >= 4
-
-    &&
-
-    (
-
-      isRivas(line)
-
-      ||
-
-      /FUTSAL|F\.S\.|\bFS\b|SALA|CLUB|CDE|C\.D\.|INTER|TORREJON|MOSTOLES|ALCORCON|ARGANDA|PINTO|COSLADA|VALLECAS|PARAISO|PILARISTAS|VILLALBA|SAN FERNANDO|MORAL|LEGANES/i
-
-        .test(line)
-
-      ||
-
-      line ===
-      line.toUpperCase()
-
-    )
-
-  );
-
-}
-
-
-/* =========================================================
-   JORNADA / FECHA / HORA / RESULTADO
-   ========================================================= */
-
-function getRound(
-  text = ''
-) {
-
-  const m =
-
-    String(text)
-
-      .match(
-
-        /JORNADA\s*(?:N[º°.]?\s*)?(\d+)/i
-
-      );
-
-
-  return m
-
-    ? Number(m[1])
-
-    : null;
-
-}
-
-
-function getDate(
-  text = ''
-) {
-
-  const m =
-
-    String(text)
-
-      .match(
-
-        /\b(\d{1,2})[\/-](\d{1,2})[\/-](\d{4})\b/
-
-      );
-
-
-  if (
-    !m
-  ) {
+  if (!m) {
 
     return null;
-
   }
 
 
@@ -1370,23 +637,17 @@ function getDate(
     `${String(m[1]).padStart(2, '0')}`
 
   );
-
 }
 
 
-function findTime(
-  text = ''
-) {
+function getTime(text = '') {
 
   const m =
+    String(text).match(
 
-    String(text)
+      /\b([01]?\d|2[0-3]):([0-5]\d)\b/
 
-      .match(
-
-        /\b([01]?\d|2[0-3]):([0-5]\d)\b/
-
-      );
+    );
 
 
   return m
@@ -1394,237 +655,141 @@ function findTime(
     ? `${String(m[1]).padStart(2, '0')}:${m[2]}`
 
     : null;
-
 }
 
 
-function findScore(
-  text = ''
-) {
+function scoreFromCells(cells) {
 
-  const m =
+  const score =
+    cells.find(
 
-    String(text)
+      cell =>
+        /^\s*\d{1,2}\s*[-–]\s*\d{1,2}\s*$/
+          .test(cell)
 
-      .match(
-
-        /\b(\d{1,2})\s*[-–]\s*(\d{1,2})\b/
-
-      );
+    );
 
 
-  return m
+  return score
 
-    ? `${m[1]} - ${m[2]}`
+    ? score
+        .replace(/–/g, '-')
+        .replace(/\s+/g, ' ')
+        .trim()
 
     : null;
-
 }
 
 
-function cellText(
-  cell = ''
-) {
+/* ==========================================================
+   PARSER DE UNA JORNADA NFG
+   ========================================================== */
+
+function cleanCell(html = '') {
 
   return decode(
 
-    String(cell)
+    String(html)
 
       .replace(
-
-        /<script[\s\S]*?<\/script>/gi,
-
-        ' '
-
-      )
-
-      .replace(
-
-        /<style[\s\S]*?<\/style>/gi,
-
-        ' '
-
-      )
-
-      .replace(
-
         /<br\s*\/?>/gi,
-
         ' '
-
       )
 
       .replace(
-
         /<[^>]+>/g,
-
         ' '
-
       )
 
   )
 
-    .replace(
-      /\s+/g,
-      ' '
-    )
+    .replace(/\s+/g, ' ')
 
     .trim();
-
 }
 
 
-/* =========================================================
-   CREAR PARTIDO
-   ========================================================= */
+function looksLikeTeam(text = '') {
 
-function makeFixture(
-  source,
-  {
-    round,
-    date,
-    time,
-    home,
-    away,
-    score,
-    venue
+  const value =
+    norm(text);
+
+
+  if (!value) {
+
+    return false;
   }
-) {
-
-  return {
-
-    round:
-      round || null,
-
-    date:
-      date || null,
-
-    time:
-      time || null,
-
-    home,
-
-    away,
-
-    score:
-      score || null,
-
-    venue:
-      venue || null,
 
 
-    competition:
-      source.competition,
+  if (text.length > 180) {
 
-    group:
-      source.group,
-
-    competitionName:
-      source.competitionName,
-
-    officialTeamName:
-      source.officialTeamName,
-
-    team:
-      source.team,
-
-    section:
-      source.section,
+    return false;
+  }
 
 
-    rffmUrl:
+  if (
+    /^(JORNADA|RESULTADOS|FECHA|HORA|CAMPO|LOCALIDAD|CLASIFICACION|CALENDARIO)/
+      .test(value)
+  ) {
 
-      `https://www.rffm.es/competicion/calendario`
+    return false;
+  }
 
-      +
 
-      `?competicion=${source.competition}`
+  if (
+    /^\d+$/.test(value) ||
+    /^\d{1,2}:\d{2}$/.test(value) ||
+    /^\d{1,2}[\/-]\d{1,2}[\/-]\d{4}$/
+      .test(value) ||
+    /^\d{1,2}\s*[-–]\s*\d{1,2}$/
+      .test(value)
+  ) {
 
-      +
+    return false;
+  }
 
-      `&grupo=${source.group}`
 
-      +
-
-      `&temporada=${SEASON}`
-
-      +
-
-      `&tipojuego=${TYPE}`
-
-  };
-
+  return (
+    isRivas(text) ||
+    /FUTSAL|FUTBOL SALA|\bF\.?S\.?\b|C\.?D\.?|CDE|CLUB|INTER|MOSTOLES|TORREJON|ARGANDA|PINTO|COSLADA|VALLECAS|PILARISTAS|LEGANES|ALCORCON|SAN FERNANDO/i
+      .test(text)
+  );
 }
 
 
-/* =========================================================
-   LEER EL CALENDARIO
-   ========================================================= */
-
-function parseCalendar(
+function parseRound(
   html,
-  source
+  source,
+  round
 ) {
 
-  const out = [];
+  const fixtures = [];
 
-
-  let activeRound = null;
-  let activeDate = null;
-
-
-  /*
-   * PRIMER MÉTODO:
-   * buscar partidos dentro de tablas.
-   */
 
   const rows = [
 
-    ...String(html)
-      .matchAll(
+    ...String(html).matchAll(
 
-        /<tr\b[^>]*>([\s\S]*?)<\/tr>/gi
+      /<tr\b[^>]*>([\s\S]*?)<\/tr>/gi
 
-      )
+    )
 
-  ].map(
-    m => m[1]
-  );
+  ];
 
 
-  for (
-    const rowHtml
-    of rows
-  ) {
+  for (const row of rows) {
+
+    const rowHtml =
+      row[1];
+
 
     const rowText =
-      cellText(rowHtml);
+      cleanCell(rowHtml);
 
 
-    activeRound =
-
-      getRound(rowText)
-
-      ||
-
-      activeRound;
-
-
-    activeDate =
-
-      getDate(rowText)
-
-      ||
-
-      activeDate;
-
-
-    if (
-      !isRivas(rowText)
-    ) {
+    if (!isRivas(rowText)) {
 
       continue;
-
     }
 
 
@@ -1639,791 +804,883 @@ function parseCalendar(
     ]
 
       .map(
-        m => cellText(m[1])
+        match =>
+          cleanCell(match[1])
       )
 
       .filter(Boolean);
 
 
-    if (
-      !cells.length
-    ) {
+    if (!cells.length) {
 
       continue;
-
     }
 
 
-    const teamCells =
+    const teams =
+      cells.filter(
+        looksLikeTeam
+      );
 
+
+    const rivasIndex =
+      teams.findIndex(
+        team =>
+          isRivas(team)
+      );
+
+
+    if (
+      rivasIndex < 0 ||
+      teams.length < 2
+    ) {
+
+      continue;
+    }
+
+
+    const rivas =
+      teams[rivasIndex];
+
+
+    let rival = null;
+
+
+    if (rivasIndex > 0) {
+
+      rival =
+        teams[rivasIndex - 1];
+    }
+
+
+    if (
+      !rival ||
+      isRivas(rival)
+    ) {
+
+      rival =
+        teams.find(
+          team =>
+            !isRivas(team)
+        );
+    }
+
+
+    if (!rival) {
+
+      continue;
+    }
+
+
+    const teamPositions =
       cells
-
         .map(
-          (text, i) => ({
-            text,
-            i
+          (cell, index) => ({
+            cell,
+            index
           })
         )
-
         .filter(
-          x => looksLikeTeam(x.text)
+          item =>
+            looksLikeTeam(item.cell)
         );
 
 
-    let ri =
-
-      teamCells.findIndex(
-
-        x =>
-
-          sameRivas(
-
-            x.text,
-
-            source.officialTeamName
-
-          )
-
+    const rivasPosition =
+      teamPositions.find(
+        item =>
+          isRivas(item.cell)
       );
 
 
-    if (
-      ri < 0
-    ) {
-
-      ri =
-
-        teamCells.findIndex(
-
-          x =>
-            isRivas(x.text)
-
-        );
-
-    }
-
-
-    if (
-      ri < 0
-    ) {
-
-      continue;
-
-    }
-
-
-    const rv =
-      teamCells[ri];
-
-
-    const rivals =
-
-      teamCells.filter(
-
-        (x, i) =>
-
-          i !== ri
-
-          &&
-
-          !isRivas(
-            x.text
-          )
-
+    const rivalPosition =
+      teamPositions.find(
+        item =>
+          item.cell === rival
       );
-
-
-    if (
-      !rivals.length
-    ) {
-
-      continue;
-
-    }
-
-
-    rivals.sort(
-
-      (a, b) =>
-
-        Math.abs(
-          a.i - rv.i
-        )
-
-        -
-
-        Math.abs(
-          b.i - rv.i
-        )
-
-    );
-
-
-    const rival =
-      rivals[0];
 
 
     const rivasHome =
-      rv.i < rival.i;
+      (
+        rivasPosition &&
+        rivalPosition
+      )
+
+        ? rivasPosition.index <
+          rivalPosition.index
+
+        : rivasIndex === 0;
 
 
     const date =
-
-      getDate(rowText)
-
-      ||
-
-      activeDate;
+      getDate(rowText);
 
 
-    const round =
-
-      getRound(rowText)
-
-      ||
-
-      activeRound;
+    const time =
+      getTime(rowText);
 
 
-    const venueCell =
+    const score =
+      scoreFromCells(cells);
 
+
+    const venue =
       cells.find(
 
-        c =>
-
-          /POLID|PABELL|P\.M\.|PARQUE|CAMPO|INSTALACI|RIVAS\s*-|MUNICIPAL/i
-
-            .test(c)
+        cell =>
+          /PABELL|POLID|P\.M\.|PARQUE|MUNICIPAL|CAMPO|INSTALACI/i
+            .test(cell)
 
           &&
 
-          !isRivas(c)
-
-      );
-
-
-    out.push(
-
-      makeFixture(
-
-        source,
-
-        {
-
-          round,
-
-          date,
-
-          time:
-            findTime(rowText),
-
-          home:
-
-            rivasHome
-
-              ? rv.text
-
-              : rival.text,
-
-          away:
-
-            rivasHome
-
-              ? rival.text
-
-              : rv.text,
-
-          score:
-            findScore(rowText),
-
-          venue:
-            venueCell || null
-
-        }
-
+          !isRivas(cell)
       )
 
-    );
-
-  }
+      || null;
 
 
-  if (
-    out.length
-  ) {
+    fixtures.push({
 
-    return out;
+      round,
 
+      date,
+
+      time,
+
+      home:
+        rivasHome
+          ? rivas
+          : rival,
+
+      away:
+        rivasHome
+          ? rival
+          : rivas,
+
+      score,
+
+      venue,
+
+      team:
+        source.team,
+
+      section:
+        source.section,
+
+      competition:
+        source.competition,
+
+      group:
+        source.group,
+
+      competitionName:
+        source.competitionName,
+
+      officialTeamName:
+        source.officialTeamName,
+
+      rffmUrl:
+        `https://www.rffm.es/competicion/calendario` +
+        `?competicion=${source.competition}` +
+        `&grupo=${source.group}` +
+        `&temporada=${SEASON}` +
+        `&tipojuego=${TYPE}`
+
+    });
   }
 
 
   /*
-   * SEGUNDO MÉTODO:
-   * texto completo de la página.
+   * Fallback por texto,
+   * por si RFFM cambia la tabla.
    */
 
-  const ls =
-    lines(html);
+  if (!fixtures.length) {
+
+    const lines =
+      textLines(html);
 
 
-  const meta = [];
-
-
-  activeRound = null;
-  activeDate = null;
-
-
-  for (
-    let i = 0;
-    i < ls.length;
-    i++
-  ) {
-
-    const r =
-      getRound(
-        ls[i]
-      );
-
-
-    const d =
-      getDate(
-        ls[i]
-      );
-
-
-    if (r) {
-      activeRound = r;
-    }
-
-
-    if (d) {
-      activeDate = d;
-    }
-
-
-    meta[i] = {
-
-      round:
-        activeRound,
-
-      date:
-        activeDate
-
-    };
-
-  }
-
-
-  const teams =
-
-    ls
-
-      .map(
-
-        (line, i) => ({
-          line,
-          i
-        })
-
-      )
-
-      .filter(
-
-        x =>
-          looksLikeTeam(
-            x.line
-          )
-
-      );
-
-
-  for (
-    let t = 0;
-    t < teams.length;
-    t++
-  ) {
-
-    if (
-
-      !sameRivas(
-
-        teams[t].line,
-
-        source.officialTeamName
-
-      )
-
-      &&
-
-      !isRivas(
-        teams[t].line
-      )
-
-    ) {
-
-      continue;
-
-    }
-
-
-    const rv =
-      teams[t];
-
-
-    const candidates = [];
+    const rivasIndexes = [];
 
 
     for (
-
-      let j =
-        Math.max(
-          0,
-          t - 2
-        );
-
-      j <=
-      Math.min(
-        teams.length - 1,
-        t + 2
-      );
-
-      j++
-
+      let i = 0;
+      i < lines.length;
+      i++
     ) {
 
       if (
-
-        j === t
-
-        ||
-
-        isRivas(
-          teams[j].line
-        )
-
+        isRivas(lines[i])
       ) {
+
+        rivasIndexes.push(i);
+      }
+    }
+
+
+    for (
+      const index
+      of rivasIndexes
+    ) {
+
+      const before =
+        lines[index - 1] || '';
+
+      const after =
+        lines[index + 1] || '';
+
+
+      let rival = null;
+      let rivasHome = true;
+
+
+      if (
+        looksLikeTeam(before) &&
+        !isRivas(before)
+      ) {
+
+        rival = before;
+        rivasHome = false;
+
+      } else if (
+        looksLikeTeam(after) &&
+        !isRivas(after)
+      ) {
+
+        rival = after;
+        rivasHome = true;
+      }
+
+
+      if (!rival) {
 
         continue;
-
       }
 
 
-      candidates.push(
-        teams[j]
-      );
-
-    }
-
-
-    if (
-      !candidates.length
-    ) {
-
-      continue;
-
-    }
-
-
-    candidates.sort(
-
-      (a, b) =>
-
-        Math.abs(
-          a.i - rv.i
-        )
-
-        -
-
-        Math.abs(
-          b.i - rv.i
-        )
-
-    );
-
-
-    const rival =
-      candidates[0];
-
-
-    if (
-
-      Math.abs(
-        rival.i - rv.i
-      )
-
-      >
-
-      14
-
-    ) {
-
-      continue;
-
-    }
-
-
-    const lo =
-
-      Math.max(
-
-        0,
-
-        Math.min(
-          rv.i,
-          rival.i
-        ) - 8
-
-      );
-
-
-    const hi =
-
-      Math.min(
-
-        ls.length,
-
+      const start =
         Math.max(
-          rv.i,
-          rival.i
-        ) + 9
-
-      );
-
-
-    const around =
-
-      ls
-
-        .slice(
-          lo,
-          hi
-        )
-
-        .join(' ');
-
-
-    let round =
-
-      meta[rv.i]?.round
-
-      ||
-
-      getRound(
-        around
-      );
-
-
-    let date =
-
-      meta[rv.i]?.date
-
-      ||
-
-      getDate(
-        around
-      );
-
-
-    if (
-      !date
-    ) {
-
-      for (
-        let k = lo;
-        k < hi;
-        k++
-      ) {
-
-        const d =
-          getDate(
-            ls[k]
-          );
-
-
-        if (d) {
-
-          date = d;
-
-          break;
-
-        }
-
-      }
-
-    }
-
-
-    const rivasHome =
-      rv.i < rival.i;
-
-
-    const venueLine =
-
-      ls
-
-        .slice(
-          lo,
-          hi
-        )
-
-        .find(
-
-          c =>
-
-            /POLID|PABELL|P\.M\.|PARQUE|CAMPO|INSTALACI|MUNICIPAL/i
-
-              .test(c)
-
-            &&
-
-            !isRivas(c)
-
+          0,
+          index - 8
         );
 
 
-    out.push(
+      const end =
+        Math.min(
+          lines.length,
+          index + 9
+        );
 
-      makeFixture(
 
-        source,
+      const context =
+        lines
+          .slice(start, end)
+          .join(' ');
 
-        {
 
-          round,
+      const date =
+        getDate(context);
 
-          date,
 
-          time:
-            findTime(
-              around
-            ),
+      const time =
+        getTime(context);
 
-          home:
 
-            rivasHome
+      fixtures.push({
 
-              ? rv.line
+        round,
 
-              : rival.line,
+        date,
 
-          away:
+        time,
 
-            rivasHome
+        home:
+          rivasHome
+            ? lines[index]
+            : rival,
 
-              ? rival.line
+        away:
+          rivasHome
+            ? rival
+            : lines[index],
 
-              : rv.line,
+        score:
+          null,
 
-          score:
-            findScore(
-              around
-            ),
+        venue:
+          lines
+            .slice(start, end)
+            .find(
+              line =>
+                /PABELL|POLID|P\.M\.|PARQUE|MUNICIPAL/i
+                  .test(line)
+            )
+          || null,
 
-          venue:
-            venueLine || null
+        team:
+          source.team,
 
-        }
+        section:
+          source.section,
+
+        competition:
+          source.competition,
+
+        group:
+          source.group,
+
+        competitionName:
+          source.competitionName,
+
+        officialTeamName:
+          source.officialTeamName,
+
+        rffmUrl:
+          `https://www.rffm.es/competicion/calendario` +
+          `?competicion=${source.competition}` +
+          `&grupo=${source.group}` +
+          `&temporada=${SEASON}` +
+          `&tipojuego=${TYPE}`
+
+      });
+    }
+  }
+
+
+  return fixtures;
+}
+
+
+/* ==========================================================
+   DESCUBRIR OTROS EQUIPOS DEL CLUB
+   ========================================================== */
+
+async function fetchText(
+  url,
+  timeout = 5000
+) {
+
+  const response =
+    await fetchWithTimeout(
+
+      url,
+
+      {
+
+        headers: {
+
+          'user-agent': UA,
+
+          'accept':
+            'text/html,application/xhtml+xml,*/*;q=0.8'
+        },
+
+        redirect: 'follow'
+      },
+
+      timeout
+    );
+
+
+  if (!response.ok) {
+
+    throw new Error(
+      `${response.status}`
+    );
+  }
+
+
+  return await response.text();
+}
+
+
+async function discoverExtraSources() {
+
+  try {
+
+    const clubHtml =
+      await fetchText(
+        CLUB_PAGE,
+        5000
+      );
+
+
+    const ids = [
+
+      ...clubHtml.matchAll(
+
+        /\/equipo\/(\d+)/gi
 
       )
 
+    ].map(
+      match => match[1]
     );
 
+
+    const unique =
+      [...new Set(ids)]
+        .slice(0, 40);
+
+
+    const responses =
+      await Promise.allSettled(
+
+        unique.map(
+
+          async id => {
+
+            const html =
+              await fetchText(
+
+                `https://www.elbalondemadrid.es/equipo/${id}`,
+
+                5000
+              );
+
+
+            const pageText =
+              plain(html)
+                .replace(/\s+/g, ' ')
+                .trim();
+
+
+            if (
+              !/2026\/27|2026\/2027/i
+                .test(pageText)
+            ) {
+
+              return null;
+            }
+
+
+            const teamName =
+
+              cleanCell(
+
+                html.match(
+
+                  /<h1[^>]*>([\s\S]*?)<\/h1>/i
+
+                )?.[1]
+
+                ||
+
+                ''
+
+              );
+
+
+            if (
+              !teamName ||
+              !isRivas(teamName)
+            ) {
+
+              return null;
+            }
+
+
+            const link =
+              html.match(
+
+                /\/competicion\/(\d+)\/grupo\/(\d+)/i
+
+              );
+
+
+            if (!link) {
+
+              return null;
+            }
+
+
+            let competitionName =
+
+              decode(
+
+                html.match(
+
+                  /<title[^>]*>([\s\S]*?)<\/title>/i
+
+                )?.[1]
+
+                ||
+
+                ''
+
+              );
+
+
+            competitionName =
+              competitionName
+
+                .replace(
+                  /<[^>]+>/g,
+                  ' '
+                )
+
+                .replace(
+                  /^Plantilla de .*?—/i,
+                  ''
+                )
+
+                .replace(
+                  /2026\/27.*$/i,
+                  ''
+                )
+
+                .replace(/\s+/g, ' ')
+
+                .trim();
+
+
+            if (!competitionName) {
+
+              return null;
+            }
+
+
+            const category =
+              identity(
+                competitionName,
+                teamName
+              );
+
+
+            if (!category) {
+
+              return null;
+            }
+
+
+            return {
+
+              competition:
+                link[1],
+
+              group:
+                link[2],
+
+              competitionName,
+
+              officialTeamName:
+                teamName,
+
+              ...category
+            };
+          }
+        )
+      );
+
+
+    return responses
+
+      .map(
+
+        result =>
+          result.status === 'fulfilled'
+            ? result.value
+            : null
+
+      )
+
+      .filter(Boolean);
+
+  } catch (_) {
+
+    return [];
   }
-
-
-  return out;
-
 }
 
 
-/* =========================================================
-   ELIMINAR DUPLICADOS
-   ========================================================= */
+/* ==========================================================
+   FUENTES SIN DUPLICADOS
+   ========================================================== */
 
-function dedupeSources(
-  list
-) {
+function dedupeSources(list) {
 
-  const m =
+  const map =
     new Map();
 
 
-  for (
-    const s
-    of list
-  ) {
+  for (const source of list) {
 
-    const k =
-
-      `${s.section}|${s.team}`;
+    const key =
+      `${source.section}|${source.team}`;
 
 
-    if (
-      !m.has(k)
-    ) {
+    if (!map.has(key)) {
 
-      m.set(
-        k,
-        s
+      map.set(
+        key,
+        source
       );
-
     }
-
   }
 
 
   return [
-    ...m.values()
+    ...map.values()
   ];
-
 }
 
 
-function dedupeFixtures(
-  list
+/* ==========================================================
+   OBTENER PRÓXIMO PARTIDO
+   ========================================================== */
+
+async function getTeamMatches(
+  source,
+  cookie
 ) {
 
-  const m =
-    new Map();
+  /*
+   * Primero Jornada 1.
+   */
+
+  const first =
+    await fetchRound(
+      source,
+      1,
+      cookie
+    );
 
 
-  for (
-    const f
-    of list
-  ) {
+  const firstFixtures =
+    parseRound(
+      first.html,
+      source,
+      1
+    );
 
-    const k =
 
-      `${f.section}|`
+  /*
+   * Antes de empezar la liga,
+   * la Jornada 1 ya es el próximo partido.
+   */
 
-      +
+  const today =
+    new Date();
 
-      `${f.team}|`
+  today.setHours(
+    0, 0, 0, 0
+  );
 
-      +
 
-      `${f.round}|`
+  const firstWithDate =
+    firstFixtures.find(
+      fixture =>
+        fixture.date
+    );
 
-      +
 
-      `${f.date}|`
+  if (firstWithDate) {
 
-      +
-
-      `${canonical(f.home)}|`
-
-      +
-
-      `${canonical(f.away)}`;
+    const firstDate =
+      new Date(
+        `${firstWithDate.date}T12:00:00`
+      );
 
 
     if (
-      !m.has(k)
+      firstDate >= today
     ) {
 
-      m.set(
-        k,
-        f
-      );
+      return {
+        fixtures:
+          firstFixtures,
 
+        checkedRounds:
+          [1]
+      };
     }
-
   }
 
 
-  return [
-    ...m.values()
-  ];
+  /*
+   * Si la liga ya empezó:
+   * calculamos aproximadamente
+   * en qué jornada debemos estar
+   * y consultamos alrededor.
+   */
 
+  let estimated = 1;
+
+
+  if (firstWithDate) {
+
+    const firstDate =
+      new Date(
+        `${firstWithDate.date}T12:00:00`
+      );
+
+
+    const difference =
+      today.getTime() -
+      firstDate.getTime();
+
+
+    estimated =
+      1 +
+      Math.floor(
+        difference /
+        (7 * 24 * 60 * 60 * 1000)
+      );
+  }
+
+
+  estimated =
+    Math.max(
+      1,
+      Math.min(
+        estimated,
+        40
+      )
+    );
+
+
+  const rounds =
+    new Set([1]);
+
+
+  for (
+    let offset = -4;
+    offset <= 5;
+    offset++
+  ) {
+
+    const round =
+      estimated + offset;
+
+
+    if (
+      round >= 1 &&
+      round <= 40
+    ) {
+
+      rounds.add(round);
+    }
+  }
+
+
+  const roundList =
+    [...rounds];
+
+
+  const pages =
+    await Promise.allSettled(
+
+      roundList
+
+        .filter(
+          round => round !== 1
+        )
+
+        .map(
+
+          async round => {
+
+            const page =
+              await fetchRound(
+                source,
+                round,
+                cookie
+              );
+
+
+            return {
+
+              round,
+
+              fixtures:
+                parseRound(
+                  page.html,
+                  source,
+                  round
+                )
+            };
+          }
+        )
+    );
+
+
+  let fixtures =
+    [...firstFixtures];
+
+
+  for (const result of pages) {
+
+    if (
+      result.status ===
+      'fulfilled'
+    ) {
+
+      fixtures.push(
+        ...result.value.fixtures
+      );
+    }
+  }
+
+
+  return {
+
+    fixtures,
+
+    checkedRounds:
+      roundList
+  };
 }
 
 
-/* =========================================================
-   CREAR RESPUESTA
-   ========================================================= */
+/* ==========================================================
+   CONSTRUIR JSON FINAL
+   ========================================================== */
 
 async function buildPayload() {
 
-  /*
-   * Intentamos encontrar automáticamente
-   * el resto de categorías.
-   */
-
   const extra =
+    await Promise.race([
 
-    await Promise.race(
+      discoverExtraSources(),
 
-      [
+      new Promise(
+        resolve =>
+          setTimeout(
+            () => resolve([]),
+            6000
+          )
+      )
+    ]);
 
-        discoverExtraSources(),
-
-        new Promise(
-
-          resolve =>
-
-            setTimeout(
-
-              () =>
-                resolve([]),
-
-              6000
-
-            )
-
-        )
-
-      ]
-
-    );
-
-
-  /*
-   * Los descubiertos tienen prioridad.
-   * FIXED sirve como respaldo.
-   */
 
   const sources =
-
-    dedupeSources(
-
-      [
-
-        ...extra,
-
-        ...FIXED
-
-      ]
-
-    );
+    dedupeSources([
+      ...extra,
+      ...FIXED
+    ]);
 
 
   /*
-   * Consultar calendarios en paralelo.
+   * Una única sesión RFFM
+   * para todas las categorías.
    */
 
-  const calendarResults =
+  const cookie =
+    await createRffmSession();
 
+
+  const responses =
     await Promise.allSettled(
 
       sources.map(
 
         async source => {
 
-          const page =
-
-            await fetchFederationHtml(
-              source
-            );
-
-
-          const fixtures =
-
-            parseCalendar(
-
-              page.html,
-
-              source
-
+          const data =
+            await getTeamMatches(
+              source,
+              cookie
             );
 
 
@@ -2431,177 +1688,170 @@ async function buildPayload() {
 
             source,
 
-            page,
-
-            fixtures
-
+            ...data
           };
-
         }
-
       )
-
     );
 
 
-  let all = [];
-
-  let ok = 0;
-
-  let failed = 0;
-
-
-  const modes = {};
+  const allFixtures = [];
 
   const errors = [];
 
+  const modes = {};
 
-  for (
-    const r
-    of calendarResults
-  ) {
+  const checkedRounds = {};
+
+
+  let calendarsOk = 0;
+  let calendarsFailed = 0;
+
+
+  for (const result of responses) {
 
     if (
-      r.status ===
+      result.status ===
       'fulfilled'
     ) {
 
-      ok++;
+      calendarsOk++;
 
 
-      all.push(
+      const source =
+        result.value.source;
 
-        ...r.value.fixtures
 
+      const key =
+        `${source.section} ${source.team}`;
+
+
+      modes[key] =
+        'RFFM-NFG-CmpJornada';
+
+
+      checkedRounds[key] =
+        result.value.checkedRounds;
+
+
+      allFixtures.push(
+        ...result.value.fixtures
       );
 
+    } else {
 
-      modes[
-        `${r.value.source.section} ${r.value.source.team}`
-      ] =
-
-        r.value.page.mode;
-
-    }
-
-    else {
-
-      failed++;
+      calendarsFailed++;
 
 
       errors.push(
 
         String(
 
-          r.reason?.message
+          result.reason?.message
 
           ||
 
-          r.reason
+          result.reason
 
         )
-
       );
-
     }
-
   }
 
 
-  all =
-    dedupeFixtures(
-      all
-    );
-
-
   /*
-   * Fecha actual.
+   * Quitar duplicados.
    */
+
+  const fixtureMap =
+    new Map();
+
+
+  for (const fixture of allFixtures) {
+
+    const key =
+
+      `${fixture.section}|` +
+
+      `${fixture.team}|` +
+
+      `${fixture.round}|` +
+
+      `${fixture.date}|` +
+
+      `${fixture.home}|` +
+
+      `${fixture.away}`;
+
+
+    if (
+      !fixtureMap.has(key)
+    ) {
+
+      fixtureMap.set(
+        key,
+        fixture
+      );
+    }
+  }
+
+
+  const fixtures =
+    [...fixtureMap.values()];
+
 
   const today =
     new Date();
 
-
   today.setHours(
-    0,
-    0,
-    0,
-    0
+    0, 0, 0, 0
   );
 
-
-  /*
-   * Agrupar por equipo.
-   */
 
   const byTeam =
     new Map();
 
 
-  for (
-    const f
-    of all
-  ) {
+  for (const fixture of fixtures) {
 
-    const k =
-
-      `${f.section}|${f.team}`;
+    const key =
+      `${fixture.section}|${fixture.team}`;
 
 
-    if (
-      !byTeam.has(k)
-    ) {
+    if (!byTeam.has(key)) {
 
       byTeam.set(
-        k,
+        key,
         []
       );
-
     }
 
 
     byTeam
-      .get(k)
-      .push(f);
-
+      .get(key)
+      .push(fixture);
   }
 
 
   const upcoming = [];
-
   const results = [];
 
 
-  /*
-   * Próximo partido de cada equipo.
-   */
-
   for (
-    const list
+    const teamFixtures
     of byTeam.values()
   ) {
 
     const future =
-
-      list
+      teamFixtures
 
         .filter(
 
-          f =>
-
-            f.date
-
-            &&
-
+          fixture =>
+            fixture.date &&
             new Date(
-
-              `${f.date}T12:00:00`
-
-            )
-
-            >=
-
-            today
+              `${fixture.date}T12:00:00`
+            ) >= today
 
         )
 
@@ -2615,55 +1865,33 @@ async function buildPayload() {
 
             ||
 
-            (a.round || 0)
-
-            -
-
+            (a.round || 0) -
             (b.round || 0)
 
         );
 
 
-    if (
-      future[0]
-    ) {
+    if (future[0]) {
 
       upcoming.push(
         future[0]
       );
-
     }
 
 
-    /*
-     * Último resultado.
-     */
-
     const past =
-
-      list
+      teamFixtures
 
         .filter(
 
-          f =>
-
-            f.date
-
-            &&
+          fixture =>
+            fixture.date &&
 
             new Date(
+              `${fixture.date}T12:00:00`
+            ) < today &&
 
-              `${f.date}T12:00:00`
-
-            )
-
-            <
-
-            today
-
-            &&
-
-            f.score
+            fixture.score
 
         )
 
@@ -2675,64 +1903,35 @@ async function buildPayload() {
               a.date
             )
 
-            ||
-
-            (b.round || 0)
-
-            -
-
-            (a.round || 0)
-
         );
 
 
-    if (
-      past[0]
-    ) {
+    if (past[0]) {
 
       results.push(
         past[0]
       );
-
     }
-
   }
 
-
-  /*
-   * Ordenar próximos encuentros.
-   */
 
   upcoming.sort(
 
     (a, b) =>
 
       (a.date || '')
-
         .localeCompare(
           b.date || ''
         )
 
-      ||
-
-      a.team.localeCompare(
-        b.team,
-        'es'
-      )
-
   );
 
-
-  /*
-   * Ordenar resultados.
-   */
 
   results.sort(
 
     (a, b) =>
 
       (b.date || '')
-
         .localeCompare(
           a.date || ''
         )
@@ -2748,32 +1947,25 @@ async function buildPayload() {
 
 
     sourceTeams:
-
       sources.map(
 
-        s =>
-
-          `${s.section}|${s.team}`
+        source =>
+          `${source.section}|${source.team}`
 
       ),
 
 
     detectedTeams:
-
-      [
-        ...byTeam.keys()
-      ],
+      [...byTeam.keys()],
 
 
     updatedAt:
-
       new Date()
         .toISOString(),
 
 
     source:
-
-      'RFFM · datos públicos vía El Balón de Madrid',
+      'RFFM',
 
 
     diagnostics: {
@@ -2781,39 +1973,40 @@ async function buildPayload() {
       sources:
         sources.length,
 
-      calendarsOk:
-        ok,
+      calendarsOk,
 
-      calendarsFailed:
-        failed,
+      calendarsFailed,
 
       fixtures:
-        all.length,
+        fixtures.length,
+
+      session:
+        cookie
+          ? 'JSESSIONID/cookie obtenida'
+          : 'sin cookie',
 
       modes,
 
+      checkedRounds,
+
       parser:
-        'v18-rffm-public-mirror',
+        'v19-rffm-nfg-cmpjornada',
 
       errors:
         errors.slice(
           0,
           10
         )
-
     }
-
   };
-
 }
 
 
-/* =========================================================
-   NETLIFY FUNCTION
-   ========================================================= */
+/* ==========================================================
+   NETLIFY
+   ========================================================== */
 
 exports.handler =
-
   async function () {
 
     try {
@@ -2831,38 +2024,22 @@ exports.handler =
         headers: {
 
           'content-type':
-
             'application/json; charset=utf-8',
 
-
-          /*
-           * 5 minutos navegador.
-           * 15 minutos CDN.
-           */
-
           'cache-control':
-
             'public, max-age=300, s-maxage=900',
 
-
           'access-control-allow-origin':
-
             '*'
-
         },
 
 
         body:
-
-          JSON.stringify(
-            data
-          )
-
+          JSON.stringify(data)
       };
 
-    }
 
-    catch (err) {
+    } catch (error) {
 
       return {
 
@@ -2873,62 +2050,28 @@ exports.handler =
         headers: {
 
           'content-type':
-
             'application/json; charset=utf-8',
 
           'cache-control':
-
             'no-store'
-
         },
 
 
         body:
+          JSON.stringify({
 
-          JSON.stringify(
+            error:
+              'No se han podido obtener los partidos de RFFM.',
 
-            {
+            detail:
+              String(
+                error?.message ||
+                error
+              ),
 
-              error:
-
-                'No se han podido obtener los partidos.',
-
-
-              detail:
-
-                String(
-
-                  err?.message
-
-                  ||
-
-                  err
-
-                )
-
-            }
-
-          )
-
+            parser:
+              'v19-rffm-nfg-cmpjornada'
+          })
       };
-
     }
-
   };
-
-
-/*
- * Exportado solo para pruebas.
- */
-
-exports._test = {
-
-  parseCalendar,
-
-  identity,
-
-  sameRivas,
-
-  canonical
-
-};
