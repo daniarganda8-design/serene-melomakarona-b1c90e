@@ -108,7 +108,7 @@
     {
       "section": "Masculina",
       "team": "Infantil B",
-      "reason": "La categoría está localizada, pero la próxima jornada todavía no está publicada."
+      "reason": "Calendario 2026/27 pendiente de publicación."
     },
     {
       "section": "Masculina",
@@ -133,7 +133,7 @@
     {
       "section": "Femenina",
       "team": "Juvenil A",
-      "reason": "La categoría está localizada, pero la próxima jornada todavía no está publicada."
+      "reason": "Calendario 2026/27 pendiente de publicación."
     },
     {
       "section": "Femenina",
@@ -162,9 +162,7 @@
     "Masculina|Juvenil B",
     "Masculina|Cadete Autonómica",
     "Masculina|Cadete B",
-    "Masculina|Infantil Preferente",
-    "Masculina|Infantil B",
-    "Femenina|Juvenil A"
+    "Masculina|Infantil Preferente"
   ],
   "detectedTeams": [
     "Masculina|Tercera División",
@@ -172,22 +170,23 @@
     "Masculina|Juvenil B",
     "Masculina|Cadete Autonómica",
     "Masculina|Cadete B",
-    "Masculina|Infantil Preferente",
-    "Masculina|Infantil B"
+    "Masculina|Infantil Preferente"
   ],
-  "updatedAt": "2026-09-04T16:30:29.567Z",
+  "updatedAt": "2026-09-04T20:48:20.582Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
-    "sources": 8,
-    "fixtures": 7,
+    "sources": 6,
+    "fixtures": 6,
     "expectedTeams": 16,
     "pendingTeams": 10,
     "missingTeams": [
+      "Masculina|Infantil B",
       "Masculina|Alevín A",
       "Masculina|Alevín B",
       "Masculina|Benjamín A",
       "Masculina|Prebenjamín A",
+      "Femenina|Juvenil A",
       "Femenina|Cadete A",
       "Femenina|Cadete B",
       "Femenina|Infantil A",
@@ -221,7 +220,7 @@
       "Masculina Cadete Autonómica": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2257,
+        "chars": 2163,
         "seasonValid": true,
         "competition": "26738292",
         "group": "26738293"
@@ -229,7 +228,7 @@
       "Masculina Cadete B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2368,
+        "chars": 2165,
         "seasonValid": true,
         "competition": "26750003",
         "group": "26877982"
@@ -237,26 +236,10 @@
       "Masculina Infantil Preferente": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2315,
+        "chars": 2180,
         "seasonValid": true,
         "competition": "26738249",
         "group": "26738251"
-      },
-      "Masculina Infantil B": {
-        "mode": "rendered-dom",
-        "fixtures": 1,
-        "chars": 2259,
-        "seasonValid": true,
-        "competition": "24388742",
-        "group": "24388758"
-      },
-      "Femenina Juvenil A": {
-        "mode": "no-fixture",
-        "fixtures": 0,
-        "chars": 2853,
-        "seasonValid": true,
-        "competition": "26738226",
-        "group": "26738227"
       }
     }
   }
