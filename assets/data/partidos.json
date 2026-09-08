@@ -108,7 +108,7 @@
     {
       "section": "Masculina",
       "team": "Infantil B",
-      "reason": "Calendario 2026/27 pendiente de publicación."
+      "reason": "La categoría está localizada, pero la próxima jornada todavía no está publicada."
     },
     {
       "section": "Masculina",
@@ -163,6 +163,7 @@
     "Masculina|Cadete Autonómica",
     "Masculina|Cadete B",
     "Masculina|Infantil Preferente",
+    "Masculina|Infantil B",
     "Femenina|Juvenil A"
   ],
   "detectedTeams": [
@@ -171,18 +172,18 @@
     "Masculina|Juvenil B",
     "Masculina|Cadete Autonómica",
     "Masculina|Cadete B",
-    "Masculina|Infantil Preferente"
+    "Masculina|Infantil Preferente",
+    "Masculina|Infantil B"
   ],
-  "updatedAt": "2026-09-08T16:42:34.727Z",
+  "updatedAt": "2026-09-08T21:14:02.027Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
-    "sources": 7,
-    "fixtures": 6,
+    "sources": 8,
+    "fixtures": 7,
     "expectedTeams": 16,
     "pendingTeams": 10,
     "missingTeams": [
-      "Masculina|Infantil B",
       "Masculina|Alevín A",
       "Masculina|Alevín B",
       "Masculina|Benjamín A",
@@ -204,7 +205,7 @@
       "Masculina Juvenil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2624,
+        "chars": 2671,
         "seasonValid": true,
         "competition": "26749998",
         "group": "26814437"
@@ -220,7 +221,7 @@
       "Masculina Cadete Autonómica": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2335,
+        "chars": 2355,
         "seasonValid": true,
         "competition": "26738292",
         "group": "26738293"
@@ -240,6 +241,14 @@
         "seasonValid": true,
         "competition": "26738249",
         "group": "26738251"
+      },
+      "Masculina Infantil B": {
+        "mode": "rendered-dom",
+        "fixtures": 1,
+        "chars": 2357,
+        "seasonValid": true,
+        "competition": "24388742",
+        "group": "24388758"
       },
       "Femenina Juvenil A": {
         "mode": "no-fixture",
