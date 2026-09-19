@@ -3,7 +3,7 @@
     {
       "round": 1,
       "date": "2026-09-19",
-      "time": "18:00",
+      "time": null,
       "home": "FUTSALA VILLAVERDE",
       "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
       "score": null,
@@ -175,7 +175,7 @@
     "Masculina|Infantil Preferente",
     "Masculina|Infantil B"
   ],
-  "updatedAt": "2026-09-18T20:57:33.941Z",
+  "updatedAt": "2026-09-19T20:45:17.143Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
@@ -197,7 +197,7 @@
       "Masculina Tercera División": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2662,
+        "chars": 2725,
         "seasonValid": true,
         "competition": "26738221",
         "group": "26771028"
@@ -205,7 +205,7 @@
       "Masculina Juvenil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2676,
+        "chars": 2801,
         "seasonValid": true,
         "competition": "26749998",
         "group": "26814437"
