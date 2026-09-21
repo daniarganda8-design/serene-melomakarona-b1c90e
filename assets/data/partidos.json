@@ -108,7 +108,7 @@
     {
       "section": "Masculina",
       "team": "Infantil B",
-      "reason": "La categoría está localizada, pero la próxima jornada todavía no está publicada."
+      "reason": "Calendario 2026/27 pendiente de publicación."
     },
     {
       "section": "Masculina",
@@ -163,7 +163,6 @@
     "Masculina|Cadete Autonómica",
     "Masculina|Cadete B",
     "Masculina|Infantil Preferente",
-    "Masculina|Infantil B",
     "Femenina|Juvenil A"
   ],
   "detectedTeams": [
@@ -172,18 +171,18 @@
     "Masculina|Juvenil B",
     "Masculina|Cadete Autonómica",
     "Masculina|Cadete B",
-    "Masculina|Infantil Preferente",
-    "Masculina|Infantil B"
+    "Masculina|Infantil Preferente"
   ],
-  "updatedAt": "2026-09-21T05:01:35.067Z",
+  "updatedAt": "2026-09-21T12:54:55.953Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
-    "sources": 8,
-    "fixtures": 7,
+    "sources": 7,
+    "fixtures": 6,
     "expectedTeams": 16,
     "pendingTeams": 10,
     "missingTeams": [
+      "Masculina|Infantil B",
       "Masculina|Alevín A",
       "Masculina|Alevín B",
       "Masculina|Benjamín A",
@@ -229,7 +228,7 @@
       "Masculina Cadete B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2455,
+        "chars": 2439,
         "seasonValid": true,
         "competition": "26750003",
         "group": "26877982"
@@ -241,14 +240,6 @@
         "seasonValid": true,
         "competition": "26738249",
         "group": "26738251"
-      },
-      "Masculina Infantil B": {
-        "mode": "rendered-dom",
-        "fixtures": 1,
-        "chars": 2357,
-        "seasonValid": true,
-        "competition": "24388742",
-        "group": "24388758"
       },
       "Femenina Juvenil A": {
         "mode": "no-fixture",
