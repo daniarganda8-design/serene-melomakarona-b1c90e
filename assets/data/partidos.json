@@ -3,7 +3,7 @@
     {
       "round": 1,
       "date": "2026-09-26",
-      "time": null,
+      "time": "10:30",
       "home": "LEGANES F.S. MASDEPORTE 'A'",
       "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
       "score": null,
@@ -20,7 +20,7 @@
     {
       "round": 1,
       "date": "2026-09-26",
-      "time": null,
+      "time": "12:00",
       "home": "FUTBOL SALA LIMONES 5 'B'",
       "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
       "score": null,
@@ -108,7 +108,7 @@
     {
       "section": "Masculina",
       "team": "Infantil B",
-      "reason": "Calendario 2026/27 pendiente de publicación."
+      "reason": "La categoría está localizada, pero la próxima jornada todavía no está publicada."
     },
     {
       "section": "Masculina",
@@ -163,6 +163,7 @@
     "Masculina|Cadete Autonómica",
     "Masculina|Cadete B",
     "Masculina|Infantil Preferente",
+    "Masculina|Infantil B",
     "Femenina|Juvenil A"
   ],
   "detectedTeams": [
@@ -171,18 +172,18 @@
     "Masculina|Juvenil B",
     "Masculina|Cadete Autonómica",
     "Masculina|Cadete B",
-    "Masculina|Infantil Preferente"
+    "Masculina|Infantil Preferente",
+    "Masculina|Infantil B"
   ],
-  "updatedAt": "2026-09-21T12:54:55.953Z",
+  "updatedAt": "2026-09-21T22:04:49.916Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
-    "sources": 7,
-    "fixtures": 6,
+    "sources": 8,
+    "fixtures": 7,
     "expectedTeams": 16,
     "pendingTeams": 10,
     "missingTeams": [
-      "Masculina|Infantil B",
       "Masculina|Alevín A",
       "Masculina|Alevín B",
       "Masculina|Benjamín A",
@@ -196,7 +197,7 @@
       "Masculina Tercera División": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2614,
+        "chars": 2554,
         "seasonValid": true,
         "competition": "26738221",
         "group": "26771028"
@@ -204,7 +205,7 @@
       "Masculina Juvenil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2660,
+        "chars": 2629,
         "seasonValid": true,
         "competition": "26749998",
         "group": "26814437"
@@ -212,7 +213,7 @@
       "Masculina Juvenil B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2499,
+        "chars": 2535,
         "seasonValid": true,
         "competition": "26738220",
         "group": "26878012"
@@ -220,7 +221,7 @@
       "Masculina Cadete Autonómica": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2364,
+        "chars": 2328,
         "seasonValid": true,
         "competition": "26738292",
         "group": "26738293"
@@ -228,7 +229,7 @@
       "Masculina Cadete B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2439,
+        "chars": 2400,
         "seasonValid": true,
         "competition": "26750003",
         "group": "26877982"
@@ -236,10 +237,18 @@
       "Masculina Infantil Preferente": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2431,
+        "chars": 2363,
         "seasonValid": true,
         "competition": "26738249",
         "group": "26738251"
+      },
+      "Masculina Infantil B": {
+        "mode": "rendered-dom",
+        "fixtures": 1,
+        "chars": 2333,
+        "seasonValid": true,
+        "competition": "24388742",
+        "group": "24388758"
       },
       "Femenina Juvenil A": {
         "mode": "no-fixture",
