@@ -52,6 +52,23 @@
       "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26738249&grupo=26738251&temporada=22&tipojuego=3"
     },
     {
+      "round": 2,
+      "date": "2026-09-26",
+      "time": "18:00",
+      "home": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
+      "away": "INTER FUTBOL SALA - JP FINANCIAL 'B'",
+      "score": null,
+      "venue": null,
+      "competition": "26749998",
+      "group": "26814437",
+      "competitionName": "PRIMERA DIVISION AUTONOMICA JUVENIL SALA",
+      "officialTeamName": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
+      "team": "Juvenil A",
+      "section": "Masculina",
+      "sourceUrl": "https://www.elbalondemadrid.es/competicion/26749998/grupo/26814437/jornadas",
+      "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26749998&grupo=26814437&temporada=22&tipojuego=3"
+    },
+    {
       "round": 1,
       "date": "2026-09-26",
       "time": "19:00",
@@ -67,20 +84,27 @@
       "section": "Masculina",
       "sourceUrl": "https://www.elbalondemadrid.es/competicion/26738220/grupo/26878012/jornadas",
       "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26738220&grupo=26878012&temporada=22&tipojuego=3"
+    },
+    {
+      "round": 2,
+      "date": "2026-09-26",
+      "time": "18:00",
+      "home": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE",
+      "away": "CLUB ARGANDA FUTSAL - MISAN SPORTS 'A'",
+      "score": null,
+      "venue": null,
+      "competition": "26738221",
+      "group": "26771028",
+      "competitionName": "TERCERA DIVISIÓN DE FÚTBOL SALA",
+      "officialTeamName": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE",
+      "team": "Tercera División",
+      "section": "Masculina",
+      "sourceUrl": "https://www.elbalondemadrid.es/competicion/26738221/grupo/26771028/jornadas",
+      "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26738221&grupo=26771028&temporada=22&tipojuego=3"
     }
   ],
   "results": [],
   "pendingTeams": [
-    {
-      "section": "Masculina",
-      "team": "Tercera División",
-      "reason": "La categoría está localizada, pero la próxima jornada todavía no está publicada."
-    },
-    {
-      "section": "Masculina",
-      "team": "Juvenil A",
-      "reason": "La categoría está localizada, pero la próxima jornada todavía no está publicada."
-    },
     {
       "section": "Masculina",
       "team": "Infantil B",
@@ -151,14 +175,14 @@
     "Masculina|Infantil Preferente",
     "Masculina|Infantil B"
   ],
-  "updatedAt": "2026-09-20T04:58:19.653Z",
+  "updatedAt": "2026-09-21T05:01:35.067Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
     "sources": 8,
     "fixtures": 7,
     "expectedTeams": 16,
-    "pendingTeams": 12,
+    "pendingTeams": 10,
     "missingTeams": [
       "Masculina|Alevín A",
       "Masculina|Alevín B",
@@ -173,7 +197,7 @@
       "Masculina Tercera División": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2867,
+        "chars": 2614,
         "seasonValid": true,
         "competition": "26738221",
         "group": "26771028"
@@ -181,7 +205,7 @@
       "Masculina Juvenil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2868,
+        "chars": 2660,
         "seasonValid": true,
         "competition": "26749998",
         "group": "26814437"
