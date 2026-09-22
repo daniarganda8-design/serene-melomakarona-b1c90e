@@ -37,7 +37,7 @@
     {
       "round": 1,
       "date": "2026-09-26",
-      "time": null,
+      "time": "16:00",
       "home": "INTER FUTBOL SALA - JP FINANCIAL 'C'",
       "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
       "score": null,
@@ -108,7 +108,7 @@
     {
       "section": "Masculina",
       "team": "Infantil B",
-      "reason": "La categoría está localizada, pero la próxima jornada todavía no está publicada."
+      "reason": "Calendario 2026/27 pendiente de publicación."
     },
     {
       "section": "Masculina",
@@ -133,7 +133,7 @@
     {
       "section": "Femenina",
       "team": "Juvenil A",
-      "reason": "La categoría está localizada, pero la próxima jornada todavía no está publicada."
+      "reason": "Calendario 2026/27 pendiente de publicación."
     },
     {
       "section": "Femenina",
@@ -162,9 +162,7 @@
     "Masculina|Juvenil B",
     "Masculina|Cadete Autonómica",
     "Masculina|Cadete B",
-    "Masculina|Infantil Preferente",
-    "Masculina|Infantil B",
-    "Femenina|Juvenil A"
+    "Masculina|Infantil Preferente"
   ],
   "detectedTeams": [
     "Masculina|Tercera División",
@@ -172,22 +170,23 @@
     "Masculina|Juvenil B",
     "Masculina|Cadete Autonómica",
     "Masculina|Cadete B",
-    "Masculina|Infantil Preferente",
-    "Masculina|Infantil B"
+    "Masculina|Infantil Preferente"
   ],
-  "updatedAt": "2026-09-21T22:04:49.916Z",
+  "updatedAt": "2026-09-22T11:44:05.907Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
-    "sources": 8,
-    "fixtures": 7,
+    "sources": 6,
+    "fixtures": 6,
     "expectedTeams": 16,
     "pendingTeams": 10,
     "missingTeams": [
+      "Masculina|Infantil B",
       "Masculina|Alevín A",
       "Masculina|Alevín B",
       "Masculina|Benjamín A",
       "Masculina|Prebenjamín A",
+      "Femenina|Juvenil A",
       "Femenina|Cadete A",
       "Femenina|Cadete B",
       "Femenina|Infantil A",
@@ -197,7 +196,7 @@
       "Masculina Tercera División": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2554,
+        "chars": 2614,
         "seasonValid": true,
         "competition": "26738221",
         "group": "26771028"
@@ -205,7 +204,7 @@
       "Masculina Juvenil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2629,
+        "chars": 2660,
         "seasonValid": true,
         "competition": "26749998",
         "group": "26814437"
@@ -213,7 +212,7 @@
       "Masculina Juvenil B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2535,
+        "chars": 2564,
         "seasonValid": true,
         "competition": "26738220",
         "group": "26878012"
@@ -221,7 +220,7 @@
       "Masculina Cadete Autonómica": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2328,
+        "chars": 2359,
         "seasonValid": true,
         "competition": "26738292",
         "group": "26738293"
@@ -229,7 +228,7 @@
       "Masculina Cadete B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2400,
+        "chars": 2439,
         "seasonValid": true,
         "competition": "26750003",
         "group": "26877982"
@@ -237,26 +236,10 @@
       "Masculina Infantil Preferente": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2363,
+        "chars": 2322,
         "seasonValid": true,
         "competition": "26738249",
         "group": "26738251"
-      },
-      "Masculina Infantil B": {
-        "mode": "rendered-dom",
-        "fixtures": 1,
-        "chars": 2333,
-        "seasonValid": true,
-        "competition": "24388742",
-        "group": "24388758"
-      },
-      "Femenina Juvenil A": {
-        "mode": "no-fixture",
-        "fixtures": 0,
-        "chars": 2833,
-        "seasonValid": true,
-        "competition": "26738226",
-        "group": "26738227"
       }
     }
   }
