@@ -88,7 +88,7 @@
     {
       "round": 2,
       "date": "2026-09-26",
-      "time": "18:00",
+      "time": null,
       "home": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE",
       "away": "CLUB ARGANDA FUTSAL - ALBERO-MUDANZAS SEGOVIANA 'A'",
       "score": null,
@@ -175,7 +175,7 @@
     "Masculina|Infantil Preferente",
     "Masculina|Infantil B"
   ],
-  "updatedAt": "2026-09-26T11:30:22.398Z",
+  "updatedAt": "2026-09-26T16:28:16.796Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
@@ -197,7 +197,7 @@
       "Masculina Tercera División": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2704,
+        "chars": 2700,
         "seasonValid": true,
         "competition": "26738221",
         "group": "26771028"
@@ -213,7 +213,7 @@
       "Masculina Juvenil B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2558,
+        "chars": 2554,
         "seasonValid": true,
         "competition": "26738220",
         "group": "26878012"
@@ -221,7 +221,7 @@
       "Masculina Cadete Autonómica": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2459,
+        "chars": 2463,
         "seasonValid": true,
         "competition": "26738292",
         "group": "26738293"
