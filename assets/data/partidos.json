@@ -20,7 +20,7 @@
     {
       "round": 1,
       "date": "2026-10-03",
-      "time": null,
+      "time": "10:00",
       "home": "COLEGIO ABACO FS",
       "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE",
       "score": null,
@@ -257,7 +257,7 @@
     "Femenina|Infantil A",
     "Femenina|Alevín A"
   ],
-  "updatedAt": "2026-09-28T14:02:36.840Z",
+  "updatedAt": "2026-09-28T23:20:57.437Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
@@ -274,7 +274,7 @@
       "Masculina Tercera División": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2684,
+        "chars": 2671,
         "seasonValid": true,
         "competition": "26738221",
         "group": "26771028"
@@ -290,7 +290,7 @@
       "Masculina Juvenil B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2523,
+        "chars": 2491,
         "seasonValid": true,
         "competition": "26738220",
         "group": "26878012"
@@ -298,7 +298,7 @@
       "Masculina Cadete Autonómica": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2497,
+        "chars": 2471,
         "seasonValid": true,
         "competition": "26738292",
         "group": "26738293"
@@ -314,7 +314,7 @@
       "Masculina Infantil Preferente": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2309,
+        "chars": 2300,
         "seasonValid": true,
         "competition": "26738249",
         "group": "26738251"
@@ -330,7 +330,7 @@
       "Masculina Alevín A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2176,
+        "chars": 2152,
         "seasonValid": true,
         "competition": "26750017",
         "group": "28105877"
@@ -354,7 +354,7 @@
       "Femenina Cadete B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2209,
+        "chars": 2168,
         "seasonValid": true,
         "competition": "26738222",
         "group": "28165724"
@@ -362,7 +362,7 @@
       "Femenina Infantil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2162,
+        "chars": 2123,
         "seasonValid": true,
         "competition": "26738223",
         "group": "28169452"
@@ -370,7 +370,7 @@
       "Femenina Alevín A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2077,
+        "chars": 2036,
         "seasonValid": true,
         "competition": "26750025",
         "group": "28170761"
