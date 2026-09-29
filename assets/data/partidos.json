@@ -88,7 +88,7 @@
     {
       "round": 1,
       "date": "2026-10-03",
-      "time": null,
+      "time": "16:00",
       "home": "C.D.E. SPORT SALA 12",
       "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
       "score": null,
@@ -257,7 +257,7 @@
     "Femenina|Infantil A",
     "Femenina|Alevín A"
   ],
-  "updatedAt": "2026-09-28T23:20:57.437Z",
+  "updatedAt": "2026-09-29T05:49:32.101Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
@@ -282,7 +282,7 @@
       "Masculina Juvenil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2702,
+        "chars": 2676,
         "seasonValid": true,
         "competition": "26749998",
         "group": "26814437"
@@ -306,7 +306,7 @@
       "Masculina Cadete B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2434,
+        "chars": 2421,
         "seasonValid": true,
         "competition": "26750003",
         "group": "26877982"
@@ -322,7 +322,7 @@
       "Masculina Infantil B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2212,
+        "chars": 2197,
         "seasonValid": true,
         "competition": "26750015",
         "group": "28125503"
@@ -338,7 +338,7 @@
       "Femenina Juvenil A": {
         "mode": "no-fixture",
         "fixtures": 0,
-        "chars": 3034,
+        "chars": 2612,
         "seasonValid": true,
         "competition": "26738226",
         "group": "26738227"
@@ -346,7 +346,7 @@
       "Femenina Cadete A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2267,
+        "chars": 2254,
         "seasonValid": true,
         "competition": "26738222",
         "group": "28165770"
@@ -354,7 +354,7 @@
       "Femenina Cadete B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2168,
+        "chars": 2155,
         "seasonValid": true,
         "competition": "26738222",
         "group": "28165724"
