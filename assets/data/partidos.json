@@ -88,7 +88,7 @@
     {
       "round": 1,
       "date": "2026-10-03",
-      "time": "16:00",
+      "time": null,
       "home": "C.D.E. SPORT SALA 12",
       "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
       "score": null,
@@ -156,7 +156,7 @@
     {
       "round": 3,
       "date": "2026-10-03",
-      "time": "17:45",
+      "time": null,
       "home": "A.D. ALCORCON F.S. 'B'",
       "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
       "score": null,
@@ -190,7 +190,7 @@
     {
       "round": 3,
       "date": "2026-10-03",
-      "time": "18:20",
+      "time": null,
       "home": "F.S. DIAGONAL 'A'",
       "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE",
       "score": null,
@@ -257,7 +257,7 @@
     "Femenina|Infantil A",
     "Femenina|Alevín A"
   ],
-  "updatedAt": "2026-10-03T16:23:41.411Z",
+  "updatedAt": "2026-10-03T21:22:48.825Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
@@ -274,7 +274,7 @@
       "Masculina Tercera División": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2719,
+        "chars": 2855,
         "seasonValid": true,
         "competition": "26738221",
         "group": "26771028"
@@ -282,7 +282,7 @@
       "Masculina Juvenil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2672,
+        "chars": 2735,
         "seasonValid": true,
         "competition": "26749998",
         "group": "26814437"
@@ -290,7 +290,7 @@
       "Masculina Juvenil B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2604,
+        "chars": 2619,
         "seasonValid": true,
         "competition": "26738220",
         "group": "26878012"
@@ -298,7 +298,7 @@
       "Masculina Cadete Autonómica": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2590,
+        "chars": 2593,
         "seasonValid": true,
         "competition": "26738292",
         "group": "26738293"
@@ -306,7 +306,7 @@
       "Masculina Cadete B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2597,
+        "chars": 2621,
         "seasonValid": true,
         "competition": "26750003",
         "group": "26877982"
@@ -338,7 +338,7 @@
       "Femenina Juvenil A": {
         "mode": "no-fixture",
         "fixtures": 0,
-        "chars": 2845,
+        "chars": 2847,
         "seasonValid": true,
         "competition": "26738226",
         "group": "26738227"
@@ -346,7 +346,7 @@
       "Femenina Cadete A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2249,
+        "chars": 2299,
         "seasonValid": true,
         "competition": "26738222",
         "group": "28165770"
@@ -354,7 +354,7 @@
       "Femenina Cadete B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2314,
+        "chars": 2318,
         "seasonValid": true,
         "competition": "26738222",
         "group": "28165724"
