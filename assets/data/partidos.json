@@ -20,7 +20,7 @@
     {
       "round": 3,
       "date": "2026-10-10",
-      "time": null,
+      "time": "09:20",
       "home": "CLUB ARGANDA FUTSAL 'B'",
       "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
       "score": null,
@@ -173,7 +173,7 @@
     "Masculina|Cadete B",
     "Masculina|Infantil Preferente"
   ],
-  "updatedAt": "2026-10-05T14:47:36.638Z",
+  "updatedAt": "2026-10-06T18:26:05.754Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
@@ -196,7 +196,7 @@
       "Masculina Tercera División": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2700,
+        "chars": 2698,
         "seasonValid": true,
         "competition": "26738221",
         "group": "26771028"
@@ -204,7 +204,7 @@
       "Masculina Juvenil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2725,
+        "chars": 2695,
         "seasonValid": true,
         "competition": "26749998",
         "group": "26814437"
@@ -220,7 +220,7 @@
       "Masculina Cadete Autonómica": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2425,
+        "chars": 2375,
         "seasonValid": true,
         "competition": "26738292",
         "group": "26738293"
@@ -228,7 +228,7 @@
       "Masculina Cadete B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2464,
+        "chars": 2451,
         "seasonValid": true,
         "competition": "26750003",
         "group": "26877982"
@@ -236,7 +236,7 @@
       "Masculina Infantil Preferente": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2466,
+        "chars": 2430,
         "seasonValid": true,
         "competition": "26738249",
         "group": "26738251"
@@ -244,7 +244,7 @@
       "Femenina Juvenil A": {
         "mode": "no-fixture",
         "fixtures": 0,
-        "chars": 3448,
+        "chars": 3210,
         "seasonValid": true,
         "competition": "26738226",
         "group": "26738227"
