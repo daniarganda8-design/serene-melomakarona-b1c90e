@@ -3,7 +3,7 @@
     {
       "round": 4,
       "date": "2026-10-17",
-      "time": null,
+      "time": "20:00",
       "home": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
       "away": "MRB F.S. MOSTOLES - CIUDAD DE MOSTOLES 'A'",
       "score": null,
@@ -37,7 +37,7 @@
     {
       "round": 4,
       "date": "2026-10-17",
-      "time": null,
+      "time": "10:00",
       "home": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
       "away": "C.D.E. PINAR DE SAN JOSE - ALCORCON 'B'",
       "score": null,
@@ -173,7 +173,7 @@
     "Masculina|Cadete B",
     "Masculina|Infantil Preferente"
   ],
-  "updatedAt": "2026-10-12T06:04:03.911Z",
+  "updatedAt": "2026-10-12T15:33:16.262Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
@@ -204,7 +204,7 @@
       "Masculina Juvenil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2719,
+        "chars": 2706,
         "seasonValid": true,
         "competition": "26749998",
         "group": "26814437"
@@ -212,7 +212,7 @@
       "Masculina Juvenil B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2598,
+        "chars": 2580,
         "seasonValid": true,
         "competition": "26738220",
         "group": "26878012"
@@ -220,7 +220,7 @@
       "Masculina Cadete Autonómica": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2494,
+        "chars": 2481,
         "seasonValid": true,
         "competition": "26738292",
         "group": "26738293"
@@ -236,7 +236,7 @@
       "Masculina Infantil Preferente": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2377,
+        "chars": 2386,
         "seasonValid": true,
         "competition": "26738249",
         "group": "26738251"
