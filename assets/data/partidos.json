@@ -71,7 +71,7 @@
     {
       "round": 3,
       "date": "2026-10-17",
-      "time": "12:30",
+      "time": null,
       "home": "C.D.E. COLEGIO ALEMAN DE MADRID 'A'",
       "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
       "score": null,
@@ -173,7 +173,7 @@
     "Masculina|Cadete B",
     "Masculina|Infantil Preferente"
   ],
-  "updatedAt": "2026-10-13T14:19:54.413Z",
+  "updatedAt": "2026-10-17T20:41:30.699Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
@@ -196,7 +196,7 @@
       "Masculina Tercera División": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2660,
+        "chars": 2810,
         "seasonValid": true,
         "competition": "26738221",
         "group": "26771028"
@@ -204,7 +204,7 @@
       "Masculina Juvenil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2594,
+        "chars": 2723,
         "seasonValid": true,
         "competition": "26749998",
         "group": "26814437"
@@ -212,7 +212,7 @@
       "Masculina Juvenil B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2490,
+        "chars": 2580,
         "seasonValid": true,
         "competition": "26738220",
         "group": "26878012"
@@ -220,7 +220,7 @@
       "Masculina Cadete Autonómica": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2468,
+        "chars": 2612,
         "seasonValid": true,
         "competition": "26738292",
         "group": "26738293"
@@ -228,7 +228,7 @@
       "Masculina Cadete B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2330,
+        "chars": 2462,
         "seasonValid": true,
         "competition": "26750003",
         "group": "26877982"
@@ -236,7 +236,7 @@
       "Masculina Infantil Preferente": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2411,
+        "chars": 2365,
         "seasonValid": true,
         "competition": "26738249",
         "group": "26738251"
@@ -244,7 +244,7 @@
       "Femenina Juvenil A": {
         "mode": "no-fixture",
         "fixtures": 0,
-        "chars": 3063,
+        "chars": 3314,
         "seasonValid": true,
         "competition": "26738226",
         "group": "26738227"
