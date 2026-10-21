@@ -66,7 +66,90 @@ const FIXED = [
     competitionName:'PREFERENTE INFANTIL SALA',
     officialTeamName:"CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
     team:'Infantil Preferente', section:'Masculina'
+  },
+  {
+    competition: '26750015',
+    group: '28125503',
+    competitionName: 'PRIMERA INFANTIL SALA',
+    officialTeamName: "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
+    team: 'Infantil B',
+    section: 'Masculina'
+  },
+  {
+    competition: '26750017',
+    group: '28105877',
+    competitionName: 'ALEVIN SALA',
+    officialTeamName: "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
+    team: 'Alevín A',
+    section: 'Masculina'
+  },
+  {
+    competition: '26750017',
+    group: '27597476',
+    competitionName: 'ALEVIN SALA',
+    officialTeamName: "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
+    team: 'Alevín B',
+    section: 'Masculina'
+  },
+  {
+    competition: '26738225',
+    group: '28202550',
+    competitionName: 'BENJAMIN INICIACION SALA',
+    officialTeamName: 'CD RIVAS FUTSAL - YOUFIRST SMART FINACE',
+    team: 'Benjamín A',
+    section: 'Masculina'
+  },
+  {
+    competition: 'ID_PENDIENTE',
+    group: 'ID_PENDIENTE',
+    competitionName: 'PREBENJAMIN SALA',
+    officialTeamName: 'CD RIVAS FUTSAL - YOUFIRST SMART FINACE',
+    team: 'Prebenjamín A',
+    section: 'Masculina'
+  },
+
+  // Femenino
+  {
+    competition: '26750020',
+    group: '28163764',
+    competitionName: 'JUVENIL FEMENINO SALA',
+    officialTeamName: 'CD RIVAS FUTSAL - YOUFIRST SMART FINACE',
+    team: 'Juvenil A',
+    section: 'Femenina'
+  },
+  {
+    competition: '26738222',
+    group: '28165770',
+    competitionName: 'CADETE FEMENINO SALA',
+    officialTeamName: "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
+    team: 'Cadete A',
+    section: 'Femenina'
+  },
+  {
+    competition: '26738222',
+    group: '28165724',
+    competitionName: 'CADETE FEMENINO SALA',
+    officialTeamName: "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
+    team: 'Cadete B',
+    section: 'Femenina'
+  },
+  {
+    competition: '26738223',
+    group: '28169452',
+    competitionName: 'INFANTIL FEMENINO SALA',
+    officialTeamName: 'CD RIVAS FUTSAL - YOUFIRST SMART FINACE',
+    team: 'Infantil A',
+    section: 'Femenina'
+  },
+  {
+    competition: '26750025',
+    group: '28170761',
+    competitionName: 'ALEVIN FEMENINO SALA',
+    officialTeamName: 'CD RIVAS FUTSAL - YOUFIRST SMART FINACE',
+    team: 'Alevín A',
+    section: 'Femenina'
   }
+
 ];
 
 function stripAccents(value='') {
@@ -116,11 +199,77 @@ function dedupeSources(list) {
   return [...map.values()];
 }
 
-function findDate(text='') {
-  const m = String(text).match(/\b(\d{1,2})[\/-](\d{1,2})[\/-](\d{4})\b/);
-  if (!m) return null;
-  return `${m[3]}-${String(m[2]).padStart(2,'0')}-${String(m[1]).padStart(2,'0')}`;
+
+function findDate(text = '') {
+  const value = String(text).toLowerCase();
+
+  // Formatos: 24/10/2026 o 24-10-2026
+  const numeric = value.match(
+    /\b(\d{1,2})[\/-](\d{1,2})[\/-](\d{4})\b/
+  );
+
+  if (numeric) {
+    const day = Number(numeric[1]);
+    const month = Number(numeric[2]);
+    const year = Number(numeric[3]);
+
+    const date = new Date(Date.UTC(year, month - 1, day));
+
+    if (
+      date.getUTCFullYear() === year &&
+      date.getUTCMonth() === month - 1 &&
+      date.getUTCDate() === day
+    ) {
+      return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+    }
+  }
+
+  // Formatos: 24 de octubre de 2026
+  const months = {
+    enero: 1,
+    febrero: 2,
+    marzo: 3,
+    abril: 4,
+    mayo: 5,
+    junio: 6,
+    julio: 7,
+    agosto: 8,
+    septiembre: 9,
+    setiembre: 9,
+    octubre: 10,
+    noviembre: 11,
+    diciembre: 12
+  };
+
+  const written = value.match(
+    /\b(\d{1,2})\s+de\s+(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|setiembre|octubre|noviembre|diciembre)(?:\s+de\s+(\d{4}))?\b/i
+  );
+
+  if (written) {
+    const day = Number(written[1]);
+    const month = months[written[2]];
+    let year = written[3] ? Number(written[3]) : new Date().getFullYear();
+
+    // Si la fuente omite el año, orienta la fecha a la temporada actual.
+    // En la temporada 2026/27, los meses de enero a junio son de 2027.
+    if (!written[3] && month <= 6 && new Date().getMonth() >= 6) {
+      year++;
+    }
+
+    const date = new Date(Date.UTC(year, month - 1, day));
+
+    if (
+      date.getUTCFullYear() === year &&
+      date.getUTCMonth() === month - 1 &&
+      date.getUTCDate() === day
+    ) {
+      return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+    }
+  }
+
+  return null;
 }
+
 function findTime(text='') {
   const m = String(text).match(/\b([01]?\d|2[0-3]):([0-5]\d)\b/);
   return m ? `${String(m[1]).padStart(2,'0')}:${m[2]}` : null;
@@ -271,7 +420,9 @@ function parseBodyFallback(source, pageText) {
         const rivasHome = i < idx;
 
         return makeFixture(source, {
-          round:findRound(context), date:findDate(context), time:findTime(context),
+          round:findRound(context),
+          date:findDate(context),
+          time:findTime(context),
           home:rivasHome ? lines[i] : rival, away:rivasHome ? rival : lines[i],
           score:findScore(context), venue:findVenue(context)
         });
@@ -341,7 +492,7 @@ async function extractCalendar(page, source) {
     const rivasHome = rivasIndex < rivalIndex;
 
     fixtures.push(makeFixture(source, {
-      round:findRound(card.text) || findRound(pageText),
+      round:findRound(card.text),
       date:findDate(card.text),
       time:findTime(card.text),
       home:rivasHome ? rivas : rival,
