@@ -611,7 +611,15 @@ try {
       await page.close();
     }
   }
+
   
+
+  const fixtures = dedupeFixtures(allFixtures);
+  if (!fixtures.length) {
+    throw new Error('No se ha detectado ningún partido. Se conserva el JSON anterior.');
+  }
+
+  // DIAGNÓSTICO DE PARTIDOS
   console.log(
     'DIAGNÓSTICO DE PARTIDOS:',
     JSON.stringify(
@@ -634,11 +642,6 @@ try {
     'de',
     fixtures.length
   );
-
-  const fixtures = dedupeFixtures(allFixtures);
-  if (!fixtures.length) {
-    throw new Error('No se ha detectado ningún partido. Se conserva el JSON anterior.');
-  }
 
   const selected = selectMatches(fixtures);
   const upcomingKeys = new Set(selected.upcoming.map(f => `${f.section}|${f.team}`));
