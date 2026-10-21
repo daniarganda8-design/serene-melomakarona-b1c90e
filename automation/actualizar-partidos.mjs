@@ -611,6 +611,29 @@ try {
       await page.close();
     }
   }
+  
+  console.log(
+    'DIAGNÓSTICO DE PARTIDOS:',
+    JSON.stringify(
+      fixtures.map(f => ({
+        equipo: f.team,
+        local: f.home,
+        visitante: f.away,
+        fecha: f.date,
+        jornada: f.round,
+        resultado: f.score
+      })),
+      null,
+      2
+    )
+  );
+
+  console.log(
+    'PARTIDOS CON FECHA:',
+    fixtures.filter(f => f.date).length,
+    'de',
+    fixtures.length
+  );
 
   const fixtures = dedupeFixtures(allFixtures);
   if (!fixtures.length) {
