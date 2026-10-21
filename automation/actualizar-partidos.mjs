@@ -342,7 +342,7 @@ async function extractCalendar(page, source) {
 
     fixtures.push(makeFixture(source, {
       round:findRound(card.text) || findRound(pageText),
-      date:findDate(card.text) || findDate(pageText),
+      date:findDate(card.text),
       time:findTime(card.text),
       home:rivasHome ? rivas : rival,
       away:rivasHome ? rival : rivas,
