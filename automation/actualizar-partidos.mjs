@@ -272,13 +272,39 @@ function findRound(text='') {
   const m = String(text).match(/JORNADA\s*(?:N[º°.]?\s*)?(\d+)/i);
   return m ? Number(m[1]) : null;
 }
-function findScore(text='') {
-  for (const line of String(text).split(/\n+/)) {
-    const m = line.trim().match(/^(\d{1,2})\s*[-–]\s*(\d{1,2})$/);
-    if (m) return `${m[1]} - ${m[2]}`;
+
+function findScore(text = '') {
+  const lines = String(text).split(/\n+/);
+
+  for (const line of lines) {
+    const value = line.trim();
+
+    // Marcador en una línea aislada: 3 - 2, 3–2 o 3:2
+    const match = value.match(/^(\d{1,2})\s*[-–:]\s*(\d{1,2})$/);
+
+    if (match) {
+      return `${match[1]} - ${match[2]}`;
+    }
   }
+
+  // Busca marcadores en el texto completo, si están junto a otros datos.
+  const matches = String(text).match(
+    /\b(\d{1,2})\s*[-–:]\s*(\d{1,2})\b/g
+  );
+
+  if (matches) {
+    for (const value of matches) {
+      const match = value.match(/^(\d{1,2})\s*[-–:]\s*(\d{1,2})$/);
+
+      if (match) {
+        return `${match[1]} - ${match[2]}`;
+      }
+    }
+  }
+
   return null;
 }
+
 function findVenue(text='') {
   return String(text).split(/\n+/).map(x=>x.trim()).find(
     line => /PABELL|POLID|P\.M\.|PARQUE|MUNICIPAL|INSTALACI|CAMPO/i.test(line) && !isRivas(line)
@@ -495,6 +521,12 @@ async function extractCalendar(page, source) {
     source.team,
     cards[0]?.html?.slice(0, 5000) ?? 'SIN TARJETA'
   );
+
+  console.log(
+  'TEXTO COMPLETO DE LA JORNADA:',
+  source.team,
+  pageText
+);
 
   console.log(
     'TEXTO ORIGINAL DEL PARTIDO:',
@@ -766,13 +798,15 @@ try {
     detectedTeams:payload.detectedTeams
   });
 
-  if (previousCore === newCore) {
-    console.log('No hay cambios en partidos ni calendarios pendientes.');
-  } else {
-    await fs.mkdir(path.dirname(OUTPUT), { recursive:true });
-    await fs.writeFile(OUTPUT, JSON.stringify(payload,null,2) + '\n', 'utf8');
-    console.log(`JSON actualizado: ${OUTPUT}`);
-  }
+ 
+  await fs.mkdir(path.dirname(OUTPUT), { recursive: true });
+  await fs.writeFile(
+    OUTPUT,
+    JSON.stringify(payload, null, 2) + '\n',
+    'utf8'
+  );
+  console.log(`JSON actualizado: ${OUTPUT}`);
+
 
   console.log(`Partidos encontrados: ${fixtures.length}`);
   console.log(`Próximos: ${payload.upcoming.length}`);
