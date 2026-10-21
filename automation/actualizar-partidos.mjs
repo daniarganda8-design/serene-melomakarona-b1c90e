@@ -200,18 +200,26 @@ function dedupeSources(list) {
 }
 
 
+
 function findDate(text = '') {
   const value = String(text).toLowerCase();
 
-  // Formatos: 24/10/2026 o 24-10-2026
+  // Formatos: 24/10/2026, 24-10-2026, 24/10 o 24-10
   const numeric = value.match(
-    /\b(\d{1,2})[\/-](\d{1,2})[\/-](\d{4})\b/
+    /\b(\d{1,2})[/-](\d{1,2})(?:[/-](\d{2,4}))?\b/
   );
 
   if (numeric) {
     const day = Number(numeric[1]);
     const month = Number(numeric[2]);
-    const year = Number(numeric[3]);
+    let year;
+
+    if (numeric[3]) {
+      year = Number(numeric[3]);
+      if (year < 100) year += 2000;
+    } else {
+      year = month <= 6 ? 2027 : 2026;
+    }
 
     const date = new Date(Date.UTC(year, month - 1, day));
 
@@ -250,8 +258,7 @@ function findDate(text = '') {
     const month = months[written[2]];
     let year = written[3] ? Number(written[3]) : new Date().getFullYear();
 
-    // Si la fuente omite el año, orienta la fecha a la temporada actual.
-    // En la temporada 2026/27, los meses de enero a junio son de 2027.
+    // Si no aparece el año, orientar la fecha a la temporada 2026/27.
     if (!written[3] && month <= 6 && new Date().getMonth() >= 6) {
       year++;
     }
@@ -269,6 +276,7 @@ function findDate(text = '') {
 
   return null;
 }
+
 
 function findTime(text='') {
   const m = String(text).match(/\b([01]?\d|2[0-3]):([0-5]\d)\b/);
