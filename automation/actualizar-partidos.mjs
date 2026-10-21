@@ -199,84 +199,70 @@ function dedupeSources(list) {
   return [...map.values()];
 }
 
-
-
 function findDate(text = '') {
-  const value = String(text).toLowerCase();
+    const value = String(text).toLowerCase();
 
-  // Formatos: 24/10/2026, 24-10-2026, 24/10 o 24-10
-  const numeric = value.match(
-    /\b(\d{1,2})[/-](\d{1,2})(?:[/-](\d{2,4}))?\b/
-  );
+    // Formatos: 24/10/2026, 24-10-2026, 24/10 o 24-10
+    const numeric = value.match(
+      /\b(\d{1,2})[/-](\d{1,2})(?:[/-](\d{2,4}))?\b/
+    );
 
-  if (numeric) {
-    const day = Number(numeric[1]);
-    const month = Number(numeric[2]);
-    let year;
+    if (numeric) {
+      const day = Number(numeric[1]);
+      const month = Number(numeric[2]);
+      let year;
 
-    if (numeric[3]) {
-      year = Number(numeric[3]);
-      if (year < 100) year += 2000;
-    } else {
-      year = month <= 6 ? 2027 : 2026;
+      if (numeric[3]) {
+        year = Number(numeric[3]);
+        if (year < 100) year += 2000;
+      } else {
+        year = month <= 6 ? 2027 : 2026;
+      }
+
+      const date = new Date(Date.UTC(year, month - 1, day));
+
+      if (
+        date.getUTCFullYear() === year &&
+        date.getUTCMonth() === month - 1 &&
+        date.getUTCDate() === day
+      ) {
+        return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+      }
     }
 
-    const date = new Date(Date.UTC(year, month - 1, day));
+    const months = {
+      enero: 1, febrero: 2, marzo: 3, abril: 4,
+      mayo: 5, junio: 6, julio: 7, agosto: 8,
+      septiembre: 9, setiembre: 9, octubre: 10,
+      noviembre: 11, diciembre: 12
+    };
 
-    if (
-      date.getUTCFullYear() === year &&
-      date.getUTCMonth() === month - 1 &&
-      date.getUTCDate() === day
-    ) {
-      return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+    const written = value.match(
+      /\b(\d{1,2})\s+de\s+(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|setiembre|octubre|noviembre|diciembre)(?:\s+de\s+(\d{4}))?\b/i
+    );
+
+    if (written) {
+      const day = Number(written[1]);
+      const month = months[written[2]];
+      let year = written[3] ? Number(written[3]) : new Date().getFullYear();
+
+      if (!written[3] && month <= 6 && new Date().getMonth() >= 6) {
+        year++;
+      }
+
+      const date = new Date(Date.UTC(year, month - 1, day));
+
+      if (
+        date.getUTCFullYear() === year &&
+        date.getUTCMonth() === month - 1 &&
+        date.getUTCDate() === day
+      ) {
+        return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+      }
     }
+
+    return null;
   }
-
-  // Formatos: 24 de octubre de 2026
-  const months = {
-    enero: 1,
-    febrero: 2,
-    marzo: 3,
-    abril: 4,
-    mayo: 5,
-    junio: 6,
-    julio: 7,
-    agosto: 8,
-    septiembre: 9,
-    setiembre: 9,
-    octubre: 10,
-    noviembre: 11,
-    diciembre: 12
-  };
-
-  const written = value.match(
-    /\b(\d{1,2})\s+de\s+(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|setiembre|octubre|noviembre|diciembre)(?:\s+de\s+(\d{4}))?\b/i
-  );
-
-  if (written) {
-    const day = Number(written[1]);
-    const month = months[written[2]];
-    let year = written[3] ? Number(written[3]) : new Date().getFullYear();
-
-    // Si no aparece el año, orientar la fecha a la temporada 2026/27.
-    if (!written[3] && month <= 6 && new Date().getMonth() >= 6) {
-      year++;
-    }
-
-    const date = new Date(Date.UTC(year, month - 1, day));
-
-    if (
-      date.getUTCFullYear() === year &&
-      date.getUTCMonth() === month - 1 &&
-      date.getUTCDate() === day
-    ) {
-      return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-    }
-  }
-
-  return null;
-}
-
 
 function findTime(text='') {
   const m = String(text).match(/\b([01]?\d|2[0-3]):([0-5]\d)\b/);
@@ -516,6 +502,37 @@ async function extractCalendar(page, source) {
     JSON.stringify(cards[0]?.text ?? 'SIN TARJETA')
   );
 
+    const pageLines = pageText
+    .split('\n')
+    .map(line => line.trim())
+    .filter(Boolean);
+
+  let currentDate = null;
+  let currentRound = null;
+
+  const matchDates = new Map();
+
+  for (let i = 0; i < pageLines.length; i++) {
+    const line = pageLines[i];
+
+    if (/^\d{2}\/\d{2}\/\d{4}$/.test(line)) {
+      currentDate = findDate(line);
+    }
+
+    if (/^JORNADA$/i.test(line)) {
+      const nextLine = pageLines[i + 1];
+
+      if (nextLine && /^\d+$/.test(nextLine)) {
+        currentRound = Number(nextLine);
+      }
+    }
+
+    matchDates.set(i, {
+      date: currentDate,
+      round: currentRound
+    });
+  }
+
   const fixtures = [];
 
   for (const card of cards) {
@@ -528,15 +545,36 @@ async function extractCalendar(page, source) {
     const rival = teams[rivalIndex];
     const rivasHome = rivasIndex < rivalIndex;
 
-    fixtures.push(makeFixture(source, {
-      round:findRound(card.text),
-      date:findDate(card.text),
-      time:findTime(card.text),
-      home:rivasHome ? rivas : rival,
-      away:rivasHome ? rival : rivas,
-      score:findScore(card.text),
-      venue:findVenue(card.text)
-    }));
+    
+const teamPosition = pageText.lastIndexOf(rivas);
+const textBeforeMatch = teamPosition >= 0
+  ? pageText.slice(0, teamPosition)
+  : '';
+
+const datesBeforeMatch = [
+  ...textBeforeMatch.matchAll(
+    /\b\d{1,2}[/-]\d{1,2}[/-]\d{2,4}\b/g
+  )
+];
+
+const lastDateText = datesBeforeMatch.length
+  ? datesBeforeMatch[datesBeforeMatch.length - 1][0]
+  : null;
+
+const matchDate = lastDateText
+  ? findDate(lastDateText)
+  : null;
+
+fixtures.push(makeFixture(source, {
+  round: findRound(textBeforeMatch) || findRound(card.text),
+  date: matchDate || findDate(card.text),
+  time: findTime(card.text),
+  home: rivasHome ? rivas : rival,
+  away: rivasHome ? rival : rivas,
+  score: findScore(card.text),
+  venue: findVenue(card.text)
+}));
+
   }
 
   if (fixtures.length) {
