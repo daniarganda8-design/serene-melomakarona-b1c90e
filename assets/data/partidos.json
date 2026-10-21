@@ -299,7 +299,7 @@
     "Femenina|Infantil A",
     "Femenina|Alevín A"
   ],
-  "updatedAt": "2026-10-21T11:07:49.926Z",
+  "updatedAt": "2026-10-21T11:56:20.265Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
@@ -416,7 +416,7 @@
       "Femenina Cadete B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2204,
+        "chars": 2229,
         "seasonValid": true,
         "competition": "26738222",
         "group": "28165724"
