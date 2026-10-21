@@ -487,6 +487,12 @@ async function extractCalendar(page, source) {
     });
   });
 
+  console.log(
+    'TEXTO ORIGINAL DEL PARTIDO:',
+    source.team,
+    JSON.stringify(cards[0]?.text ?? 'SIN TARJETA')
+  );
+
   const fixtures = [];
 
   for (const card of cards) {
