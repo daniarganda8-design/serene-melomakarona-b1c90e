@@ -467,20 +467,27 @@ async function extractCalendar(page, source) {
     const out = [];
 
     for (const anchor of rivasAnchors) {
-      let node = anchor;
-      for (let depth=0; depth<9 && node; depth++, node=node.parentElement) {
-        const teams = unique([...node.querySelectorAll('a[href*="/equipo/"]')].map(a=>a.innerText || ''));
-        const text = (node.innerText || '').trim();
-        if (teams.length >= 2 && teams.length <= 4 && text.length > 0 && text.length < 2200) {
-          out.push({
-            text,
-            teams,
-            html: node.outerHTML
-          });
-          break;
-        }
+    let node = anchor;
+
+    for (let depth = 0; depth < 9 && node; depth++, node = node.parentElement) {
+      const teams = unique(
+        [...node.querySelectorAll('a[href*="/equipo/"]')]
+          .map(a => a.innerText || '')
+      );
+
+      const text = (node.innerText || '').trim();
+
+      if (teams.length >= 2 && teams.length <= 4 && text.length > 0 && text.length < 2200) {
+        out.push({
+          text,
+          teams,
+          depth,
+          html: node.outerHTML
+        });
+        break;
       }
     }
+  }
 
     const seen = new Set();
     return out.filter(card => {
@@ -490,6 +497,12 @@ async function extractCalendar(page, source) {
       return true;
     });
   });
+
+  console.log(
+  'TEXTO COMPLETO DE LA PAGINA:',
+  source.team,
+  pageText.slice(0, 6000)
+);
 
   console.log(
     'HTML DE TARJETA:',
