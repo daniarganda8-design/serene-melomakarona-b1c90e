@@ -472,7 +472,11 @@ async function extractCalendar(page, source) {
         const teams = unique([...node.querySelectorAll('a[href*="/equipo/"]')].map(a=>a.innerText || ''));
         const text = (node.innerText || '').trim();
         if (teams.length >= 2 && teams.length <= 4 && text.length > 0 && text.length < 2200) {
-          out.push({ text, teams });
+          out.push({
+            text,
+            teams,
+            html: node.outerHTML
+          });
           break;
         }
       }
@@ -486,6 +490,12 @@ async function extractCalendar(page, source) {
       return true;
     });
   });
+
+  console.log(
+    'HTML DE TARJETA:',
+    source.team,
+    cards[0]?.html?.slice(0, 5000) ?? 'SIN TARJETA'
+  );
 
   console.log(
     'TEXTO ORIGINAL DEL PARTIDO:',
