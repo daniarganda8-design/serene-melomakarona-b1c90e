@@ -70,8 +70,14 @@ window.RIVAS_DATA = {
     { team: "Prebenjamín A", section: "Masculina", members: [
       { name: "Izan Rodríguez", role: "Entrenador", image: "assets/images/staff/izan-rodriguez.jpg" }
     ]},
+    { team: "Juevenil", section: "Femenina", members: [
+      { name: "Daniel de la Orden", role: "Entrenador", image: "assets/images/staff/daniel-de-la-orden.jpg" }
+    ]},
     { team: "Cadete A", section: "Femenina", members: [
       { name: "Daniel de la Orden", role: "Entrenador", image: "assets/images/staff/daniel-de-la-orden.jpg" }
+    ]},
+    { team: "Cadete B", section: "Femenina", members: [
+      { name: "Alberto Benito", role: "Entrenador", image: "assets/images/staff/alberto-benito.jpg" }
     ]},
     { team: "Infantil A", section: "Femenina", members: [
       { name: "Alberto Benito", role: "Entrenador", image: "assets/images/staff/alberto-benito.jpg" }
