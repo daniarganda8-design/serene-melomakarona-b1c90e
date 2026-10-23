@@ -23,7 +23,8 @@ window.RIVAS_DATA = {
   sponsors: [
     { name: "YouFirst Smart Finance", image: "assets/images/youfirst.jpg", role: "Patrocinador principal" },
     { name: "EMIX", image: "assets/images/emix.jpg", role: "Patrocinador técnico" },
-    { name: "LEGON", image: "assets/images/legon.jpg", role: "Patrocinador oficial" }
+    { name: "LEGON", image: "assets/images/legon.jpg", role: "Patrocinador oficial" },
+    { name: "Serveo", image: "assets/images/serveo-logo.jpg", role: "Patrocinador oficial" }
   ],
   collaborators: [
     { name: "Karma Fisio Clinic", image: "assets/images/karma-fisio.jpg", role: "Salud · Fisioterapia", detail: "10% en tratamientos para jugadores, jugadoras y familiares directos." },
