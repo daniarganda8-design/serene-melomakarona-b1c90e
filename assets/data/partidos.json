@@ -37,10 +37,10 @@
     {
       "round": 3,
       "date": "2026-10-24",
-      "time": "11:10",
+      "time": null,
       "home": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
       "away": "FUTURO DEL FUTBOL SALA - VELILLA",
-      "score": "11 - 10",
+      "score": null,
       "venue": null,
       "competition": "26750017",
       "group": "27597476",
@@ -88,10 +88,10 @@
     {
       "round": 3,
       "date": "2026-10-24",
-      "time": "12:20",
+      "time": null,
       "home": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
       "away": "ASTON F.S. 'C'",
-      "score": "12 - 20",
+      "score": null,
       "venue": null,
       "competition": "26750015",
       "group": "28125503",
@@ -299,7 +299,7 @@
     "Femenina|Infantil A",
     "Femenina|Alevín A"
   ],
-  "updatedAt": "2026-10-24T11:07:28.119Z",
+  "updatedAt": "2026-10-24T16:01:04.697Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
@@ -336,7 +336,7 @@
       "Masculina Cadete Autonómica": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2495,
+        "chars": 2541,
         "seasonValid": true,
         "competition": "26738292",
         "group": "26738293"
@@ -360,7 +360,7 @@
       "Masculina Infantil B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2265,
+        "chars": 2309,
         "seasonValid": true,
         "competition": "26750015",
         "group": "28125503"
@@ -376,7 +376,7 @@
       "Masculina Alevín B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2191,
+        "chars": 2226,
         "seasonValid": true,
         "competition": "26750017",
         "group": "27597476"
@@ -416,7 +416,7 @@
       "Femenina Cadete B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2282,
+        "chars": 2311,
         "seasonValid": true,
         "competition": "26738222",
         "group": "28165724"
