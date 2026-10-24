@@ -3,10 +3,10 @@
     {
       "round": 3,
       "date": "2026-10-24",
-      "time": "10:00",
+      "time": null,
       "home": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
       "away": "INTER FUTBOL SALA - JP FINANCIAL 'B'",
-      "score": "10 - 00",
+      "score": null,
       "venue": null,
       "competition": "26750017",
       "group": "28105877",
@@ -20,10 +20,10 @@
     {
       "round": 3,
       "date": "2026-10-24",
-      "time": "14:00",
+      "time": null,
       "home": "ASTON F.S.",
       "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE",
-      "score": "14 - 00",
+      "score": null,
       "venue": null,
       "competition": "26750025",
       "group": "28170761",
@@ -54,10 +54,10 @@
     {
       "round": 4,
       "date": "2026-10-24",
-      "time": "20:00",
+      "time": null,
       "home": "C.D. FUTSI ATLETICO NAVALCARNERO - FROZEN",
       "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
-      "score": "20 - 00",
+      "score": null,
       "venue": null,
       "competition": "26738222",
       "group": "28165770",
@@ -71,10 +71,10 @@
     {
       "round": 5,
       "date": "2026-10-24",
-      "time": "13:30",
+      "time": null,
       "home": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
       "away": "E.F.S. CIUDAD DE TORREJON - REDPISO TORREJON 'A'",
-      "score": "13 - 30",
+      "score": null,
       "venue": null,
       "competition": "26750003",
       "group": "26877982",
@@ -139,10 +139,10 @@
     {
       "round": 6,
       "date": "2026-10-24",
-      "time": "18:00",
+      "time": null,
       "home": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE",
       "away": "C.D.E. ANDRES SEGOVIA-MOSTOLES 'A'",
-      "score": "18 - 00",
+      "score": null,
       "venue": null,
       "competition": "26738221",
       "group": "26771028",
@@ -299,7 +299,7 @@
     "Femenina|Infantil A",
     "Femenina|Alevín A"
   ],
-  "updatedAt": "2026-10-24T16:01:04.697Z",
+  "updatedAt": "2026-10-24T20:54:20.863Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
@@ -312,7 +312,7 @@
       "Masculina Tercera División": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2743,
+        "chars": 2790,
         "seasonValid": true,
         "competition": "26738221",
         "group": "26771028"
@@ -320,7 +320,7 @@
       "Masculina Juvenil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2817,
+        "chars": 2857,
         "seasonValid": true,
         "competition": "26749998",
         "group": "26814437"
@@ -344,7 +344,7 @@
       "Masculina Cadete B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2586,
+        "chars": 2641,
         "seasonValid": true,
         "competition": "26750003",
         "group": "26877982"
@@ -352,7 +352,7 @@
       "Masculina Infantil Preferente": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2446,
+        "chars": 2457,
         "seasonValid": true,
         "competition": "26738249",
         "group": "26738251"
@@ -368,7 +368,7 @@
       "Masculina Alevín A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2245,
+        "chars": 2290,
         "seasonValid": true,
         "competition": "26750017",
         "group": "28105877"
@@ -384,7 +384,7 @@
       "Masculina Benjamín A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2362,
+        "chars": 2402,
         "seasonValid": true,
         "competition": "26738225",
         "group": "28202550"
@@ -408,7 +408,7 @@
       "Femenina Cadete A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2318,
+        "chars": 2377,
         "seasonValid": true,
         "competition": "26738222",
         "group": "28165770"
@@ -432,7 +432,7 @@
       "Femenina Alevín A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 1972,
+        "chars": 2113,
         "seasonValid": true,
         "competition": "26750025",
         "group": "28170761"
