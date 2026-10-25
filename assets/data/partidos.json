@@ -71,10 +71,10 @@
     {
       "round": 5,
       "date": "2026-10-25",
-      "time": "10:00",
+      "time": null,
       "home": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
       "away": "COLEGIO CLARET 'A'",
-      "score": "10 - 00",
+      "score": null,
       "venue": null,
       "competition": "26738249",
       "group": "26738251",
@@ -88,10 +88,10 @@
     {
       "round": 6,
       "date": "2026-10-25",
-      "time": "13:00",
+      "time": null,
       "home": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
       "away": "UNION DEPORTIVA LAS ROZAS BOADILLA - AST TCNET",
-      "score": "13 - 00",
+      "score": null,
       "venue": null,
       "competition": "26749998",
       "group": "26814437",
@@ -191,7 +191,7 @@
     "Femenina|Infantil A",
     "Femenina|Alevín A"
   ],
-  "updatedAt": "2026-10-25T16:28:09.608Z",
+  "updatedAt": "2026-10-25T20:55:55.972Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
@@ -204,7 +204,7 @@
       "Masculina Tercera División": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2776,
+        "chars": 2931,
         "seasonValid": true,
         "competition": "26738221",
         "group": "26771028"
@@ -212,7 +212,7 @@
       "Masculina Juvenil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2872,
+        "chars": 2962,
         "seasonValid": true,
         "competition": "26749998",
         "group": "26814437"
@@ -236,7 +236,7 @@
       "Masculina Cadete B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2699,
+        "chars": 2710,
         "seasonValid": true,
         "competition": "26750003",
         "group": "26877982"
@@ -244,7 +244,7 @@
       "Masculina Infantil Preferente": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2457,
+        "chars": 2653,
         "seasonValid": true,
         "competition": "26738249",
         "group": "26738251"
