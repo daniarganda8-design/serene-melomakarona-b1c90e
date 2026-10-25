@@ -20,10 +20,10 @@
     {
       "round": 5,
       "date": "2026-10-25",
-      "time": "11:15",
+      "time": null,
       "home": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
       "away": "CLUB ARGANDA FUTSAL 'A'",
-      "score": "11 - 15",
+      "score": null,
       "venue": null,
       "competition": "26738292",
       "group": "26738293",
@@ -191,7 +191,7 @@
     "Femenina|Infantil A",
     "Femenina|Alevín A"
   ],
-  "updatedAt": "2026-10-25T11:37:22.537Z",
+  "updatedAt": "2026-10-25T16:28:09.608Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
@@ -228,7 +228,7 @@
       "Masculina Cadete Autonómica": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2552,
+        "chars": 2630,
         "seasonValid": true,
         "competition": "26738292",
         "group": "26738293"
@@ -236,7 +236,7 @@
       "Masculina Cadete B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2641,
+        "chars": 2699,
         "seasonValid": true,
         "competition": "26750003",
         "group": "26877982"
@@ -292,7 +292,7 @@
       "Femenina Juvenil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2341,
+        "chars": 2459,
         "seasonValid": true,
         "competition": "26750020",
         "group": "28163764"
