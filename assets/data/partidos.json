@@ -103,25 +103,7 @@
       "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26749998&grupo=26814437&temporada=22&tipojuego=3"
     }
   ],
-  "results": [
-    {
-      "round": 4,
-      "date": "2026-10-24",
-      "time": "17:00",
-      "home": "C.D.E. FUENLABRADA FUTBOL SALA (FS)",
-      "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINANCE",
-      "score": "17 - 00",
-      "venue": null,
-      "competition": "26750020",
-      "group": "28163764",
-      "competitionName": "JUVENIL FEMENINO SALA",
-      "officialTeamName": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE",
-      "team": "Juvenil A",
-      "section": "Femenina",
-      "sourceUrl": "https://www.elbalondemadrid.es/competicion/26750020/grupo/28163764/jornadas",
-      "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26750020&grupo=28163764&temporada=22&tipojuego=3"
-    }
-  ],
+  "results": [],
   "pendingTeams": [
     {
       "section": "Masculina",
@@ -209,7 +191,7 @@
     "Femenina|Infantil A",
     "Femenina|Alevín A"
   ],
-  "updatedAt": "2026-10-25T04:47:45.830Z",
+  "updatedAt": "2026-10-25T11:37:22.537Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
@@ -294,7 +276,7 @@
       "Masculina Benjamín A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2402,
+        "chars": 2414,
         "seasonValid": true,
         "competition": "26738225",
         "group": "28202550"
@@ -310,7 +292,7 @@
       "Femenina Juvenil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2319,
+        "chars": 2341,
         "seasonValid": true,
         "competition": "26750020",
         "group": "28163764"
