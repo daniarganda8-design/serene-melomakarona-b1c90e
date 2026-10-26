@@ -3,10 +3,10 @@
     {
       "round": 7,
       "date": "2026-10-31",
-      "time": null,
+      "time": "20:00",
       "home": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
       "away": "CLUB ARGANDA FUTSAL 'A'",
-      "score": null,
+      "score": "20 - 00",
       "venue": null,
       "competition": "26749998",
       "group": "26814437",
@@ -19,11 +19,11 @@
     },
     {
       "round": 7,
-      "date": "2026-10-31",
-      "time": null,
+      "date": "2026-11-01",
+      "time": "16:00",
       "home": "ATLETICO TRABENCO ZARZAQUEMADA 'A'",
       "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE",
-      "score": null,
+      "score": "16 - 00",
       "venue": null,
       "competition": "26738221",
       "group": "26771028",
@@ -299,7 +299,7 @@
     "Femenina|Infantil A",
     "Femenina|Alevín A"
   ],
-  "updatedAt": "2026-10-26T13:10:11.108Z",
+  "updatedAt": "2026-10-26T22:43:43.610Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
@@ -312,7 +312,7 @@
       "Masculina Tercera División": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2672,
+        "chars": 2659,
         "seasonValid": true,
         "competition": "26738221",
         "group": "26771028"
@@ -320,7 +320,7 @@
       "Masculina Juvenil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2700,
+        "chars": 2674,
         "seasonValid": true,
         "competition": "26749998",
         "group": "26814437"
