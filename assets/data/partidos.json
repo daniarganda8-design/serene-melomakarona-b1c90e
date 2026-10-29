@@ -122,10 +122,10 @@
     {
       "round": 6,
       "date": "2026-11-07",
-      "time": null,
+      "time": "15:20",
       "home": "F.S. DIAGONAL 'A'",
       "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
-      "score": null,
+      "score": "15 - 20",
       "venue": null,
       "competition": "26738292",
       "group": "26738293",
@@ -299,7 +299,7 @@
     "Femenina|Infantil A",
     "Femenina|Alevín A"
   ],
-  "updatedAt": "2026-10-29T13:08:15.832Z",
+  "updatedAt": "2026-10-29T22:49:02.099Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
@@ -328,7 +328,7 @@
       "Masculina Juvenil B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2578,
+        "chars": 2565,
         "seasonValid": true,
         "competition": "26738220",
         "group": "26878012"
@@ -336,7 +336,7 @@
       "Masculina Cadete Autonómica": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2516,
+        "chars": 2503,
         "seasonValid": true,
         "competition": "26738292",
         "group": "26738293"
@@ -352,7 +352,7 @@
       "Masculina Infantil Preferente": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2376,
+        "chars": 2334,
         "seasonValid": true,
         "competition": "26738249",
         "group": "26738251"
