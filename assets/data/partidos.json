@@ -299,7 +299,7 @@
     "Femenina|Infantil A",
     "Femenina|Alevín A"
   ],
-  "updatedAt": "2026-10-30T05:54:40.370Z",
+  "updatedAt": "2026-10-30T13:01:36.952Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
@@ -312,7 +312,7 @@
       "Masculina Tercera División": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2643,
+        "chars": 2675,
         "seasonValid": true,
         "competition": "26738221",
         "group": "26771028"
