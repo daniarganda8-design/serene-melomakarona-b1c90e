@@ -69,23 +69,6 @@
       "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26750025&grupo=28170761&temporada=22&tipojuego=3"
     },
     {
-      "round": 4,
-      "date": "2026-11-07",
-      "time": null,
-      "home": "RIVAS ATLANTIS 'A'",
-      "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
-      "score": null,
-      "venue": null,
-      "competition": "26750017",
-      "group": "27597476",
-      "competitionName": "ALEVIN SALA",
-      "officialTeamName": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
-      "team": "Alevín B",
-      "section": "Masculina",
-      "sourceUrl": "https://www.elbalondemadrid.es/competicion/26750017/grupo/27597476/jornadas",
-      "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26750017&grupo=27597476&temporada=22&tipojuego=3"
-    },
-    {
       "round": 3,
       "date": "2026-11-07",
       "time": null,
@@ -254,6 +237,23 @@
       "section": "Masculina",
       "sourceUrl": "https://www.elbalondemadrid.es/competicion/26738220/grupo/26878012/jornadas",
       "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26738220&grupo=26878012&temporada=22&tipojuego=3"
+    },
+    {
+      "round": 4,
+      "date": "2026-11-08",
+      "time": "10:00",
+      "home": "RIVAS ATLANTIS 'A'",
+      "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
+      "score": "10 - 00",
+      "venue": null,
+      "competition": "26750017",
+      "group": "27597476",
+      "competitionName": "ALEVIN SALA",
+      "officialTeamName": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
+      "team": "Alevín B",
+      "section": "Masculina",
+      "sourceUrl": "https://www.elbalondemadrid.es/competicion/26750017/grupo/27597476/jornadas",
+      "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26750017&grupo=27597476&temporada=22&tipojuego=3"
     }
   ],
   "results": [],
@@ -299,7 +299,7 @@
     "Femenina|Infantil A",
     "Femenina|Alevín A"
   ],
-  "updatedAt": "2026-10-31T12:39:24.636Z",
+  "updatedAt": "2026-10-31T21:39:52.327Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
@@ -312,7 +312,7 @@
       "Masculina Tercera División": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2695,
+        "chars": 2774,
         "seasonValid": true,
         "competition": "26738221",
         "group": "26771028"
@@ -320,7 +320,7 @@
       "Masculina Juvenil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2755,
+        "chars": 2768,
         "seasonValid": true,
         "competition": "26749998",
         "group": "26814437"
@@ -360,7 +360,7 @@
       "Masculina Infantil B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2260,
+        "chars": 2248,
         "seasonValid": true,
         "competition": "26750015",
         "group": "28125503"
@@ -376,7 +376,7 @@
       "Masculina Alevín B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2132,
+        "chars": 2130,
         "seasonValid": true,
         "competition": "26750017",
         "group": "27597476"
@@ -384,7 +384,7 @@
       "Masculina Benjamín A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2164,
+        "chars": 2162,
         "seasonValid": true,
         "competition": "26738225",
         "group": "28202550"
