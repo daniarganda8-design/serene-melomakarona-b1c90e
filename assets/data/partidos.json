@@ -3,10 +3,10 @@
     {
       "round": 7,
       "date": "2026-11-01",
-      "time": "16:00",
+      "time": null,
       "home": "ATLETICO TRABENCO ZARZAQUEMADA 'A'",
       "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE",
-      "score": "16 - 00",
+      "score": null,
       "venue": null,
       "competition": "26738221",
       "group": "26771028",
@@ -287,7 +287,7 @@
     "Femenina|Infantil A",
     "Femenina|Alevín A"
   ],
-  "updatedAt": "2026-11-01T13:30:50.904Z",
+  "updatedAt": "2026-11-01T22:06:27.392Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
@@ -300,7 +300,7 @@
       "Masculina Tercera División": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2901,
+        "chars": 2955,
         "seasonValid": true,
         "competition": "26738221",
         "group": "26771028"
@@ -308,7 +308,7 @@
       "Masculina Juvenil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2820,
+        "chars": 2944,
         "seasonValid": true,
         "competition": "26749998",
         "group": "26814437"
@@ -364,7 +364,7 @@
       "Masculina Alevín B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2130,
+        "chars": 2117,
         "seasonValid": true,
         "competition": "26750017",
         "group": "27597476"
