@@ -299,7 +299,7 @@
     "Femenina|Infantil A",
     "Femenina|Alevín A"
   ],
-  "updatedAt": "2026-11-05T20:00:33.064Z",
+  "updatedAt": "2026-11-06T06:53:40.500Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
@@ -312,7 +312,7 @@
       "Masculina Tercera División": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 3192,
+        "chars": 2725,
         "seasonValid": true,
         "competition": "26738221",
         "group": "26771028"
@@ -320,7 +320,7 @@
       "Masculina Juvenil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 3150,
+        "chars": 2683,
         "seasonValid": true,
         "competition": "26749998",
         "group": "26814437"
@@ -328,7 +328,7 @@
       "Masculina Juvenil B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 3003,
+        "chars": 2536,
         "seasonValid": true,
         "competition": "26738220",
         "group": "26878012"
@@ -336,7 +336,7 @@
       "Masculina Cadete Autonómica": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2937,
+        "chars": 2470,
         "seasonValid": true,
         "competition": "26738292",
         "group": "26738293"
@@ -344,7 +344,7 @@
       "Masculina Cadete B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2871,
+        "chars": 2404,
         "seasonValid": true,
         "competition": "26750003",
         "group": "26877982"
@@ -352,7 +352,7 @@
       "Masculina Infantil Preferente": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2878,
+        "chars": 2411,
         "seasonValid": true,
         "competition": "26738249",
         "group": "26738251"
@@ -360,7 +360,7 @@
       "Masculina Infantil B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2676,
+        "chars": 2209,
         "seasonValid": true,
         "competition": "26750015",
         "group": "28125503"
@@ -368,7 +368,7 @@
       "Masculina Alevín A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2632,
+        "chars": 2165,
         "seasonValid": true,
         "competition": "26750017",
         "group": "28105877"
@@ -376,7 +376,7 @@
       "Masculina Alevín B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2566,
+        "chars": 2099,
         "seasonValid": true,
         "competition": "26750017",
         "group": "27597476"
@@ -384,7 +384,7 @@
       "Masculina Benjamín A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2592,
+        "chars": 2125,
         "seasonValid": true,
         "competition": "26738225",
         "group": "28202550"
@@ -392,7 +392,7 @@
       "Masculina Prebenjamín A": {
         "mode": "no-fixture",
         "fixtures": 0,
-        "chars": 1691,
+        "chars": 1224,
         "seasonValid": true,
         "competition": "ID_PENDIENTE",
         "group": "ID_PENDIENTE"
@@ -400,7 +400,7 @@
       "Femenina Juvenil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2759,
+        "chars": 2292,
         "seasonValid": true,
         "competition": "26750020",
         "group": "28163764"
@@ -408,7 +408,7 @@
       "Femenina Cadete A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2599,
+        "chars": 2132,
         "seasonValid": true,
         "competition": "26738222",
         "group": "28165770"
@@ -416,7 +416,7 @@
       "Femenina Cadete B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2690,
+        "chars": 2223,
         "seasonValid": true,
         "competition": "26738222",
         "group": "28165724"
@@ -424,7 +424,7 @@
       "Femenina Infantil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2542,
+        "chars": 2075,
         "seasonValid": true,
         "competition": "26738223",
         "group": "28169452"
@@ -432,7 +432,7 @@
       "Femenina Alevín A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2495,
+        "chars": 2028,
         "seasonValid": true,
         "competition": "26750025",
         "group": "28170761"
