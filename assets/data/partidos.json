@@ -20,10 +20,10 @@
     {
       "round": 5,
       "date": "2026-11-07",
-      "time": "15:00",
+      "time": null,
       "home": "CDE C.F.S. EUROSIRIS (FS)",
       "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
-      "score": "15 - 00",
+      "score": null,
       "venue": null,
       "competition": "26738222",
       "group": "28165770",
@@ -54,10 +54,10 @@
     {
       "round": 4,
       "date": "2026-11-07",
-      "time": "11:15",
+      "time": null,
       "home": "TORREJON SALA FIVE PLAY",
       "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
-      "score": "11 - 15",
+      "score": null,
       "venue": null,
       "competition": "26750015",
       "group": "28125503",
@@ -71,10 +71,10 @@
     {
       "round": 8,
       "date": "2026-11-07",
-      "time": "18:00",
+      "time": null,
       "home": "FUTSALA PINTO - ESCUELA PATRI CHAMORRO 'A'",
       "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
-      "score": "18 - 00",
+      "score": null,
       "venue": null,
       "competition": "26749998",
       "group": "26814437",
@@ -105,10 +105,10 @@
     {
       "round": 8,
       "date": "2026-11-07",
-      "time": "18:00",
+      "time": null,
       "home": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE",
       "away": "CDB SPORTING LAS AGUILAS DE MADRID - PARISAT 'A'",
-      "score": "18 - 00",
+      "score": null,
       "venue": null,
       "competition": "26738221",
       "group": "26771028",
@@ -299,7 +299,7 @@
     "Femenina|Infantil A",
     "Femenina|Alevín A"
   ],
-  "updatedAt": "2026-11-07T13:09:25.359Z",
+  "updatedAt": "2026-11-07T21:56:04.847Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
@@ -312,7 +312,7 @@
       "Masculina Tercera División": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2834,
+        "chars": 2873,
         "seasonValid": true,
         "competition": "26738221",
         "group": "26771028"
@@ -320,7 +320,7 @@
       "Masculina Juvenil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2739,
+        "chars": 2765,
         "seasonValid": true,
         "competition": "26749998",
         "group": "26814437"
@@ -344,7 +344,7 @@
       "Masculina Cadete B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2450,
+        "chars": 2476,
         "seasonValid": true,
         "competition": "26750003",
         "group": "26877982"
@@ -352,7 +352,7 @@
       "Masculina Infantil Preferente": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2466,
+        "chars": 2492,
         "seasonValid": true,
         "competition": "26738249",
         "group": "26738251"
@@ -360,7 +360,7 @@
       "Masculina Infantil B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2216,
+        "chars": 2298,
         "seasonValid": true,
         "competition": "26750015",
         "group": "28125503"
@@ -408,7 +408,7 @@
       "Femenina Cadete A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2186,
+        "chars": 2212,
         "seasonValid": true,
         "competition": "26738222",
         "group": "28165770"
@@ -432,7 +432,7 @@
       "Femenina Alevín A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2035,
+        "chars": 2136,
         "seasonValid": true,
         "competition": "26750025",
         "group": "28170761"
