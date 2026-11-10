@@ -37,10 +37,10 @@
     {
       "round": 5,
       "date": "2026-11-14",
-      "time": null,
+      "time": "11:00",
       "home": "ESCUELA TORREJON JUNCAL F.S. 'B'",
       "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
-      "score": null,
+      "score": "11 - 00",
       "venue": null,
       "competition": "26750017",
       "group": "27597476",
@@ -171,23 +171,6 @@
       "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26749998&grupo=26814437&temporada=22&tipojuego=3"
     },
     {
-      "round": 6,
-      "date": "2026-11-14",
-      "time": null,
-      "home": "CLUB DEPORCOSLADA F.S. 'B'",
-      "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
-      "score": null,
-      "venue": null,
-      "competition": "26738220",
-      "group": "26878012",
-      "competitionName": "PREFERENTE JUVENIL SALA",
-      "officialTeamName": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
-      "team": "Juvenil B",
-      "section": "Masculina",
-      "sourceUrl": "https://www.elbalondemadrid.es/competicion/26738220/grupo/26878012/jornadas",
-      "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26738220&grupo=26878012&temporada=22&tipojuego=3"
-    },
-    {
       "round": 7,
       "date": "2026-11-15",
       "time": "13:30",
@@ -237,6 +220,23 @@
       "section": "Femenina",
       "sourceUrl": "https://www.elbalondemadrid.es/competicion/26750020/grupo/28163764/jornadas",
       "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26750020&grupo=28163764&temporada=22&tipojuego=3"
+    },
+    {
+      "round": 6,
+      "date": "2026-11-15",
+      "time": "15:00",
+      "home": "CLUB DEPORCOSLADA F.S. 'B'",
+      "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
+      "score": "15 - 00",
+      "venue": null,
+      "competition": "26738220",
+      "group": "26878012",
+      "competitionName": "PREFERENTE JUVENIL SALA",
+      "officialTeamName": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
+      "team": "Juvenil B",
+      "section": "Masculina",
+      "sourceUrl": "https://www.elbalondemadrid.es/competicion/26738220/grupo/26878012/jornadas",
+      "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26738220&grupo=26878012&temporada=22&tipojuego=3"
     },
     {
       "round": 9,
@@ -299,7 +299,7 @@
     "Femenina|Infantil A",
     "Femenina|Alevín A"
   ],
-  "updatedAt": "2026-11-09T22:26:33.495Z",
+  "updatedAt": "2026-11-10T07:25:07.577Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
@@ -312,7 +312,7 @@
       "Masculina Tercera División": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2704,
+        "chars": 2678,
         "seasonValid": true,
         "competition": "26738221",
         "group": "26771028"
@@ -328,7 +328,7 @@
       "Masculina Juvenil B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2547,
+        "chars": 2521,
         "seasonValid": true,
         "competition": "26738220",
         "group": "26878012"
@@ -360,7 +360,7 @@
       "Masculina Infantil B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2203,
+        "chars": 2153,
         "seasonValid": true,
         "competition": "26750015",
         "group": "28125503"
@@ -376,7 +376,7 @@
       "Masculina Alevín B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2154,
+        "chars": 2115,
         "seasonValid": true,
         "competition": "26750017",
         "group": "27597476"
@@ -384,7 +384,7 @@
       "Masculina Benjamín A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2240,
+        "chars": 2214,
         "seasonValid": true,
         "competition": "26738225",
         "group": "28202550"
@@ -424,7 +424,7 @@
       "Femenina Infantil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2105,
+        "chars": 2069,
         "seasonValid": true,
         "competition": "26738223",
         "group": "28169452"
