@@ -299,7 +299,7 @@
     "Femenina|Infantil A",
     "Femenina|Alevín A"
   ],
-  "updatedAt": "2026-11-11T19:40:44.449Z",
+  "updatedAt": "2026-11-12T07:18:00.756Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
@@ -376,7 +376,7 @@
       "Masculina Alevín B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2115,
+        "chars": 2122,
         "seasonValid": true,
         "competition": "26750017",
         "group": "27597476"
