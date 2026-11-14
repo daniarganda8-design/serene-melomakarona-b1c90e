@@ -37,10 +37,10 @@
     {
       "round": 4,
       "date": "2026-11-14",
-      "time": "11:15",
+      "time": null,
       "home": "SAD 77 FUTSAL INTER - JP FINANCIAL",
       "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE",
-      "score": "11 - 15",
+      "score": null,
       "venue": null,
       "competition": "26738225",
       "group": "28202550",
@@ -71,10 +71,10 @@
     {
       "round": 7,
       "date": "2026-11-14",
-      "time": "10:00",
+      "time": null,
       "home": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
       "away": "C.D.E. ALARO DEPORTIVA",
-      "score": "10 - 00",
+      "score": null,
       "venue": null,
       "competition": "26750003",
       "group": "26877982",
@@ -105,10 +105,10 @@
     {
       "round": 5,
       "date": "2026-11-14",
-      "time": "13:00",
+      "time": null,
       "home": "FUTBOL SALA LIMONES 5 'B'",
       "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
-      "score": "13 - 00",
+      "score": null,
       "venue": null,
       "competition": "26750015",
       "group": "28125503",
@@ -287,7 +287,7 @@
     "Femenina|Infantil A",
     "Femenina|Alevín A"
   ],
-  "updatedAt": "2026-11-14T06:31:37.318Z",
+  "updatedAt": "2026-11-14T18:09:42.357Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
@@ -332,7 +332,7 @@
       "Masculina Cadete B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2631,
+        "chars": 2670,
         "seasonValid": true,
         "competition": "26750003",
         "group": "26877982"
@@ -348,7 +348,7 @@
       "Masculina Infantil B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2232,
+        "chars": 2265,
         "seasonValid": true,
         "competition": "26750015",
         "group": "28125503"
@@ -372,7 +372,7 @@
       "Masculina Benjamín A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2269,
+        "chars": 2282,
         "seasonValid": true,
         "competition": "26738225",
         "group": "28202550"
