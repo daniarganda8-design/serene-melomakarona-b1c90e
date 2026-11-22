@@ -2,125 +2,6 @@
   "upcoming": [
     {
       "round": 6,
-      "date": "2026-11-21",
-      "time": "12:15",
-      "home": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
-      "away": "CLUB ARGANDA FUTSAL 'A'",
-      "score": "12 - 15",
-      "venue": null,
-      "competition": "26750017",
-      "group": "28105877",
-      "competitionName": "ALEVIN SALA",
-      "officialTeamName": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
-      "team": "Alevín A",
-      "section": "Masculina",
-      "sourceUrl": "https://www.elbalondemadrid.es/competicion/26750017/grupo/28105877/jornadas",
-      "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26750017&grupo=28105877&temporada=22&tipojuego=3"
-    },
-    {
-      "round": 6,
-      "date": "2026-11-21",
-      "time": null,
-      "home": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
-      "away": "C.D.E. MEJORSALA",
-      "score": null,
-      "venue": null,
-      "competition": "26750017",
-      "group": "27597476",
-      "competitionName": "ALEVIN SALA",
-      "officialTeamName": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
-      "team": "Alevín B",
-      "section": "Masculina",
-      "sourceUrl": "https://www.elbalondemadrid.es/competicion/26750017/grupo/27597476/jornadas",
-      "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26750017&grupo=27597476&temporada=22&tipojuego=3"
-    },
-    {
-      "round": 5,
-      "date": "2026-11-21",
-      "time": null,
-      "home": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE",
-      "away": "FUTBOL SALA LIMONES 5 'B'",
-      "score": null,
-      "venue": null,
-      "competition": "26738225",
-      "group": "28202550",
-      "competitionName": "BENJAMIN INICIACION SALA",
-      "officialTeamName": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE",
-      "team": "Benjamín A",
-      "section": "Masculina",
-      "sourceUrl": "https://www.elbalondemadrid.es/competicion/26738225/grupo/28202550/jornadas",
-      "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26738225&grupo=28202550&temporada=22&tipojuego=3"
-    },
-    {
-      "round": 8,
-      "date": "2026-11-21",
-      "time": "13:00",
-      "home": "MRB F.S. MOSTOLES - CIUDAD DE MOSTOLES 'C'",
-      "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
-      "score": "13 - 00",
-      "venue": null,
-      "competition": "26750003",
-      "group": "26877982",
-      "competitionName": "PREFERENTE CADETE SALA",
-      "officialTeamName": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
-      "team": "Cadete B",
-      "section": "Masculina",
-      "sourceUrl": "https://www.elbalondemadrid.es/competicion/26750003/grupo/26877982/jornadas",
-      "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26750003&grupo=26877982&temporada=22&tipojuego=3"
-    },
-    {
-      "round": 6,
-      "date": "2026-11-21",
-      "time": "10:00",
-      "home": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
-      "away": "CDE FUSION FUTBOL SALA SAN FERNANDO",
-      "score": "10 - 00",
-      "venue": null,
-      "competition": "26750015",
-      "group": "28125503",
-      "competitionName": "PRIMERA INFANTIL SALA",
-      "officialTeamName": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
-      "team": "Infantil B",
-      "section": "Masculina",
-      "sourceUrl": "https://www.elbalondemadrid.es/competicion/26750015/grupo/28125503/jornadas",
-      "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26750015&grupo=28125503&temporada=22&tipojuego=3"
-    },
-    {
-      "round": 8,
-      "date": "2026-11-21",
-      "time": "17:00",
-      "home": "MRB F.S. MOSTOLES - CIUDAD DE MOSTOLES 'B'",
-      "away": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
-      "score": "17 - 00",
-      "venue": null,
-      "competition": "26738249",
-      "group": "26738251",
-      "competitionName": "PREFERENTE INFANTIL SALA",
-      "officialTeamName": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'A'",
-      "team": "Infantil Preferente",
-      "section": "Masculina",
-      "sourceUrl": "https://www.elbalondemadrid.es/competicion/26738249/grupo/26738251/jornadas",
-      "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26738249&grupo=26738251&temporada=22&tipojuego=3"
-    },
-    {
-      "round": 7,
-      "date": "2026-11-21",
-      "time": "18:30",
-      "home": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
-      "away": "ESCUELA TORREJON JUNCAL F.S. 'A'",
-      "score": "18 - 30",
-      "venue": null,
-      "competition": "26738220",
-      "group": "26878012",
-      "competitionName": "PREFERENTE JUVENIL SALA",
-      "officialTeamName": "CD RIVAS FUTSAL - YOUFIRST SMART FINACE 'B'",
-      "team": "Juvenil B",
-      "section": "Masculina",
-      "sourceUrl": "https://www.elbalondemadrid.es/competicion/26738220/grupo/26878012/jornadas",
-      "rffmUrl": "https://www.rffm.es/competicion/calendario?competicion=26738220&grupo=26878012&temporada=22&tipojuego=3"
-    },
-    {
-      "round": 6,
       "date": "2026-11-22",
       "time": "10:00",
       "home": "CLUB FUTBOL SALA FEMENINO SAN FERNANDO 'A'",
@@ -260,6 +141,41 @@
   "pendingTeams": [
     {
       "section": "Masculina",
+      "team": "Juvenil B",
+      "reason": "La categoría está localizada, pero la próxima jornada todavía no está publicada."
+    },
+    {
+      "section": "Masculina",
+      "team": "Cadete B",
+      "reason": "La categoría está localizada, pero la próxima jornada todavía no está publicada."
+    },
+    {
+      "section": "Masculina",
+      "team": "Infantil Preferente",
+      "reason": "La categoría está localizada, pero la próxima jornada todavía no está publicada."
+    },
+    {
+      "section": "Masculina",
+      "team": "Infantil B",
+      "reason": "La categoría está localizada, pero la próxima jornada todavía no está publicada."
+    },
+    {
+      "section": "Masculina",
+      "team": "Alevín A",
+      "reason": "La categoría está localizada, pero la próxima jornada todavía no está publicada."
+    },
+    {
+      "section": "Masculina",
+      "team": "Alevín B",
+      "reason": "La categoría está localizada, pero la próxima jornada todavía no está publicada."
+    },
+    {
+      "section": "Masculina",
+      "team": "Benjamín A",
+      "reason": "La categoría está localizada, pero la próxima jornada todavía no está publicada."
+    },
+    {
+      "section": "Masculina",
       "team": "Prebenjamín A",
       "reason": "La categoría está localizada, pero la próxima jornada todavía no está publicada."
     }
@@ -299,20 +215,20 @@
     "Femenina|Infantil A",
     "Femenina|Alevín A"
   ],
-  "updatedAt": "2026-11-21T19:21:14.022Z",
+  "updatedAt": "2026-11-22T06:56:45.059Z",
   "source": "Calendarios públicos RFFM",
   "diagnostics": {
     "scraper": "playwright-cloudflare-v3",
     "sources": 16,
     "fixtures": 15,
     "expectedTeams": 16,
-    "pendingTeams": 1,
+    "pendingTeams": 8,
     "missingTeams": [],
     "teams": {
       "Masculina Tercera División": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2781,
+        "chars": 2775,
         "seasonValid": true,
         "competition": "26738221",
         "group": "26771028"
@@ -320,7 +236,7 @@
       "Masculina Juvenil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2847,
+        "chars": 2873,
         "seasonValid": true,
         "competition": "26749998",
         "group": "26814437"
@@ -328,7 +244,7 @@
       "Masculina Juvenil B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2662,
+        "chars": 2701,
         "seasonValid": true,
         "competition": "26738220",
         "group": "26878012"
@@ -336,7 +252,7 @@
       "Masculina Cadete Autonómica": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2550,
+        "chars": 2564,
         "seasonValid": true,
         "competition": "26738292",
         "group": "26738293"
@@ -344,7 +260,7 @@
       "Masculina Cadete B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2553,
+        "chars": 2592,
         "seasonValid": true,
         "competition": "26750003",
         "group": "26877982"
@@ -352,7 +268,7 @@
       "Masculina Infantil Preferente": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2531,
+        "chars": 2578,
         "seasonValid": true,
         "competition": "26738249",
         "group": "26738251"
@@ -360,7 +276,7 @@
       "Masculina Infantil B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2352,
+        "chars": 2424,
         "seasonValid": true,
         "competition": "26750015",
         "group": "28125503"
@@ -368,7 +284,7 @@
       "Masculina Alevín A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2281,
+        "chars": 2295,
         "seasonValid": true,
         "competition": "26750017",
         "group": "28105877"
@@ -376,7 +292,7 @@
       "Masculina Alevín B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2287,
+        "chars": 2280,
         "seasonValid": true,
         "competition": "26750017",
         "group": "27597476"
@@ -384,7 +300,7 @@
       "Masculina Benjamín A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2295,
+        "chars": 2321,
         "seasonValid": true,
         "competition": "26738225",
         "group": "28202550"
@@ -400,7 +316,7 @@
       "Femenina Juvenil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2236,
+        "chars": 2249,
         "seasonValid": true,
         "competition": "26750020",
         "group": "28163764"
@@ -416,7 +332,7 @@
       "Femenina Cadete B": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2276,
+        "chars": 2289,
         "seasonValid": true,
         "competition": "26738222",
         "group": "28165724"
@@ -424,7 +340,7 @@
       "Femenina Infantil A": {
         "mode": "rendered-dom",
         "fixtures": 1,
-        "chars": 2182,
+        "chars": 2221,
         "seasonValid": true,
         "competition": "26738223",
         "group": "28169452"
